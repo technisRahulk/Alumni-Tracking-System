@@ -1,0 +1,34 @@
+{
+  "name": "ats_nits",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jitulteron7/ATS-NITS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jitulteron7/ATS-NITS/issues"
+  },
+  "homepage": "https://github.com/Jitulteron7/ATS-NITS#readme"
+}
