@@ -1,14 +1,10 @@
-const jwt=require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const User = require("../models/User");
 
 const auth = async (req,res,next) => {
     try{
-        const {authorization}=req.headers;
-        if(!authorization){
-            return res.json("Login First")
-        }
-        const token = authorization.replace("Bearer ","");
+        const token = req.header("Authorization").replace("Bearer ", "");
         const userInfo = jwt.verify(token,process.env.JWT_SECRET);
         const user = await User.findOne({
             _id: userInfo._id,
@@ -16,10 +12,9 @@ const auth = async (req,res,next) => {
         });
         if(!user) throw new Error("User not found");
         
-        req.userInfo = {
-            token:token,
-            user:user
-        }
+        req.token=token;
+        req.user=user;
+
         next();    
     }
     catch(e){

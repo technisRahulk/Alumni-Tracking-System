@@ -1,44 +1,61 @@
 const User = require("../models/User");
 
-exports.register = async (req,res,next)=>{
-    try{
-        
-        const {password,email,name}=req.body;
-        const doesExits=await User.findOne({email});
-        if(doesExits){
-            return res.json("account already exits");
-        }
-        const user = await User.create({
-        name,
-        password,
-        email
-        });
-        
-        const JWTtoken=await user.generateAuthToken();
-        user = await user.extractUser();
-        res.status(201).json({
-            JWTtoken,
-            user
-        });
-        console.log("thik aaya hai");
+exports.signUp = async (req, res) => {
+    const user = new User(req.body);
+  
+    const doesExits = await User.findOne({email});
+    if(doesExits) {
+        return res.json("Account already exits");
     }
-    catch(err){
-        console.log("error aaya hai");
-        next(err);
+  
+    try {
+        await user.save();
+        const token = await user.generateAuthToken();
+  
+        res.status(201).send({ user, token });
+    } catch (e) {
+        res.status(400).send(e);
     }
 }
-exports.login = async (req,res,next)=>{
-    try{
-        const {password,email}=req.body;
-        let user =await User.findUser(email,password);
-        const JWTtoken=await user.generateAuthToken();
-        user=await user.extractUser();
-        res.status(200).json({
-            JWTtoken,
-            user
-        });
-    }
-    catch(err){
+exports.login = async (req, res) => {
+    try {
+        const user = await User.findByCredentials(
+        req.body.email,
+        req.body.password
+        );
+        const token = await user.generateAuthToken();
+            
+        res.send({ user: user.extractUser(), token });
 
+    } catch (e) {
+        res.status(400).send();
     }
+}
+
+exports.logout = async (req, res) => {
+    try {
+        req.user.tokens = req.user.tokens.filter((token) => {
+        return token.token !== req.token;
+    });
+  
+        await req.user.save();
+        res.send();
+    } catch (e) {
+        res.status(500).send();
+    }
+}
+
+exports.logoutAll = async (req, res) => {
+    try {
+        req.user.tokens = [];
+        await req.user.save();
+        res.send();
+    } catch (e) {
+        res.status(500).send();
+    }
+}
+
+exports.readUser = async (req, res) => {
+  
+    res.send(req.user);
 }

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const crypto = require("crypto");
+const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
@@ -12,7 +12,8 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
         trim: true,
-        // match:[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"is invalid"],
+        lowercase: true,
+        match:[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"is invalid"],
         unique:true
     },
     password:{
@@ -28,7 +29,7 @@ const userSchema = new mongoose.Schema({
     },
     branch:{
         type:String,
-        // required:true,
+        //required:true,
         trim: true
     },
     workAt:{
@@ -49,50 +50,49 @@ const userSchema = new mongoose.Schema({
     timestamps:true
 });
 
-// token gen
-userSchema.methods.generateAuthToken = async function(){
+userSchema.methods.generateAuthToken = async function () {
     const user = this;
-    const token = jwt.sign({_id:user._id.toString()},process.env.JWT_SECRECT,{expiresIn:process.env.ExpireJWT});
-
+    const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET, {expiresIn:'30 days'});
+  
     user.tokens = user.tokens.concat({ token });
     await user.save();
-
+  
     return token;
-}
-
-// password encrypting 
-userSchema.pre("save",async function(next){
+};
+  
+userSchema.methods.extractUser = function () {
     const user = this;
-    if(user.isModified("password")){
-        const salt = crypto.randomBytes(16).toString("hex");
-        const hash = crypto.pbkdf2Sync(user.password,salt,100000,64,'sha512').toString("hex");
-        user.password = [salt,hash].join('$');
-    }
-    next();
-});
-// password verify
-userSchema.statics.findUser = async function(email,password){
-
-    const User = this;
-    const user = await User.findOne({email});
-
-    if(!user) throw new Error("User not found. Register first!");
-
-    const oldsalt = user.password.split('$')[0];
-    const originalPassword = user.password.split('$')[1];
-    const hash = crypto.pbkdf2Sync(password,oldsalt,100000,64,'sha512').toString("hex");
-
-    if(!hash === originalPassword) throw new Error("Invalid password");
-    
+    const userObject = user.toObject(); // will give you just the raw object
+  
+    delete userObject.password;
+    delete userObject.tokens;
+  
+    return userObject;
+};
+  
+userSchema.statics.findByCredentials = async (email, password) => {
+    const user = await User.findOne({ email });
+  
+    if (!user) throw new Error("Unable to Login!");
+  
+    const isMatch = await bcrypt.compare(password, user.password);
+  
+    if (!isMatch) throw new Error("Unable to Login!");
+  
     return user;
 };
-// extract 
-userSchema.methods.extractUser = async function(){
+  
+  // Hash the password
+userSchema.pre("save", async function (next) {
     const user = this;
-    const userInfo = user.toObject();
-    delete userInfo.password;
-    return userInfo;
+  
+    if (user.isModified("password")) {
+        user.password = await bcrypt.hash(user.password, 8);
+    }
+  
+    next();
+});
+  
+const User = mongoose.model("User", userSchema);
 
-};
-
-module.exports = mongoose.model("User",userSchema);
+module.exports = User;
