@@ -30,14 +30,10 @@ const userSchema = new mongoose.Schema(
     },
     branch: {
       type: String,
-      //required:true,
+      required:true,
       trim: true,
     },
-    workAt: {
-      type: String,
-      // required:true,
-      trim: true,
-    },
+
     tokens: [
       {
         token: {
@@ -46,10 +42,70 @@ const userSchema = new mongoose.Schema(
         },
       },
     ],
+
+  // new added 
+    socialLinks:
+    { 
+      fb:{
+        type:String
+      },
+      linkDin:{
+        type:String
+      },
+      others:{
+        type:String
+      }, 
+     },
+
+      experience:[
+        {
+          workAt:{
+            type:String,
+            trim:true
+          },
+          descrption:{
+              type:String
+          },
+          jobRole:{
+            type:String
+        },
+          specialization:{
+            type:String
+          },
+          duration:{
+            type:String
+          }
+        }
+      ],
+
+     img:{
+      type:Buffer,
+       default:""
+       },
+
+
+     resume:{
+      type:String
+            },
+
+
+    batch:{
+      type:Number,
+      required:true
+            
+    },
+
+
+    phone:{
+      type:Number,
+     }
+
   },
+
   {
     timestamps: true,
   }
+
 );
 
 userSchema.methods.generateAuthToken = async function () {
@@ -58,6 +114,7 @@ userSchema.methods.generateAuthToken = async function () {
     expiresIn: "30 days",
   });
 
+  // doubt
   user.tokens = user.tokens.concat({ token });
   await user.save();
 
