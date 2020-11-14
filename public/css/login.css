@@ -1,0 +1,209 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700;800;900&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+body {
+    font-family: 'Gothic A1', sans-serif;
+    margin: 0;
+    color: rgb(51, 48, 48);
+    background-image: url("../img/back.png");
+	height: 100vh;
+    background-size: 100% 100%;
+    align-items: center;
+    justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+.heading h1{
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    font-size: 40px;
+}
+.container{
+    align-items: center;
+    justify-content: center;
+    align-self:center;
+    display: flex;
+    flex-direction: row;
+    width:65%;
+    height:70vh;
+    position: relative;
+    border-radius:20px; 
+    background-color:white;
+    box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                 0 12.5px 10px rgba(0, 0, 0, 0.06),
+                 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                 0 10px 80px rgba(0, 0, 0, 0.12);
+   margin-top: 20px;
+}
+.containerleft{
+          
+    text-align: center;
+    float: left;
+    width: 49.5%;
+    height: 100%;
+    border-bottom-left-radius:20px; 
+    border-top-left-radius: 20px;
+}
+.logo{
+width: 100%;
+height:20%;
+display: flex;
+align-items: flex-start;
+}
+.logo img{
+height: 95%;
+padding: 10px;
+}
+.bg{
+height:85%;
+align-items:center;
+vertical-align: middle;
+}
+.bg img{
+max-width: 95%;
+max-height: 75%;
+}
+
+.vertical{
+    height: 80%;
+    width: 2px;
+    background-image: radial-gradient(rgb(41, 39, 39), white);
+}
+    
+.containerright{
+    	
+    text-align: center;
+    float: right;
+    width: 49%;
+    height: 100%;
+}
+h1 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto 10px;
+}
+.form-container h1{
+    color: #7579e7 ;
+}
+.form-container {
+    position: absolute;
+    align-items: center;
+    height: 100%;
+    margin:0;
+    padding: 15px 20px;
+    width:50%;
+   
+}
+.container-social{
+     display: flex;
+}
+.social{
+    margin:0 auto;
+}
+.container-social i{
+    display: flex;
+    font-size: 18px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border:1px solid rgba(70, 67, 67, 0.432);
+    align-items: center;
+    justify-content: center;
+}
+#sign{
+    z-index: 2;
+    /* opacity: 0; */
+    transition: all 1.5s;
+    transition-timing-function: ease-in-out;
+}
+#create{
+    z-index: 1;
+    opacity: 0;
+    transition: all 1.5s;
+    transition-timing-function: ease-in-out;
+}
+a{
+    text-decoration: none;
+    color: rgb(51, 48, 48);
+
+    font-weight: 700;
+    font-size: 1em;
+    margin:8px auto;
+}
+span{
+    font-weight: 550;
+    margin: 10px 10px;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.input-container i{
+    position: absolute;
+    align-self: center;
+    width: 20px;
+    padding-left: 4px;
+    color: rgba(70, 67, 67, 0.432);
+}
+.input-container{
+    width: 50%;
+    margin-bottom: 20px;
+    display: flex;
+}
+input{
+    width: 100%;
+    padding: 8px 2px 8px 27px;
+    background-color: #def0f0;
+    border: none;
+    
+}
+button{
+    margin-bottom:10px ;
+    background-color: #7579e7;
+    width: 50%;
+    border: none;
+    padding:8px;
+    border-radius: 4px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+button:active {
+	transform: scale(0.97);
+}
+
+button:focus {
+	outline: none;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    background:#7579e7 ;
+}
+div .line{
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+}
+hr{
+    width: 10%;
+    background-color: rgb(51, 48, 48);
+    margin: 0;
+}
