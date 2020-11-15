@@ -2,8 +2,9 @@ const User = require("../models/User");
 
 exports.signUp = async (req, res) => {
     const user = new User(req.body);
+    console.log(user)
   
-    const doesExits = await User.findOne({email});
+    const doesExits = await User.findOne({email: user.email});
     if(doesExits) {
         return res.json("Account already exits");
     }

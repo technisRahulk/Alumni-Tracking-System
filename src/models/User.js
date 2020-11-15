@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
         required:true,
         trim: true,
         lowercase: true,
-        match:[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"is invalid"],
+        // match:[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,"is invalid"],
         unique:true
     },
     password:{
@@ -53,46 +53,46 @@ const userSchema = new mongoose.Schema({
 userSchema.methods.generateAuthToken = async function () {
     const user = this;
     const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET, {expiresIn:'30 days'});
-  
+
     user.tokens = user.tokens.concat({ token });
     await user.save();
-  
+
     return token;
 };
-  
+
 userSchema.methods.extractUser = function () {
     const user = this;
     const userObject = user.toObject(); // will give you just the raw object
-  
+
     delete userObject.password;
     delete userObject.tokens;
-  
+
     return userObject;
 };
-  
+
 userSchema.statics.findByCredentials = async (email, password) => {
     const user = await User.findOne({ email });
-  
+
     if (!user) throw new Error("Unable to Login!");
-  
+
     const isMatch = await bcrypt.compare(password, user.password);
-  
+
     if (!isMatch) throw new Error("Unable to Login!");
-  
+
     return user;
 };
-  
+
   // Hash the password
 userSchema.pre("save", async function (next) {
     const user = this;
-  
+
     if (user.isModified("password")) {
         user.password = await bcrypt.hash(user.password, 8);
     }
-  
+
     next();
 });
-  
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
