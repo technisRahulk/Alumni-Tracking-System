@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const sharp = require("sharp");
 
+/*Endpoints for Signing Up, Logging In, Logging Out, and Logging out from all sessions*/
 exports.signUp = async (req, res) => {
   const user = new User(req.body);
 
@@ -15,7 +16,7 @@ exports.signUp = async (req, res) => {
       return res.status(400).send({ error: "Something went wrong" });
     }
     const token = await user.generateAuthToken();
-// extractUser;
+
     res.status(201).send({ user: user.extractUser(), token });
   } catch (e) {
     res.status(400).send(e);
@@ -31,7 +32,7 @@ exports.login = async (req, res) => {
 
     res.send({ user: user.extractUser(), token });
   } catch (e) {
-    res.status(400).send();
+    res.status(400).send({Error: "Invalid Email or Password!"});
   }
 };
 
@@ -47,7 +48,6 @@ exports.logout = async (req,res) => {
     res.status(500).send();
   }
 };
-// diffrence det logout and logoutall
 
 exports.logoutAll = async (req, res) => {
   try {
@@ -59,8 +59,55 @@ exports.logoutAll = async (req, res) => {
   }
 };
 
+/*Endpoints for Reading, Updating and Deleting a logged in User*/
 exports.readUser = async (req, res) => {
   res.send(req.user);
+};
+
+exports.updateUser = async (req, res) => {
+  const updates = Object.keys(req.body);
+  const allowedUpdates = ["name", "email", "password", "branch", "batch"]; //here more options are left to be added
+  const isValidOperation = updates.every((update) =>
+    allowedUpdates.includes(update)
+  );
+
+  if (!isValidOperation) {
+    return res.status(400).send({ Error: "Invalid updates" });
+  }
+
+  try {
+    const user = req.user; // changed so as to add auth to update
+    updates.forEach((update) => (user[update] = req.body[update]));
+    await user.save();
+
+    res.send(user);
+  } catch (e) {
+    res.status(400).send();
+  }
+};
+
+exports.deleteUser = async (req, res) => {
+  try {
+    await req.user.remove();
+    sendCancellationEmail(req.user.email, req.user.name);
+    res.send(req.user);
+  } catch (e) {
+    res.status(500).send(e);
+  }
+};
+
+/*Endpoints for Getting, Uploading and Deleting profile picture*/
+exports.getAvatar = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    if (!user || !user.avatar) throw new Error();
+
+    res.set("Content-Type", "image/png");
+    res.send(user.avatar);
+  } catch (e) {
+    res.status(404).send();
+  }
 };
 
 exports.uploadAvatar = async (req, res) => {
@@ -85,17 +132,4 @@ exports.deleteAvatar = async (req, res) => {
     } catch (e) {
       res.status(500).send();
     }
-  };
-
-exports.getAvatar = async (req, res) => {
-    try {
-      const user = await User.findById(req.params.id);
-  
-      if (!user || !user.avatar) throw new Error();
-  
-      res.set("Content-Type", "image/png");
-      res.send(user.avatar);
-    } catch (e) {
-      res.status(404).send();
-    }
-  };
+};

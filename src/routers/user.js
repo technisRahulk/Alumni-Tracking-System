@@ -16,20 +16,24 @@ const upload = multer({
 
 const router = new express.Router();
 
-router.post("/users", userController.signUp);
+router.post("/users", userController.signUp); //Signing Up
 
-router.post("/users/login", userController.login);
+router.post("/users/login", userController.login); //Login
 
-router.post("/users/logout", auth, userController.logout);
+router.post("/users/logout", auth, userController.logout); //Logout
 
-router.post("/users/logoutAll", auth, userController.logoutAll);
+router.post("/users/logoutAll", auth, userController.logoutAll); //Logout All sessions
 
-router.get("/users/me", auth, userController.readUser);
+router.get("/users/me", auth, userController.readUser); //Get logged in user 
 
-router.post("/users/me/avatar", auth, upload.single("avatar"), userController.uploadAvatar);
+router.patch("/users/me", auth, userController.updateUser); //Update user
 
-router.delete("/users/me/avatar", auth, userController.deleteAvatar);
+router.delete("/users/me", auth, userController.deleteUser); //Delete user 
 
-router.get("/users/:id/avatar", userController.getAvatar);
+router.get("/users/:id/avatar", userController.getAvatar); //Get profile picture or avatar
+
+router.post("/users/me/avatar", auth, upload.single("avatar"), userController.uploadAvatar); //Upload profile picture or avatar
+
+router.delete("/users/me/avatar", auth, userController.deleteAvatar); //Delete profile picture or avatar
 
 module.exports = router;
