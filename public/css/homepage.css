@@ -389,4 +389,26 @@ textarea {
     border: 0;
 }
 
-@media 
+@media only screen and (max-width: 1200px){
+    form {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width:992px){
+    .single-line {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    form {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width : 600px){
+    form {
+        width: 75%;
+    }
+}
