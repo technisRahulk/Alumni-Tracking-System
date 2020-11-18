@@ -43,7 +43,6 @@ const userSchema = new mongoose.Schema(
       },
     ],
 
-  // new added 
     socialLinks:
     { 
       fb:{
@@ -57,36 +56,39 @@ const userSchema = new mongoose.Schema(
       }, 
      },
 
-      experience:[
-        {
-          workAt:{
-            type:String,
-            trim:true
-          },
-          descrption:{
-              type:String
-          },
-          jobRole:{
+    experience:[
+      {
+        workAt:{
+          type:String,
+          trim:true
+        },
+        description:{
             type:String
         },
-          specialization:{
-            type:String
-          },
-          duration:{
-            type:String
-          }
+        jobRole:{
+          type:String
+      },
+        specialization:{
+          type:String
+        },
+        duration:{
+          type:String
         }
-      ],
+      }
+    ],
 
-     img:{
-      type:Buffer,
-       default:""
-       },
+    avatar:{
+      type: Buffer,
+      default:""
+    },
 
+    UserType:{
+      type: Boolean
+    },
 
-     resume:{
-      type:String
-            },
+    resume:{
+        type: Buffer
+    },
 
 
     batch:{
@@ -99,7 +101,6 @@ const userSchema = new mongoose.Schema(
     phone:{
       type:Number,
      }
-
   },
 
   {
