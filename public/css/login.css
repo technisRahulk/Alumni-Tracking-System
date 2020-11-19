@@ -76,8 +76,7 @@ max-height: 75%;
     background-image: radial-gradient(rgb(41, 39, 39), white);
 }
     
-.containerright{
-    	
+.containerright{    	
     text-align: center;
     float: right;
     width: 49%;
@@ -206,4 +205,166 @@ hr{
     width: 10%;
     background-color: rgb(51, 48, 48);
     margin: 0;
+}
+
+
+
+.container_left_mobile{
+  width: 0%;
+  height:0;
+  margin: 0;
+  visibility: hidden;
+}
+.container_right_mobile{
+  width: 0;
+  height:0;
+  margin:0;
+  visibility: hidden;
+}
+.wmobile{
+    height: 0%;
+    visibility: hidden;
+}
+.container-social-mobile{
+    height: 0%;
+    visibility: hidden;
+}
+
+@media (max-width:680px)
+{
+  *{
+    margin: 0;
+  }
+
+  body{
+    background-image: url("../img/Mobile_View_background.png");
+    min-height: 600px;
+  }
+  span{
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+  }
+  .hmobile{
+    height: 0%;
+    visibility: hidden;
+  }
+  .wmobile{
+    margin-bottom:10%;
+    visibility: visible;
+    font-weight: 300;
+  }
+  .form-container h1{
+    color: #000000;
+  }
+  .container-social{
+    height: 0%;
+    visibility: hidden;
+  }
+
+.container-social-mobile{
+     display: flex;
+     margin-left: 15%;
+     margin-right: 20%;
+     visibility: visible;
+}
+.container-social-mobile i{
+    display: flex;
+    font-size: 14px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border:1px solid rgba(70, 67, 67, 0.432);
+    align-items: center;
+    justify-content: center;
+}
+.line{
+    height: 0%;
+    visibility: hidden;
+}
+  .containerleft{
+        height:0px;
+        width: 0%;
+  }
+  .containerright{
+    width: 100%;
+    height: 100%;
+  }
+  .heading h1{
+    visibility: hidden;
+    height: 0px;
+  }
+  .container{
+        position:absolute;
+        right: 0;
+        top: 0; 
+       width:100%;
+       margin:0%;
+       padding: 0%;
+       border-radius: 0%;
+       height:auto;
+       background-color: #a3d8f4;
+       box-shadow:  0 1px 1px rgba(0, 0, 0, 0.034),
+            0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06);
+  }
+  .container_left_mobile{
+      text-align: center;
+      margin-top: 23%;
+       float: left;
+       width: 50%;
+       height: auto;
+       padding-top: 3%;
+       color: #FFFFFF;
+       visibility: visible;
+       font-weight:300;
+       font-size: 28px;
+  }
+  #mlogin{
+       background-color: #9ab3f5;
+  }
+  .container_right_mobile{
+    margin-top: 23%;
+    text-align: center;
+    float: right;
+    width: 50%;
+    height:auto;
+    padding-top: 3%;
+    color: #FFFFFF;
+    visibility: visible;
+    font-weight: 300;
+    font-size: 28px;
+  }
+  #msignup{
+    background-color: #a3d8f4;
+  }
+  .vertical{
+    height: 0%;
+    width: 0%;
+  }
+  form{
+    display:block;
+    margin-top:0%;
+    margin-left: 23%;
+  }
+  .form-container{
+    position: absolute;
+    width: 70%;
+    padding: 0%;
+    margin-top: 36%;
+  }
+  .input-container{
+    width: 100%;
+    padding-left: 0%;
+  }
+  button{
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  
 }
