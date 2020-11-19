@@ -162,6 +162,13 @@ form{
     width: 50%;
     margin-bottom: 20px;
     display: flex;
+    position: relative;
+}
+.input-container .showpass
+{
+    left: auto;
+    right: 10px;
+    cursor: pointer;
 }
 input{
     width: 100%;
@@ -206,7 +213,28 @@ hr{
     background-color: rgb(51, 48, 48);
     margin: 0;
 }
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
 
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 12px;
+ 
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 
 .container_left_mobile{
@@ -225,12 +253,8 @@ hr{
     height: 0%;
     visibility: hidden;
 }
-.container-social-mobile{
-    height: 0%;
-    visibility: hidden;
-}
 
-@media (max-width:680px)
+@media (max-width:600px)
 {
   *{
     margin: 0;
@@ -246,39 +270,44 @@ hr{
     margin-bottom: 0%;
     padding-bottom: 0%;
   }
+  .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 50px;
+  padding: 3px 0;
+  border-radius: 2px;
+}
   .hmobile{
     height: 0%;
     visibility: hidden;
   }
   .wmobile{
-    margin-bottom:10%;
+    padding-top: 7%;
+    padding-bottom:10%;
     visibility: visible;
+    align-items: center;
     font-weight: 300;
   }
   .form-container h1{
     color: #000000;
   }
-  .container-social{
-    height: 0%;
-    visibility: hidden;
-  }
 
-.container-social-mobile{
+.container-social{
      display: flex;
-     margin-left: 15%;
-     margin-right: 20%;
+     align-content: center;
+     padding-top: 10%;
      visibility: visible;
+     padding-left: 2%;
+     padding-right: 7%;
+     margin-bottom: 12%;
 }
-.container-social-mobile i{
+.container-social i{
     display: flex;
     font-size: 14px;
     height: 25px;
     width: 25px;
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 0px;
     border:1px solid rgba(70, 67, 67, 0.432);
-    align-items: center;
-    justify-content: center;
 }
 .line{
     height: 0%;
@@ -356,8 +385,9 @@ hr{
     margin-top: 36%;
   }
   .input-container{
-    width: 100%;
+    width: 90%;
     padding-left: 0%;
+    margin-left: 5%;
   }
   button{
     width: 90%;
