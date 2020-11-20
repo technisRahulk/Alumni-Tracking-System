@@ -198,41 +198,44 @@ body {
         
     }
    .containerfull{
-    width:100%;
+    width:100vw;
 
 }
 
-
-   .containerleft{
-       width:55%;
+.containerleft{
+       width:55vw;
        float: left;
    }
 
    .containerright{
         float: right;
-        width:45%;
-    
+        width:45vw;
+         padding-right:150px;
     }
-
-    .containerright1{
+   
+.containerright1{
         float: left;
-        width:10%;
+        width:10vw;
         display:flex;
         flex-direction: column;
+        padding-left: 85px;
+
 
     }
-
-     .containerright2{
-        float: right;
-        width:35%;
+    
+.containerright2{
+        float: left;
+        width:35px;
         display:flex;
         flex-direction: column;
-    }
-
-    .contain{
+        padding-left: 110px;
         
-        width:550px;
-        height:38vh;
+    }
+     
+.contain{
+        
+        width:50vw;
+        height:43vh;
         margin-left: 16%; 
         border-radius:15px; 
         margin-top:30px;
@@ -246,10 +249,45 @@ body {
          background-repeat: no-repeat;
          background-size: 100% 100%;
      }
-     .contain1{
+    .contain5Mobile{
+        
+        width:50vw;
+        height:43vh;
+        margin-left: 16%; 
+        border-radius:15px; 
+        margin-top:30px;
+        box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+                      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                      0 12.5px 10px rgba(0, 0, 0, 0.06),
+                      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+                      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+                      0 10px 80px rgba(0, 0, 0, 0.12);
+         background-image: url("../img/jpp.png");
+         background-repeat: no-repeat;
+         background-size: 100% 100%;
+         
+     }
+    
+      .contain1{
         background-color: var(--yellow);
-        width:550px;
-        height:30vh;
+        width:50vw;
+        height:26vh;
+        margin-left: 16%; 
+        border-radius:15px; 
+        margin-top:30px;
+        text-align: center;
+        box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.024),
+                      0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+                      0 12.5px 10px rgba(0, 0, 0, 0.05),
+                      0 22.3px 17.9px rgba(0, 0, 0, 0.062),
+                      0 41.8px 33.4px rgba(0, 0, 0, 0.066),
+                      0 10px 80px rgba(0, 0, 0, 0.02);
+    
+     }
+     .contain6Mobile{
+        background-color: var(--yellow);
+        width:50vw;
+        height:26vh;
         margin-left: 16%; 
         border-radius:15px; 
         margin-top:30px;
@@ -264,10 +302,10 @@ body {
      
      .contain2 {
         
-      width: 150px;
-      height: 100px;
+      width: 10vw;
+      height: 95px;
       border-radius: 10px;
-      margin-top: 20px;
+      margin-top: 30px;
       box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
                       0 6.7px 5.3px rgba(0, 0, 0, 0.048),
                       0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -279,14 +317,13 @@ body {
       background-repeat: no-repeat;
       background-size: 100% 100%;
      }   
-     .contain3 {
+      .contain3 {
         
-      width: 350px;
-      height: 100px;
+      width: 15vw;
+      height: 95px;
       border-radius: 10px;
       background-color:var(--yellow);
-      margin-top: 20px;
-      margin-left: -230px;
+      margin-top: 30px;
       box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.024),
                       0 6.7px 5.3px rgba(0, 0, 0, 0.028),
                       0 12.5px 10px rgba(0, 0, 0, 0.05),
@@ -298,15 +335,68 @@ body {
      }   
      .write{
         padding-top: 20px;
-        color:#ff8c00;
+        color:#61A6DA ;
         text-align: center;
-        font-size: 26px;
+        font-size: 22px;
         font-family: sans-serif;
         
     }
 
+@media only screen and (max-width: 768px) {
+.carousel-two-container {
+        width: 100%;
+    }
+ .containerleft{
+    width: 100vw;
+    padding-left: 30px;
+    padding-right: 30px;
+    }
+ .contain{
+  width: 60vw;
+  height: 28vh;
+ } 
+ .contain1{
+  width: 60vw;
+  height: 10vh;
+  margin-top:12px;
+ }
 
-
+ .contain2{
+  width: 10vw;
+  display: none;
+ }
+ .contain3{
+  width: 15vw;
+  display: none;
+ }
+ .contain5Mobile {
+  width: 60vw;
+  height: 28vh;
+  margin-top:12px;
+  
+}
+.contain6Mobile {
+  width: 60vw;
+  height: 10vh;
+  margin-top:12px;
+  text-align: center;
+ }
+ .write{
+   font-size: 15px;
+   padding-top: 5px;
+   text-align: center;
+ }
+ 
+}
+@media only screen and (min-width: 769px) {
+    .contain5Mobile {
+        display: none;
+    }
+     .contain6Mobile {
+        display: none;
+    }
+  
+}
 .container {
     text-align: center;
 }
