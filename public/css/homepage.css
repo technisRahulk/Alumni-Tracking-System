@@ -303,7 +303,7 @@ body {
      .contain2 {
         
       width: 10vw;
-      height: 95px;
+      height: 14vh;
       border-radius: 10px;
       margin-top: 30px;
       box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -320,7 +320,7 @@ body {
       .contain3 {
         
       width: 15vw;
-      height: 95px;
+      height: 14vh;
       border-radius: 10px;
       background-color:var(--yellow);
       margin-top: 30px;
@@ -350,6 +350,7 @@ body {
     width: 100vw;
     padding-left: 30px;
     padding-right: 30px;
+    margin-top: -15px;
     }
  .contain{
   width: 60vw;
@@ -407,7 +408,7 @@ body {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 5em 0 0;
+    padding: 4em 0 0;
 }
 
 #Contact h1 {
