@@ -61,13 +61,16 @@ height: 95%;
 padding: 10px;
 }
 .bg{
-height:85%;
+height:80%;
 align-items:center;
-vertical-align: middle;
+position: relative;
 }
 .bg img{
 max-width: 95%;
 max-height: 75%;
+/* top: 10%; */
+position: relative;
+align-items: center;
 }
 
 .vertical{
@@ -120,14 +123,13 @@ h1 {
 #sign{
     z-index: 2;
     /* opacity: 0; */
-    transition: all 1.5s;
-    transition-timing-function: ease-in-out;
+    transition: .4s ease-in-out;
+
 }
 #create{
     z-index: 1;
     opacity: 0;
-    transition: all 1.5s;
-    transition-timing-function: ease-in-out;
+    transition: .4s ease-in-out;
 }
 a{
     text-decoration: none;
@@ -175,7 +177,10 @@ input{
     padding: 8px 2px 8px 27px;
     background-color: #def0f0;
     border: none;
-    
+    outline: none;    
+}
+input:focus{
+  border: 1px solid rgba(70, 67, 67, 0.432);
 }
 button{
     margin-bottom:10px ;
@@ -199,7 +204,6 @@ button:focus {
 input[type="checkbox"] {
     display: inline-block;
     width: auto;
-    background:#7579e7 ;
 }
 div .line{
     display: flex;
@@ -210,7 +214,7 @@ div .line{
 }
 hr{
     width: 10%;
-    background-color: rgb(51, 48, 48);
+    border:.5px solid rgb(51, 48, 48);
     margin: 0;
 }
 .tooltip {
@@ -253,6 +257,16 @@ hr{
     height: 0%;
     visibility: hidden;
 }
+.container-social-mobile{
+    height: 0%;
+    visibility: hidden;
+}
+@media(min-width:681px)
+{
+  .hweb{
+    height: 0%;
+  }
+}
 
 @media (max-width:600px)
 {
@@ -269,6 +283,7 @@ hr{
     font-size: 12px;
     margin-bottom: 0%;
     padding-bottom: 0%;
+    align-items: center;
   }
   .tooltip .tooltiptext {
   visibility: hidden;
