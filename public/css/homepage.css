@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 
 :root {
@@ -6,6 +7,9 @@
     --dark-blue-color : #0044ff;
     --black-color: #000;
      --yellow:#faf19d ;
+     --footer-bg-grey: #858B9A;
+    --color-white: #fff;
+    --footer-heading-color: #32FCF3;
 }
 
 * {
@@ -14,14 +18,19 @@
     box-sizing: inherit;
 }
 
+*:link {
+    text-decoration: none;
+}
+
 body {
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* 1st carousel style begins */
 .carousel-one-container {
     width: 80vw;
-    height: 100vh;
+    height: 90vh;
     margin-left: auto;
     margin-right: auto;
     user-select: none;
@@ -451,6 +460,11 @@ form {
     border-radius: 12px;
 }
 
+.input:focus,
+.submit:focus {
+    outline: none;
+}
+
 textarea {
     resize: none;
 }
@@ -465,6 +479,7 @@ textarea {
     background: #0038FF;
     border-radius: 30px;
     border: 0;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px){
@@ -490,3 +505,160 @@ textarea {
         width: 75%;
     }
 }
+
+/* footer styles */
+.footer {
+    display: block;
+    max-width: 100vw;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--footer-bg-grey);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15vh;
+    border-bottom: 2px solid var(--color-white);
+}
+
+.footer-nits-aa-container,
+.footer-about,
+.footer-events,
+.footer-contact,
+.footer-ats-col-container {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 20vw;
+}
+
+.mobile-ats-logo-container {
+    display: none;
+}
+
+.footer-nits-logo {
+    width: 40%;
+    margin-bottom: 2vh;
+}
+
+.footer-contact-aa {
+    font-size: .9rem;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* contact symbol style with fa styling below */
+.footer-heading {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--footer-heading-color);
+    letter-spacing: 1px;
+    font-weight: 600;
+    user-select: none;
+}
+
+.footer-heading-aa {
+    margin-bottom: 8px;
+}
+
+.footer-para {
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+    display: block;
+    color: var(--color-white);
+    user-select: none;
+}
+
+.footer-ats-logo {
+    width: 57%;
+}
+
+.follow-us {
+    padding: 2vh 0 3vh 0;
+}
+
+.fa {
+    padding: 5px 7px;
+    font-size: 26px;
+    text-decoration: none;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    border-radius: 100%;
+    margin-right: 2vw;
+}
+
+.fa:last-child {
+    margin-right: 0;
+}
+
+.fa-facebook {
+    padding: 5px 9px;
+    font-size: 24px;
+}
+
+.contact-symbol,
+.fa-phone {
+    border: none;
+    margin-right: 10px;
+    color: var(--footer-heading-color);
+    padding-left: 0;
+    font-size: 20px;
+}
+
+.footer-copyright {
+    padding-bottom: 1vh;
+}
+
+@media (max-width: 700px) {
+
+    .footer-container {
+        padding-top: 5vh;
+    }
+
+    .footer-nits-aa-container,
+    .footer-about,
+    .footer-events,
+    .footer-contact,
+    .footer-ats-col-container {
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .footer-about,
+    .footer-events {
+        display: inline-block;
+        width: 45%;
+    }
+
+    .mobile-ats-logo-container {
+        display: block;
+        width: 100%;
+    }
+
+    .footer-ats-col-container {
+        display: none;
+    }
+
+    .footer-nits-logo {
+        width: 30%;
+    }
+
+    .footer-heading {
+        font-size: 1.1rem;
+    }
+
+    .footer-para {
+        margin-bottom: 4px;
+        font-size: 1rem;
+    }
+
+    .footer-ats-logo {
+        width: 40%;
+    }
+}
+/* footer ends */
