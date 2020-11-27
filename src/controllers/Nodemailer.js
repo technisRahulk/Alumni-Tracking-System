@@ -1,22 +1,19 @@
 const nodemailer = require('nodemailer');
 require("dotenv").config();
-const cryptoRandomString = require("crypto-random-string");
-const { JsonWebTokenError } = require("jsonwebtoken");
-const jwt = require("jsonwebtoken");
 
-exports.contact = (data) => {
+const contactAdmin = (data) => {
 	var transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
     secure: true,
     auth: {
-      user: '', //email id
-      pass: '', //my gmail password
+      user: process.env.NODEMAILER_EMAIL, 
+      pass: process.env.NODEMAILER_PASSWORD,
     	}
   	});
 	
 	const output = `
-    <p>You have a new request</p>
+    <p>You have a new report</p>
     <h3>Contact Details</h3>
     <ul>  
       <li>Name: ${data.name}</li>
@@ -26,7 +23,7 @@ exports.contact = (data) => {
     <h3>Message</h3>
     <p>${data.message}</p>`;
 	
-	let mailContent = `A ATS Report has been issued.<p>Name - ${data.name}</p><p>Email Id - ${data.email}</p><p>Subject - ${data.subject}</p><p>Message - ${data.message}</p>`;
+	// let mailContent = `A ATS Report has been issued.<p>Name - ${data.name}</p><p>Email Id - ${data.email}</p><p>Subject - ${data.subject}</p><p>Message - ${data.message}</p>`;
 	
 	var mailOptions =  {
 		from: process.env.NODEMAILER_SECONDARYEMAIL,
@@ -44,5 +41,7 @@ exports.contact = (data) => {
   });
 	
 }
-	
-	
+
+module.exports = {
+  contactAdmin
+}

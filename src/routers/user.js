@@ -1,4 +1,4 @@
-const express = require("express");
+const router = require("express").Router();
 const userController = require("../controllers/user");
 const auth = require("../middleware/auth");
 const multer = require("multer")
@@ -14,26 +14,24 @@ const upload = multer({
     },
 });
 
-const router = new express.Router();
+router.post("/signup", userController.signUp); //Signing Up
 
-router.post("/users", userController.signUp); //Signing Up
+router.post("/login", userController.login); //Login
 
-router.post("/users/login", userController.login); //Login
+router.post("/logout", auth, userController.logout); //Logout
 
-router.post("/users/logout", auth, userController.logout); //Logout
+router.post("/logoutAll", auth, userController.logoutAll); //Logout All sessions
 
-router.post("/users/logoutAll", auth, userController.logoutAll); //Logout All sessions
+router.get("/profile", auth, userController.readUser); //Get logged in user 
 
-router.get("/users/me", auth, userController.readUser); //Get logged in user 
+router.patch("/profile", auth, userController.updateUser); //Update user
 
-router.patch("/users/me", auth, userController.updateUser); //Update user
+router.delete("/profile", auth, userController.deleteUser); //Delete user 
 
-router.delete("/users/me", auth, userController.deleteUser); //Delete user 
+router.get("/avatar/:id", userController.getAvatar); //Get profile picture or avatar
 
-router.get("/users/:id/avatar", userController.getAvatar); //Get profile picture or avatar
+router.post("/avatar/me", auth, upload.single("avatar"), userController.uploadAvatar); //Upload profile picture or avatar
 
-router.post("/users/me/avatar", auth, upload.single("avatar"), userController.uploadAvatar); //Upload profile picture or avatar
-
-router.delete("/users/me/avatar", auth, userController.deleteAvatar); //Delete profile picture or avatar
+router.delete("/avatar/me", auth, userController.deleteAvatar); //Delete profile picture or avatar
 
 module.exports = router;
