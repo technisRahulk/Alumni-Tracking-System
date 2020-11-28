@@ -240,6 +240,14 @@ hr{
   visibility: visible;
 }
 
+#login_btn{
+    opacity: 0.5;
+}
+#signup_btn
+{
+    opacity: 0.5;
+}
+
 
 .container_left_mobile{
   width: 0%;
@@ -268,7 +276,7 @@ hr{
   }
 }
 
-@media (max-width:600px)
+@media (max-width:680px)
 {
   *{
     margin: 0;
@@ -313,7 +321,7 @@ hr{
      visibility: visible;
      padding-left: 2%;
      padding-right: 7%;
-     margin-bottom: 12%;
+     margin-bottom: 12px;
 }
 .container-social i{
     display: flex;
@@ -411,5 +419,17 @@ hr{
     font-size: 18px;
     font-weight: 300;
   }
-  
+  form .forgot_pass
+  {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .forgot_pass a
+  {
+    color: #7579e7;
+  }
 }

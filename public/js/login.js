@@ -5,6 +5,10 @@ let msignup=document.getElementById('msignup');
 let togglePassword=document.getElementsByClassName('togglePassword');
 let password=document.getElementsByClassName('password');
 
+let signup_btn=document.getElementById('signup_btn')
+let login_btn=document.getElementById('login_btn')
+
+
 function logIn(){
     signUpBtn.style.zIndex="2";
     logInBtn.style.opacity="0";
@@ -32,3 +36,34 @@ for(let i=0;i<togglePassword.length;i++)
 		this.classList.toggle('fa-eye-slash');
 	})
 }
+
+
+function check()
+{
+	let email = document.getElementById('login_email');
+	let password = document.getElementById('login_pass');
+	let semail=document.getElementById('signup_email');
+	let spassword=document.getElementById('signup_pass');
+	let username=document.getElementById('username');
+		if((email.value.length!=''&&password.value!=''))
+		{
+			login_btn.disabled=false;
+			login_btn.style.opacity=1;
+		}
+		else
+		{
+			login_btn.disabled=true;
+			login_btn.style.opacity=0.5;
+			}
+		if(semail.value.length!=''&&spassword.value.length!=''&&username.value.length!='')
+		{
+			signup_btn.style.opacity=1;
+			signup_btn.disabled=false;
+		}
+		else
+		{
+			signup_btn.style.opacity=0.5;
+			signup_btn.disabled=true;
+		}
+}
+
