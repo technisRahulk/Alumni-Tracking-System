@@ -1,0 +1,38 @@
+:root {
+    --body-font-color: rgb(51, 48, 48);
+    --shadow-black-light: rgba(0, 0, 0, 0.03);
+    --shadow-black-medium: rgba(0, 0, 0, 0.06);
+    --shadow-black-dark: rgba(0, 0, 0, 0.12);
+    --color-white: #fff;
+    --color-black: #000000;
+    --light-blue-color: #7579e7;
+    --icon-color: rgba(70, 67, 67, 0.432);
+    --vertical-gradient-color: rgb(41, 39, 39);
+    --input-bg-color: #def0f0;
+    --m-container-bg-color: #a3d8f4;
+    --m-login-bg-color: #9ab3f5;
+
+    /* images */
+    --bg-image: url(../img/back.png);
+    --m-bg-image: url(../img/Mobile_View_background.png);
+}
+
+.dark-mode {
+    --body-font-color: ;
+    --shadow-black-light: ;
+    --shadow-black-medium: ;
+    --shadow-black-dark: ;
+    --color-white: ;
+    --color-black: ;
+    --light-blue-color: ;
+    --icon-color: ;
+    --vertical-gradient-color: ;
+    --input-bg-color: ;
+    --m-container-bg-color: ;
+    --m-login-bg-color: ;
+
+    /* images */
+    --bg-image: url(../img/bg-image-dark.png);
+    --m-bg-image: url(../img/mobile-bg-dark.png);
+}
+

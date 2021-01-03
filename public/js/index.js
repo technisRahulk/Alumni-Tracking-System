@@ -1,38 +1,55 @@
+// dark mode
+const darkModeBtn = document.querySelector(".dark-mode-btn");
+
+darkModeBtn.addEventListener("click", function () {
+  const body = document.querySelector("body");
+
+  body.classList.toggle("dark-mode");
+
+  if (darkModeBtn) {
+    darkModeBtn.innerText = body.classList.contains("dark-mode") ? "Light" : "Dark";
+  }
+});
+// dark mode ends
+
+// Top slider
 let slideIndex,
-    slides = document.querySelectorAll(".image-container");
+  slides = document.querySelectorAll(".image-container");
 
 slideIndex = 0;
 slides[slideIndex].style.opacity = 1;
 
 function moveSlide() {
 
-    let i, current, next;
-    let n = slideIndex + 1;
-    let moveSlideAnimeClass = {
-        forCurrent: "",
-        forNext: ""
-    }
+  let i, current, next;
+  let n = slideIndex + 1;
+  let moveSlideAnimeClass = {
+    forCurrent: "",
+    forNext: ""
+  }
 
-    if (n >= slides.length) { n = 0; }
-    moveSlideAnimeClass.forCurrent = "moveLeftCurrentSlide";
-    moveSlideAnimeClass.forNext = "moveLeftNextSlide";
+  if (n >= slides.length) { n = 0; }
+  moveSlideAnimeClass.forCurrent = "moveLeftCurrentSlide";
+  moveSlideAnimeClass.forNext = "moveLeftNextSlide";
 
-    if (n != slideIndex) {
-        next = slides[n];
-        current = slides[slideIndex];
-        for (i = 0; i < slides.length; i++) {
-            slides[i].className = "image-container";
-            slides[i].style.opacity = 0;
-        }
-        current.classList.add(moveSlideAnimeClass.forCurrent);
-        next.classList.add(moveSlideAnimeClass.forNext);
-        slideIndex = n;
+  if (n != slideIndex) {
+    next = slides[n];
+    current = slides[slideIndex];
+    for (i = 0; i < slides.length; i++) {
+      slides[i].className = "image-container";
+      slides[i].style.opacity = 0;
     }
+    current.classList.add(moveSlideAnimeClass.forCurrent);
+    next.classList.add(moveSlideAnimeClass.forNext);
+    slideIndex = n;
+  }
 }
 setInterval(function () {
-    moveSlide();
+  moveSlide();
 }, 5000);
+// top slider ends
 
+// image gallery
 const galleryContainer = document.querySelector('.gallery-container');
 const galleryControlsContainer = document.querySelector('.gallery-controls');
 const galleryControls = ['previous', 'next'];
@@ -62,7 +79,7 @@ class Carousel {
     document.querySelector('.gallery-nav').childNodes[6].className = 'gallery-nav-item gallery-item-last';
   }
 
-  setCurrentState(target, selected, previous, next,second,secondlast,first,last) {
+  setCurrentState(target, selected, previous, next, second, secondlast, first, last) {
     selected.forEach(el => {
       el.classList.remove('gallery-item-selected');
       if (target.className == 'gallery-controls-previous') {
@@ -126,13 +143,13 @@ class Carousel {
     this.carouselArray.forEach(item => {
       const nav = galleryContainer.lastElementChild;
       nav.appendChild(document.createElement('li'));
-    }); 
+    });
   }
 
   setControls() {
     this.carouselControls.forEach(control => {
       galleryControlsContainer.appendChild(document.createElement('button')).className = `gallery-controls-${control}`;
-    }); 
+    });
 
     !!galleryControlsContainer.childNodes[0] ? galleryControlsContainer.childNodes[0].innerHTML = this.carouselControls[0] : null;
     !!galleryControlsContainer.childNodes[1] ? galleryControlsContainer.childNodes[1].innerHTML = this.carouselControls[1] : null;
@@ -150,7 +167,7 @@ class Carousel {
         const secondlastCarouselItem = document.querySelectorAll('.gallery-item-secondlast');
         const firstCarouselItem = document.querySelectorAll('.gallery-item-first');
         const lastCarouselItem = document.querySelectorAll('.gallery-item-last');
-        this.setCurrentState(target, selectedItem, previousSelectedItem, nextSelectedItem,secondCarouselItem,secondlastCarouselItem,firstCarouselItem,lastCarouselItem);
+        this.setCurrentState(target, selectedItem, previousSelectedItem, nextSelectedItem, secondCarouselItem, secondlastCarouselItem, firstCarouselItem, lastCarouselItem);
       });
     });
   }
@@ -164,3 +181,5 @@ exampleCarousel.setControls();
 exampleCarousel.setNav();
 exampleCarousel.setInitialState();
 exampleCarousel.useControls();
+
+// image gallery ends

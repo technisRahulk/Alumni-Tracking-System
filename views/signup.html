@@ -1,120 +1,122 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Comaptible" content="ie=edge"/>
-        <script src="https://kit.fontawesome.com/d05c3d1935.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../public/css/login.css">
-        <title>Signin/Signup</title>
-    </head>
 
-    <body>
-        
-            <div class="heading">
-            <h1> ALUMNI TRACKING SYSTEM </h1>
-            </div>
-            <div class="container">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Comaptible" content="ie=edge" />
+  <script src="https://kit.fontawesome.com/d05c3d1935.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../public/css/login.css">
+  <title>Signin/Signup</title>
+</head>
 
-                <div class="containerleft">
-                <div class="logo"><img src="../public/img/logo.png" alt=""></div>
-                <div class="bg"><img src="../public/img/ats.png" alt=""></div>    
-                </div>
-        
-                <div class="vertical"></div>
-                <div class="containerright">
-                  <div class="hweb">
-                      <a href="#" onclick="logIn()" id="mlogin" class="container_left_mobile">Login</a>
-                      <a href="#" onclick="signIn()" id="msignup" class="container_right_mobile">Sign Up</a>
-                </div>
-                        <div class="form-container sign-up" id="create">
-                            <form action="#" >
-                              <h1 class="hmobile">Create Account</h1>
-                              <h1 class="wmobile">Welcome!</h1>
-                              <!-- <span>Log in with</span> -->
-                              <div class="container-social">
-                                <a href="#" class="social tooltip"><i class="fab fa-facebook-f"></i>
-                                  <span class="tooltiptext">service not availble yet</span>
-                                </a>
-                                <a href="#" class="social tooltip"><i class="fab fa-linkedin-in"></i>
-                                  <span class="tooltiptext">service not availble yet</span>
-                                </a>
-                                <a href="#" class="social tooltip"><i class="fab fa-google-plus-g"></i>
-                                  <span class="tooltiptext">service not availble yet</span>
-                                </a>
-                              </div>
-                              <div class="line">
-                                <hr width="10%">
-                                <span>OR</span> 
-                                <hr width="10%">
-                              </div>
-                              <div class="input-container">
-                                <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Username"/>
-                              </div>
-                              <div class="input-container">
-                                <i class="fas fa-envelope"></i>
-                                <input type="email" placeholder="Email"/>
-                              </div>
-                              <div class="input-container">
-                                <i class="fas fa-lock"></i>
-                                <i class="far fa-eye showpass 
+<body>
+
+  <div class="heading">
+    <h1> ALUMNI TRACKING SYSTEM </h1>
+  </div>
+  <div class="container">
+
+    <div class="containerleft">
+      <div class="logo"><img src="../public/img/logo.png" alt=""></div>
+      <div class="bg"><img src="../public/img/ats.png" alt=""></div>
+    </div>
+
+    <div class="vertical"></div>
+    <div class="containerright">
+      <div class="hweb">
+        <a href="#" onclick="logIn()" id="mlogin" class="container_left_mobile">Login</a>
+        <a href="#" onclick="signIn()" id="msignup" class="container_right_mobile">Sign Up</a>
+      </div>
+      <div class="form-container sign-up" id="create">
+        <form action="#">
+          <h1 class="hmobile">Create Account</h1>
+          <h1 class="wmobile">Welcome!</h1>
+          <!-- <span>Log in with</span> -->
+          <div class="container-social">
+            <a href="#" class="social tooltip"><i class="fab fa-facebook-f"></i>
+              <span class="tooltiptext">service not availble yet</span>
+            </a>
+            <a href="#" class="social tooltip"><i class="fab fa-linkedin-in"></i>
+              <span class="tooltiptext">service not availble yet</span>
+            </a>
+            <a href="#" class="social tooltip"><i class="fab fa-google-plus-g"></i>
+              <span class="tooltiptext">service not availble yet</span>
+            </a>
+          </div>
+          <div class="line">
+            <hr width="10%">
+            <span>OR</span>
+            <hr width="10%">
+          </div>
+          <div class="input-container">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" onkeyup="check()" placeholder="Username" />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-envelope"></i>
+            <input id="signup_email" onkeyup="check()" type="email" placeholder="Email" />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-lock"></i>
+            <i class="far fa-eye showpass 
 
                                 togglePassword"></i>
-                                <input type="password" class="password" placeholder="Password"/>
-                              </div>
-                              <button>Sign In</button>
-                              <div id="1">
-                              <input type="checkbox" id="rememberMe" class="check"> 
-                              <label for="rememberMe">Remember me</label>
-                             </div>
-                              <span class="hmobile">Already have an account?<a href="#"  onclick="logIn()"> LOG&nbspIN</a></span>
-                            </form>
-                        </div>
-                        <div class="form-container log-in" id="sign">
-                            <form  action="#" >
-                              <h1 class="hmobile">Sign In</h1>
-                              <h1 class="wmobile">Welcome!</h1>
-                              <!-- <span>Log in with</span> -->
-                              <div class="container-social">
-                                <a href="#" class="social tooltip"><i class="fab fa-facebook-f"></i>
-                                    <span class="tooltiptext">service not availble yet</span>
-                                </a>
-                                <a href="#" class="social tooltip"><i class="fab fa-linkedin-in"></i>
-                                    <span class="tooltiptext">service not availble yet</span>
-                                </a>
-                                <a href="#" class="social tooltip"><i class="fab fa-google-plus-g"></i>
-                                    <span class="tooltiptext">service not availble yet</span>
-                                </a>
-                              </div>
-                              <div class="line">
-                                <hr width="10%">
-                                <span>OR</span> 
-                                <hr width="10%">
-                              </div>
-                              <div class="input-container">
-                                <i class="fas fa-envelope"></i>
-                                <input type="email" placeholder="Email"/>
-                              </div>
-                              <div class="input-container">
-                                <i class="fas fa-lock"></i>
-                                <i class="far fa-eye showpass togglePassword"></i>
-                                <input type="password" class="password" placeholder="Password"/>
-                              </div>
-                              <button>Log In</button>
-                              <span>
-                              <a href="#">Forgot your password?</a>
-                              </span>
-                              <span class="hmobile">
-                        
-                              Don't have an account?<a href="#" onclick="signIn()"> SIGN&nbspUP</a>
-                              </span>
-                            </form>
-                        </div>
-                    
-                </div>
-            </div>
-        
-    </body>
+            <input type="password" class="password" id="signup_pass" onkeyup="check()" placeholder="Password" />
+          </div>
+          <button id="signup_btn" disabled>Sign In</button>
+          <div id="1">
+            <input type="checkbox" id="rememberMe" class="check">
+            <label for="rememberMe">Remember me</label>
+          </div>
+          <span class="hmobile">Already have an account?<a href="#" onclick="logIn()"> LOG&nbspIN</a></span>
+        </form>
+      </div>
+      <div class="form-container log-in" id="sign">
+        <form action="#">
+          <h1 class="hmobile">Sign In</h1>
+          <h1 class="wmobile">Welcome!</h1>
+          <!-- <span>Log in with</span> -->
+          <div class="container-social">
+            <a href="#" class="social tooltip"><i class="fab fa-facebook-f"></i>
+              <span class="tooltiptext">service not availble yet</span>
+            </a>
+            <a href="#" class="social tooltip"><i class="fab fa-linkedin-in"></i>
+              <span class="tooltiptext">service not availble yet</span>
+            </a>
+            <a href="#" class="social tooltip"><i class="fab fa-google-plus-g"></i>
+              <span class="tooltiptext">service not availble yet</span>
+            </a>
+          </div>
+          <div class="line">
+            <hr width="10%">
+            <span>OR</span>
+            <hr width="10%">
+          </div>
+          <div class="input-container">
+            <i class="fas fa-envelope"></i>
+            <input onkeyup="check()" id="login_email" type="email" placeholder="Email" />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-lock"></i>
+            <i class="far fa-eye showpass togglePassword"></i>
+            <input onkeyup="check()" id="login_pass" type="password" class="password" placeholder="Password" />
+          </div>
+          <button id="login_btn" disabled>Log In</button>
+          <span class="forgot_pass">
+            <a href="#">Forgot your password?</a>
+          </span>
+          <span class="hmobile">
+
+            Don't have an account?<a href="#" onclick="signIn()"> SIGN&nbspUP</a>
+          </span>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</body>
 <script src="../public/js/login.js"></script>
+
 </html>

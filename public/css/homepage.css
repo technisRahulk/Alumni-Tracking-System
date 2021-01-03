@@ -1,7 +1,25 @@
+/* variables import */
+@import url('./variables/homepage-variables.css');
+/* fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-/*Header styles*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+*:link {
+    text-decoration: none;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/*navbar styles*/
 
 ul {
     list-style-type: none;
@@ -13,7 +31,7 @@ header {
     padding-top: 0;
     z-index: 10;
     width: 100%;
-    background-color: #9AB3F5;;
+    background-color: var(--nav-bg-color);
     position: fixed;
     opacity: 0.9;
 }
@@ -40,7 +58,7 @@ nav ul li a {
     font-family: "Open Sans";
     font-weight: bold;
     font-size: 22px;
-    color: #fff;
+    color: var(--color-white);
     margin: 0 1.5em;
     text-decoration: none;
 }
@@ -52,7 +70,7 @@ nav input {
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: groove;
-    border-bottom: 1px solid #FFFFFF;
+    border-bottom: 1px solid var(--color-white);
     background-color: inherit;
 }
 
@@ -61,37 +79,12 @@ input:focus {
 }
 
 ::placeholder {
-    color: #fff;
+    color: var(--color-white);
     font-style: normal;
     font-size: 14px;
 }
 
-/* Header style ends*/
-
-:root {
-    --light-blue-color : #7093f3;
-    --dark-blue-color : #0044ff;
-    --black-color: #000;
-     --yellow:#faf19d ;
-     --footer-bg-grey: #858B9A;
-    --color-white: #fff;
-    --footer-heading-color: #32FCF3;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-*:link {
-    text-decoration: none;
-}
-
-body {
-    box-sizing: border-box;
-    overflow-x: hidden;
-}
+/* navbar style ends*/
 
 /* 1st carousel style begins */
 .carousel-one-container {
@@ -314,12 +307,12 @@ body {
         margin-left: 16%; 
         border-radius:15px; 
         margin-top:30px;
-        box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-                      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                      0 12.5px 10px rgba(0, 0, 0, 0.06),
-                      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-                      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-                      0 10px 80px rgba(0, 0, 0, 0.12);
+        box-shadow:  0 2.8px 2.2px var(--shadow-one),
+                      0 6.7px 5.3px var(--shadow-one),
+                      0 12.5px 10px var(--shadow-one),
+                      0 22.3px 17.9px var(--shadow-one),
+                      0 41.8px 33.4px var(--shadow-one),
+                      0 10px 80px var(--shadow-one);
          background-image: url("../img/jpp.png");
          background-repeat: no-repeat;
          background-size: 100% 100%;
@@ -331,12 +324,12 @@ body {
         margin-left: 16%; 
         border-radius:15px; 
         margin-top:30px;
-        box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-                      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                      0 12.5px 10px rgba(0, 0, 0, 0.06),
-                      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-                      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-                      0 10px 80px rgba(0, 0, 0, 0.12);
+        box-shadow:  0 2.8px 2.2px var(--shadow-one),
+                      0 6.7px 5.3px var(--shadow-one),
+                      0 12.5px 10px var(--shadow-one),
+                      0 22.3px 17.9px var(--shadow-one),
+                      0 41.8px 33.4px var(--shadow-one),
+                      0 10px 80px var(--shadow-one);
          background-image: url("../img/jpp.png");
          background-repeat: no-repeat;
          background-size: 100% 100%;
@@ -351,12 +344,12 @@ body {
         border-radius:15px; 
         margin-top:30px;
         text-align: center;
-        box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.024),
-                      0 6.7px 5.3px rgba(0, 0, 0, 0.028),
-                      0 12.5px 10px rgba(0, 0, 0, 0.05),
-                      0 22.3px 17.9px rgba(0, 0, 0, 0.062),
-                      0 41.8px 33.4px rgba(0, 0, 0, 0.066),
-                      0 10px 80px rgba(0, 0, 0, 0.02);
+        box-shadow:  0 2.8px 2.2px var(--shadow-one),
+                      0 6.7px 5.3px var(--shadow-one),
+                      0 12.5px 10px var(--shadow-one),
+                      0 22.3px 17.9px var(--shadow-one),
+                      0 41.8px 33.4px var(--shadow-one),
+                      0 10px 80px var(--shadow-one);
     
      }
      .contain6Mobile{
@@ -366,12 +359,12 @@ body {
         margin-left: 16%; 
         border-radius:15px; 
         margin-top:30px;
-        box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.024),
-                      0 6.7px 5.3px rgba(0, 0, 0, 0.028),
-                      0 12.5px 10px rgba(0, 0, 0, 0.05),
-                      0 22.3px 17.9px rgba(0, 0, 0, 0.062),
-                      0 41.8px 33.4px rgba(0, 0, 0, 0.066),
-                      0 10px 80px rgba(0, 0, 0, 0.02);
+        box-shadow:  0 2.8px 2.2px var(--shadow-one),
+                      0 6.7px 5.3px var(--shadow-one),
+                      0 12.5px 10px var(--shadow-one),
+                      0 22.3px 17.9px var(--shadow-one),
+                      0 41.8px 33.4px var(--shadow-one),
+                      0 10px 80px var(--shadow-one);
     
      }
      
@@ -381,12 +374,12 @@ body {
       height: 14vh;
       border-radius: 10px;
       margin-top: 30px;
-      box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-                      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                      0 12.5px 10px rgba(0, 0, 0, 0.06),
-                      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-                      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-                      0 10px 80px rgba(0, 0, 0, 0.12);
+      box-shadow:  0 2.8px 2.2px var(--shadow-one),
+                      0 6.7px 5.3px var(--shadow-one),
+                      0 12.5px 10px var(--shadow-one),
+                      0 22.3px 17.9px var(--shadow-one),
+                      0 41.8px 33.4px var(--shadow-one),
+                      0 10px 80px var(--shadow-one);
     
       background-image: url("../img/jpp.png");
       background-repeat: no-repeat;
@@ -399,18 +392,18 @@ body {
       border-radius: 10px;
       background-color:var(--yellow);
       margin-top: 30px;
-      box-shadow:  0 2.8px 2.2px rgba(0, 0, 0, 0.024),
-                      0 6.7px 5.3px rgba(0, 0, 0, 0.028),
-                      0 12.5px 10px rgba(0, 0, 0, 0.05),
-                      0 22.3px 17.9px rgba(0, 0, 0, 0.062),
-                      0 41.8px 33.4px rgba(0, 0, 0, 0.066),
-                      0 10px 80px rgba(0, 0, 0, 0.02);
+      box-shadow:  0 2.8px 2.2px var(--shadow-one),
+                      0 6.7px 5.3px var(--shadow-one),
+                      0 12.5px 10px var(--shadow-one),
+                      0 22.3px 17.9px var(--shadow-one),
+                      0 41.8px 33.4px var(--shadow-one),
+                      0 10px 80px var(--shadow-one);
 
  
      }   
      .write{
         padding-top: 20px;
-        color:#61A6DA ;
+        color:var(--top-story-text) ;
         text-align: center;
         font-size: 22px;
         font-family: sans-serif;
@@ -507,7 +500,10 @@ body {
 }
 
 .gallery-item.gallery-item-selected {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px var(--shadow-gallery), 
+    0 0 60px var(--shadow-gallery), 
+    0 0 110px var(--shadow-gallery), 
+    0 0 100px var(--shadow-gallery);
     height: 25em;
     opacity: 1;
     left: 50%;
@@ -563,7 +559,7 @@ body {
 }
 
 .gallery-controls button {
-    background-color: red;
+    background-color: var(--color-red);
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -620,7 +616,7 @@ body {
     font-size: 36px;
     line-height: 50px;
     margin: 0 auto;
-    color: #646464;
+    color: var(--contact-h1-color);
 }
 
 form {
@@ -638,7 +634,7 @@ form {
     font-weight: 300;
     font-size: 1.4em;
     line-height: 30px;
-    color: #9B9B9B;
+    color: var(--form-text-color);
 }
 
 .input {
@@ -646,8 +642,8 @@ form {
     padding: 1em;
     margin: 1em 0;
     opacity: 0.8;
-    border: 2px solid #A6A6A6;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--form-input-border);
+    box-shadow: 0px 4px 4px var(--shadow-one);
     border-radius: 12px;
 }
 
@@ -672,7 +668,7 @@ textarea {
 .submit {
     width: 11em;
     height: 3.5em;
-    background: #0038FF;
+    background: var(form-submit-btn-color);
     border-radius: 30px;
     border: 0;
     cursor: pointer;
