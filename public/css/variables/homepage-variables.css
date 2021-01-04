@@ -6,6 +6,7 @@
     --yellow:#faf19d ;
     --footer-bg-grey: #858B9A;
     --color-white: #fff;
+    --color-yellow: #ffff00;
     --footer-heading-color: #32FCF3;
     --shadow-one: rgba(0, 0, 0, 0.084);
     --top-story-text: #61A6DA;
@@ -18,7 +19,7 @@
 }
 
 .dark-mode {
-    --nav-bg-color: ;
+    --nav-bg-color: white;
     --light-blue-color: ;
     --dark-blue-color : ;
     --black-color: ;

@@ -1,11 +1,9 @@
-const darkMode = document.querySelector(".dark-mode-btn");
+// dark mode
+const darkMode = document.querySelector("#dark-mode-cbox");
 
-darkMode.addEventListener("click", function () {
+
+darkMode.addEventListener("click", () => {
     const body = document.querySelector("body");
-
     body.classList.toggle("dark-mode");
-
-    if (darkMode) {
-        darkMode.innerText = body.classList.contains("dark-mode") ? "Light" : "Dark";
-    }
 });
+// dark mode ends

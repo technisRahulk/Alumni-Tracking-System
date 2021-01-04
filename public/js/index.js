@@ -1,16 +1,3 @@
-// dark mode
-const darkModeBtn = document.querySelector(".dark-mode-btn");
-
-darkModeBtn.addEventListener("click", function () {
-  const body = document.querySelector("body");
-
-  body.classList.toggle("dark-mode");
-
-  if (darkModeBtn) {
-    darkModeBtn.innerText = body.classList.contains("dark-mode") ? "Light" : "Dark";
-  }
-});
-// dark mode ends
 
 // Top slider
 let slideIndex,

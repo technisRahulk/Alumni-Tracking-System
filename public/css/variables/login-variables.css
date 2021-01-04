@@ -5,12 +5,14 @@
     --shadow-black-dark: rgba(0, 0, 0, 0.12);
     --color-white: #fff;
     --color-black: #000000;
+    --color-yellow: #ffff00;
     --light-blue-color: #7579e7;
     --icon-color: rgba(70, 67, 67, 0.432);
     --vertical-gradient-color: rgb(41, 39, 39);
     --input-bg-color: #def0f0;
     --m-container-bg-color: #a3d8f4;
     --m-login-bg-color: #9ab3f5;
+    
 
     /* images */
     --bg-image: url(../img/back.png);

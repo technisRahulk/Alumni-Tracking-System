@@ -1,5 +1,7 @@
-/* variables import */
+/* local import */
 @import url('./variables/homepage-variables.css');
+@import url('./dark-mode.css');
+
 /* fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
@@ -19,8 +21,18 @@ body {
     overflow-x: hidden;
 }
 
-/*navbar styles*/
+/* dark mode switch */
+.dark-switch-container {
+    position: fixed;
+    right: 3.5rem;
+    top: 6rem;
+    max-width: 3.5em;
+    width: 3.5em;
+    text-align: center;
+  }
+/* darkmode switch ends */
 
+/*navbar styles*/
 ul {
     list-style-type: none;
     margin: 0;
@@ -128,7 +140,15 @@ input:focus {
 }
 
 /* mobile view */
-@media (max-width : 600px) {
+@media (max-width : 680px) {
+
+    /* dark mode switch */
+.dark-switch-container {
+    top: 5.5rem;
+    right: 2rem;
+  }
+/* darkmode switch ends */
+
     .carousel-one-container {
         width: 80vw;
         height: 45vh;
