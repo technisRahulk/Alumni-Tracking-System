@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+
+    <!--CSS link-->
+    <link rel="stylesheet" type="text/css" href="../public/css/variables/create-blog-variables.css">
+
+    <!-- Include stylesheet for editor -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../public/css/create-blog.css">  
+</head>
+
+<body>
+    <main>
+        <section class="blog-section">
+
+            <div class="blog-heading-container">
+                <h1 class="blog-heading">Create Blog</h1>
+            </div>
+
+            <div class="title-btn-container">
+
+                <div class="title-container">
+                    <input type="text" placeholder="Title" class="blog-title">
+                </div>
+
+                <div class="btn-container">
+                    <button class="b-cancel-btn">
+                        Cancel
+                    </button>
+                    <button class="b-publish-btn">
+                        Publish
+                    </button>
+                </div>
+
+            </div>
+            <!-- title & btn container ends -->
+            <!-- selection menu -->
+            <div class="selection-menu">
+                <div class="selection__option selection__option--field">
+                    <select name="blog-field" id="" class="b-field">
+                        <option value="" selected disabled class="display-none">Select Blog Field</option>
+                        <option value="0">Web Dev</option>
+                        <option value="1">Android Dev</option>
+                        <option value="2">Design</option>
+                        <option value="3">M L</option>
+                        <option value="4">Hacking and Cracking</option>
+                    </select>
+                </div>
+                <div class="selection__option selection__option--field">
+                    <label for="chose-img" class="b-img-label">Select Cover Image</label>
+                    <input type="file" id="chose-img" name="cover-img" class="b-img display-none"
+                        accept="image/png, image/jpg, image/jpeg">
+                </div>
+            </div>
+            <!-- selection menu ends -->
+
+                <!-- Create the editor container -->
+                <div id="editor"></div>
+        </section>
+  
+    </main>
+</body>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<!-- Initialize Quill editor -->
+<script src="../public/js/create-blog.js"></script>
+
+</html>
