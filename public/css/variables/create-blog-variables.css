@@ -1,0 +1,31 @@
+:root {
+    --color-white: #fff;
+    --color-red: #ff0000;
+    --color-blue: #0000ff;
+    --color-grey: #808080;
+    --blog-sec-bg: rgb(245, 245, 245);
+    --body-bg: rgb(230, 230, 230);
+    --element-bg: #dee6e6;
+    --box-shadow-color: rgba(0, 0, 0, .52);
+    --btn-shadow: rgba(0, 0, 0, 0.2);
+    --text-shadow-color: rgba(35, 66, 75, 0.938);
+    --primary-one: #767AE8;
+    --primary-two: #f7489c;
+    --element-text-color: #344955;
+}
+
+.dark-mode {
+    --color-white: #fff;
+    --color-red: #ff0000;
+    --color-blue: #0000ff;
+    --color-grey: #304049;
+    --blog-sec-bg: #344955;
+    --body-bg: #304049;
+    --element-bg: #4a6572;
+    --box-shadow-color: rgba(255, 255, 255, .52);
+    --btn-shadow: rgba(255, 255, 255, 0.2);
+    --text-shadow-color: rgba(120, 176, 192, 0.938);
+    --primary-one: #767AE8;
+    --primary-two: #f7489c;
+    --element-text-color: rgb(205, 205, 205);
+}
