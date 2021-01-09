@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700;800;900&display=swap');
+
+body{
+	margin:0px;
+	padding: 0px;
+  	font-family: 'Gothic A1', sans-serif;
+  	background-color:#D8D8D8;
+}
+.row{
+	padding-top: 10px;
+	height: 100vh;
+	width: 100%;
+}
+
+.left-col{
+	width:20%;
+	height:30%;
+	float:left;
+}
+
+.right-col{
+	width: 20%;
+	height: 30%;
+	float:left;
+}
+.center-col{
+	width:60%;
+	height:80%;
+	float:left;
+}
+.blog{
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 25px;
+	background-color:#E8E8E8;
+	min-height: 95vh;
+}
+.profile_pic{
+	height:60px;
+	width:60px;
+	border-radius: 50%;
+	float: left;
+	margin: 15px;
+	border:2px solid #ffffff;
+}
+.name{
+	padding-top: 16px;
+	margin-bottom: 0px;
+}
+.time{
+	margin: 0px;
+	font-size: 12px;
+	color:#A9A9A9;
+}
+.body{
+	margin-left: 95px;
+	margin-top: 30px;
+	margin-bottom: 0px;
+	padding-right:30px;
+	font-weight: 500;
+	font-size:16px;
+	padding-bottom: 30px;
+}
+.pic{
+	margin-left: 95px;
+	width:80%;
+	height:50vh;
+	border-radius: 30px;
+}
+
+.container-icon{
+	margin-left: 120px;
+}
+.container-icon .fas{
+	padding-right: 10px;
+}
+
+@media (max-width:680px)
+{
+}
