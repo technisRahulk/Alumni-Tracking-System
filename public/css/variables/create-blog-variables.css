@@ -12,6 +12,9 @@
     --primary-one: #767AE8;
     --primary-two: #f7489c;
     --element-text-color: #344955;
+
+    --body-mbbg-img: url('../img/Mobile_View_background.png');
+    --body-bg-img: url('../img/back.png');
 }
 
 .dark-mode {
@@ -22,10 +25,13 @@
     --blog-sec-bg: #344955;
     --body-bg: #304049;
     --element-bg: #4a6572;
-    --box-shadow-color: rgba(255, 255, 255, .52);
-    --btn-shadow: rgba(255, 255, 255, 0.2);
-    --text-shadow-color: rgba(120, 176, 192, 0.938);
+    --box-shadow-color: rgba(0, 0, 0, .52);
+    --btn-shadow: rgba(0, 0, 0, 0.2);
+    --text-shadow-color: rgba(120, 176, 192, 0.6);
     --primary-one: #767AE8;
     --primary-two: #f7489c;
     --element-text-color: rgb(205, 205, 205);
+
+    --body-mbbg-img: url('../img/mobile-bg-dark.png');
+    --body-bg-img: url('../img/bg-image-dark.png');
 }
