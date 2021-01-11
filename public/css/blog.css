@@ -4,7 +4,7 @@ body{
 	margin:0px;
 	padding: 0px;
   	font-family: 'Gothic A1', sans-serif;
-  	background-color:#D8D8D8;
+  	background-color:#C8C8C8;
 }
 .row{
 	padding-top: 10px;
@@ -32,8 +32,8 @@ body{
 	margin-left: 25px;
 	margin-right: 25px;
 	margin-bottom: 25px;
-	background-color:#E8E8E8;
-	min-height: 95vh;
+	background-color:#E2E2E2;
+	display: inline-block;
 }
 .profile_pic{
 	height:60px;
@@ -41,10 +41,11 @@ body{
 	border-radius: 50%;
 	float: left;
 	margin: 15px;
+	margin-top: 25px;
 	border:2px solid #ffffff;
 }
 .name{
-	padding-top: 16px;
+	padding-top: 10px;
 	margin-bottom: 0px;
 }
 .time{
@@ -54,7 +55,7 @@ body{
 }
 .body{
 	margin-left: 95px;
-	margin-top: 30px;
+	margin-top: 15px;
 	margin-bottom: 0px;
 	padding-right:30px;
 	font-weight: 500;
@@ -62,19 +63,73 @@ body{
 	padding-bottom: 30px;
 }
 .pic{
-	margin-left: 95px;
-	width:80%;
+	width:75%;
 	height:50vh;
 	border-radius: 30px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .container-icon{
-	margin-left: 120px;
+	margin-left: 15%;
+	padding-bottom: 15px;
+	padding-top: 15px;
 }
 .container-icon .fas{
+	font-size: 30px;
 	padding-right: 10px;
 }
 
 @media (max-width:680px)
 {
+	.left-col{
+		height: 0px;
+		width: 0%;
+		visibility: hidden;
+		clear: both;
+	}
+	.right-col{
+		height: 0px;
+		width: 0%;
+		visibility: hidden;
+		clear: both;
+	}
+	.center-col{
+		width: 100%;
+	}
+	.profile_pic{
+		height:50px;
+		width:50px;
+		margin: 15px;
+		margin-top: 20px;
+	}
+	.name{
+		padding-top: 8px;
+	}
+	.body{
+		margin-left: 20px;
+		margin-top: 20px;
+		padding-right:20px;
+		font-weight: 300;
+		font-size: 16px;
+	}
+	.pic{
+		width:93%;
+		height:40vh;
+		border-radius: 30px;
+	}
+
+	.blog{
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 20px;
+		border-radius: 10px;
+	}
+	.container-icon{
+		margin-left: 10%;
+	}
+	.container-icon .fas{
+		font-size: 25px;
+	}
 }
