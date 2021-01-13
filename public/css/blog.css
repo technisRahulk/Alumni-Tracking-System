@@ -28,13 +28,64 @@ body{
 	height:80%;
 	float:left;
 }
+.bookmarks-activities{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	background-color: #E2E2E2;	
+}
+
+.profile{
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+.pic1{
+	display: inline-block;
+	height:50px;
+	width:50px;
+	border-radius: 50%;
+	margin: 15px;
+	margin-top: 25px;
+	border:2px solid #ffffff;
+	
+}
+.list{
+	margin:25px;
+}
+.heading{
+	display: inline-block;
+}
+.heading h1{
+	display: inline-block;
+	font-size: 15px;
+	margin-left: 20px;
+}
+.showmore{
+	display: inline-block;
+	padding: 20px;
+}
+.showmore h1 {
+	display: inline-block;
+	font-size: 12px;
+	margin-left: 5px;	
+}
+.name1{
+	padding-top: 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+h4{
+	color: #A9A9A9;
+	font-size: 10px;
+	margin-bottom: 20px;
+}
 .blog{
-	margin-left: 25px;
-	margin-right: 25px;
-	margin-bottom: 25px;
+	
+	margin-bottom: 10px;
 	background-color:#E2E2E2;
 	display: inline-block;
 }
+
 .profile_pic{
 	height:60px;
 	width:60px;
