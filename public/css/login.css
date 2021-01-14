@@ -1,5 +1,6 @@
 /* variables import */
 @import url('./variables/login-variables.css');
+@import url('./dark-mode.css');
 /* font import */
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700;800;900&display=swap');
 
@@ -36,7 +37,6 @@ body {
     height:70vh;
     position: relative;
     border-radius:20px; 
-    background-color:white;
     box-shadow:  0 2.8px 2.2px var(--shadow-black-light),
                  0 6.7px 5.3px var(--shadow-black-light),
                  0 12.5px 10px var(--shadow-black-medium),
@@ -45,6 +45,7 @@ body {
                  0 10px 80px var(--shadow-black-dark)
                  ;
    margin-top: 20px;
+   background: var(--container-bg);
 }
 .containerleft{
           
@@ -125,6 +126,7 @@ h1 {
     align-items: center;
     justify-content: center;
 }
+
 #sign{
     z-index: 2;
     /* opacity: 0; */
@@ -247,10 +249,12 @@ hr{
 }
 
 #login_btn{
+  color: (--color-white);
     opacity: 0.5;
 }
 #signup_btn
 {
+  color: (--color-white);
     opacity: 0.5;
 }
 
@@ -271,15 +275,31 @@ hr{
     height: 0%;
     visibility: hidden;
 }
+
 .container-social-mobile{
     height: 0%;
     visibility: hidden;
 }
+
+.check {
+  cursor: pointer;
+}
+
+.hmobile,
+.check,
+.hmobile a {
+  color: var(--remember-me-color);
+}
+
 @media(min-width:681px)
 {
   .hweb{
     height: 0%;
   }
+}
+.input-container .fas,
+.input-container .far {
+  color: var(--fas-color);
 }
 
 @media (max-width:680px)
@@ -315,10 +335,12 @@ hr{
     visibility: visible;
     align-items: center;
     font-weight: 300;
+    color: var(--w-mobile) !important;
   }
   .form-container h1{
     color: var(--color-black);
   }
+  
 
 .container-social{
      display: flex;
@@ -439,3 +461,4 @@ hr{
     color: var(--light-blue-color);
   }
 }
+

@@ -12,6 +12,11 @@
 
 <body>
 
+  <div class="dark-switch-container">
+    <input type='checkbox' id='dark-mode-cbox' />
+    <label for='dark-mode-cbox'>Night</label>
+  </div>
+
   <div class="heading">
     <h1> ALUMNI TRACKING SYSTEM </h1>
   </div>
@@ -67,7 +72,7 @@
           <button id="signup_btn" disabled>Sign In</button>
           <div id="1">
             <input type="checkbox" id="rememberMe" class="check">
-            <label for="rememberMe">Remember me</label>
+            <label for="rememberMe" class="check">Remember me</label>
           </div>
           <span class="hmobile">Already have an account?<a href="#" onclick="logIn()"> LOG&nbspIN</a></span>
         </form>
@@ -118,5 +123,6 @@
 
 </body>
 <script src="../public/js/login.js"></script>
+<script src="../public/js/dark-mode.js"></script>
 
 </html>

@@ -1,16 +1,3 @@
-// dark mode
-const darkModeBtn = document.querySelector(".dark-mode-btn");
-
-darkModeBtn.addEventListener("click", function () {
-	const body = document.querySelector("body");
-
-	body.classList.toggle("dark-mode");
-
-	if (darkModeBtn) {
-		darkModeBtn.innerText = body.classList.contains("dark-mode") ? "Light" : "Dark";
-	}
-});
-// dark mode ends
 
 let signUpBtn = document.getElementById('sign');
 let logInBtn = document.getElementById('create');
@@ -26,18 +13,18 @@ let login_btn = document.getElementById('login_btn')
 function logIn() {
 	signUpBtn.style.zIndex = "2";
 	logInBtn.style.opacity = "0";
-	msignup.style.backgroundColor = "#a3d8f4"
+	msignup.style.backgroundColor = "var(--m-container-bg-color)"
 
 	logInBtn.style.zIndex = "1";
 	signUpBtn.style.opacity = "1";
-	mlogin.style.backgroundColor = "#9ab3f5"
+	mlogin.style.backgroundColor = "var(--m-login-bg-color)"
 }
 function signIn() {
 	logInBtn.style.zIndex = "2";
 	signUpBtn.style.opacity = "0";
-	mlogin.style.backgroundColor = "#a3d8f4"
+	mlogin.style.backgroundColor = "var(--m-container-bg-color)"
 
-	msignup.style.backgroundColor = "#9ab3f5"
+	msignup.style.backgroundColor = "var(--m-login-bg-color)"
 	signUpBtn.style.zIndex = "1";
 	logInBtn.style.opacity = "1";
 }
