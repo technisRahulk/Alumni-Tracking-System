@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema(
     },
     branch: {
       type: String,
-      required:true,
+      // required:true,
       trim: true,
     },
 
@@ -93,7 +93,7 @@ const userSchema = new mongoose.Schema(
 
     batch:{
       type:Number,
-      required:true
+      // required:true
             
     },
 

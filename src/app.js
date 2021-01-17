@@ -5,7 +5,7 @@ const cookieParser=require("cookie-parser");
 require("dotenv").config();
 require("./db/mongoose");
 require("./passport.setup")
-const userRouter = require("./routers/user");
+const Router = require("./routers/index");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 
 
 
-app.use(userRouter);
+app.use(Router);
 
 app.get("/only-test",(req,res)=>{
 res.send("Test done")
@@ -52,7 +52,7 @@ app.get('/logout', (req, res) => {
 
 app.get("/failed",(req,res)=>{
   res.send("You have failed to login please go back and try again");
-})
+});
 
 app.use(express.static(path.join(__dirname, "../public")));
 

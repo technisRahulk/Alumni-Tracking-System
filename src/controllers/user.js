@@ -22,6 +22,7 @@ exports.signUp = async (req, res) => {
     res.status(400).send(e);
   }
 };
+
 exports.login = async (req, res) => {
   try {
     const user = await User.findByCredentials(
@@ -60,6 +61,7 @@ exports.logoutAll = async (req, res) => {
 };
 
 /*Endpoints for Reading, Updating and Deleting a logged in User*/
+
 exports.readUser = async (req, res) => {
   res.send(req.user);
 };
