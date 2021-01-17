@@ -1,0 +1,38 @@
+:root {
+    --nav-bg-color: #9AB3F5;
+    --light-blue-color : #7093f3;
+    --dark-blue-color : #0044ff;
+    --black-color: #000;
+    --yellow:#faf19d ;
+    --footer-bg-grey: #858B9A;
+    --color-white: #fff;
+    --color-yellow: #ffff00;
+    --footer-heading-color: #32FCF3;
+    --shadow-one: rgba(0, 0, 0, 0.084);
+    --top-story-text: #61A6DA;
+    --shadow-gallery: rgba(255, 255, 255, 0.6);
+    --color-red: #ff0000;
+    --contact-h1-color: #646464;
+    --form-text-color: #9B9B9B;
+    --form-input-border: #A6A6A6;
+    --form-submit-btn-color: #0038FF;
+}
+
+.dark-mode {
+    --nav-bg-color: white;
+    --light-blue-color: ;
+    --dark-blue-color : ;
+    --black-color: ;
+    --yellow: ;
+    --footer-bg-grey: ;
+    --color-white: ;
+    --footer-heading-color: ;
+    --shadow-one: ;
+    --top-story-text: ;
+    --shadow-gallery: ;
+    --color-red: ;
+    --contact-h1-color: ;
+    --form-text-color: ;
+    --form-input-border: ;
+    --form-submit-btn-color: ;
+}

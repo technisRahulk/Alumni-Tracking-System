@@ -1,0 +1,50 @@
+:root {
+    --body-font-color: rgb(51, 48, 48);
+    --shadow-black-light: rgba(0, 0, 0, 0.03);
+    --shadow-black-medium: rgba(0, 0, 0, 0.06);
+    --shadow-black-dark: rgba(0, 0, 0, 0.12);
+    --container-bg: #fff;
+    --color-white: #fff;
+    --color-black: #000000;
+    --color-yellow: #ffff00;
+    --light-blue-color: #7579e7;
+    --remember-me-color: #000;
+    --icon-color: rgba(70, 67, 67, 0.432);
+    --fas-color: rgba(70, 67, 67, 0.432);
+    --vertical-gradient-color: rgb(41, 39, 39);
+    --input-bg-color: #def0f0;
+    
+    --m-container-bg-color: #a3d8f4;
+    --m-login-bg-color: #9ab3f5;
+    --m-welcome: #000;
+    
+
+    /* images */
+    --bg-image: url(../img/back.png);
+    --m-bg-image: url(../img/Mobile_View_background.png);
+}
+
+.dark-mode {
+    --body-font-color: #ADEAD8;
+    --shadow-black-light: rgba(0, 0, 0, 0.03);
+    --shadow-black-medium: rgba(0, 0, 0, 0.06);
+    --shadow-black-dark: rgba(0, 0, 0, 0.12);
+    --container-bg: #4A6572;
+    --light-blue-color: #ADEAD8;
+    --color-white: #344955;
+    --color-black: #000000;
+    --color-yellow: #ffff00;
+    --remember-me-color: #fff;
+    --icon-color: #ADEAD8;
+    --fas-color: #344955;
+    --vertical-gradient-color: rgb(231, 229, 229);
+    --input-bg-color: #afbabe;
+    --m-container-bg-color: #4A6572;
+    --m-login-bg-color: #ADEAD8;
+    --m-welcome: #ADEAD8;
+
+    /* images */
+    --bg-image: url(../img/bg-image-dark.png);
+    --m-bg-image: url(../img/mobile-bg-dark.png);
+}
+
