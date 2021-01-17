@@ -30,15 +30,18 @@ const userSchema = new mongoose.Schema(
     },
     branch: {
       type: String,
-      required:true,
+      // required:true,
       trim: true,
     },
+
+
 
 blogs: [{
         type: Schema.Types.ObjectId,
         ref: "Blog",
     }],
     
+
     tokens: [
       {
         token: {
@@ -98,14 +101,15 @@ blogs: [{
 
     batch:{
       type:Number,
-      required:true
+
+      // required:true
+
             
     },
 
-
     phone:{
       type:Number,
-     }
+     }  
   },
 
   {

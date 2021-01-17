@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700;800;900&display=swap');
+
+body{
+	margin:0px;
+	padding: 0px;
+  	font-family: 'Gothic A1', sans-serif;
+  	background-color:#C8C8C8;
+}
+.row{
+	padding-top: 10px;
+	height: 100vh;
+	width: 100%;
+}
+
+.left-col{
+	width:20%;
+	height:30%;
+	float:left;
+}
+
+.right-col{
+	width: 20%;
+	height: 30%;
+	float:left;
+}
+.center-col{
+	width:60%;
+	height:80%;
+	float:left;
+}
+.bookmarks-activities{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	background-color: #E2E2E2;	
+}
+
+.profile{
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+.pic1{
+	display: inline-block;
+	height:50px;
+	width:50px;
+	border-radius: 50%;
+	margin: 15px;
+	margin-top: 25px;
+	border:2px solid #ffffff;
+	
+}
+.list{
+	margin:25px;
+}
+.heading{
+	display: inline-block;
+}
+.heading h1{
+	display: inline-block;
+	font-size: 15px;
+	margin-left: 20px;
+}
+.showmore{
+	display: inline-block;
+	padding: 20px;
+}
+.showmore h1 {
+	display: inline-block;
+	font-size: 12px;
+	margin-left: 5px;	
+}
+.name1{
+	padding-top: 20px;
+	display: inline-block;
+	vertical-align: top;
+}
+h4{
+	color: #A9A9A9;
+	font-size: 10px;
+	margin-bottom: 20px;
+}
+.blog{
+	
+	margin-bottom: 10px;
+	background-color:#E2E2E2;
+	display: inline-block;
+}
+
+.profile_pic{
+	height:60px;
+	width:60px;
+	border-radius: 50%;
+	float: left;
+	margin: 15px;
+	margin-top: 25px;
+	border:2px solid #ffffff;
+}
+.name{
+	padding-top: 10px;
+	margin-bottom: 0px;
+}
+.time{
+	margin: 0px;
+	font-size: 12px;
+	color:#A9A9A9;
+}
+.body{
+	margin-left: 95px;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	padding-right:30px;
+	font-weight: 500;
+	font-size:16px;
+	padding-bottom: 30px;
+}
+.pic{
+	width:75%;
+	height:50vh;
+	border-radius: 30px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container-icon{
+	margin-left: 15%;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+.container-icon .fas{
+	font-size: 30px;
+	padding-right: 10px;
+}
+
+@media (max-width:680px)
+{
+	.left-col{
+		height: 0px;
+		width: 0%;
+		visibility: hidden;
+		clear: both;
+	}
+	.right-col{
+		height: 0px;
+		width: 0%;
+		visibility: hidden;
+		clear: both;
+	}
+	.center-col{
+		width: 100%;
+	}
+	.profile_pic{
+		height:50px;
+		width:50px;
+		margin: 15px;
+		margin-top: 20px;
+	}
+	.name{
+		padding-top: 8px;
+	}
+	.body{
+		margin-left: 20px;
+		margin-top: 20px;
+		padding-right:20px;
+		font-weight: 300;
+		font-size: 16px;
+	}
+	.pic{
+		width:93%;
+		height:40vh;
+		border-radius: 30px;
+	}
+
+	.blog{
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 20px;
+		border-radius: 10px;
+	}
+	.container-icon{
+		margin-left: 10%;
+	}
+	.container-icon .fas{
+		font-size: 25px;
+	}
+}

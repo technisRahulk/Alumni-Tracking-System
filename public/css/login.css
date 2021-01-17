@@ -1,0 +1,464 @@
+/* variables import */
+@import url('./variables/login-variables.css');
+@import url('./dark-mode.css');
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700;800;900&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gothic A1', sans-serif;
+  margin: 0;
+  color: var(--body-font-color);
+  background-image: var(--bg-image);
+  height: 100vh;
+  background-size: 100% 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading h1{
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    font-size: 40px;
+}
+.container{
+    align-items: center;
+    justify-content: center;
+    align-self:center;
+    display: flex;
+    flex-direction: row;
+    width:65%;
+    height:70vh;
+    position: relative;
+    border-radius:20px; 
+    box-shadow:  0 2.8px 2.2px var(--shadow-black-light),
+                 0 6.7px 5.3px var(--shadow-black-light),
+                 0 12.5px 10px var(--shadow-black-medium),
+                 0 22.3px 17.9px var(--shadow-black-medium),
+                 0 41.8px 33.4px var(--shadow-black-dark),
+                 0 10px 80px var(--shadow-black-dark)
+                 ;
+   margin-top: 20px;
+   background: var(--container-bg);
+}
+.containerleft{
+          
+    text-align: center;
+    float: left;
+    width: 49.5%;
+    height: 100%;
+    border-bottom-left-radius:20px; 
+    border-top-left-radius: 20px;
+}
+.logo{
+width: 100%;
+height:20%;
+display: flex;
+align-items: flex-start;
+}
+.logo img{
+height: 95%;
+padding: 10px;
+}
+.bg{
+height:80%;
+align-items:center;
+position: relative;
+}
+.bg img{
+max-width: 95%;
+max-height: 75%;
+/* top: 10%; */
+position: relative;
+align-items: center;
+}
+
+.vertical{
+    height: 80%;
+    width: 2px;
+    background-image: radial-gradient(var(--vertical-gradient-color), var(--color-white));
+}
+    
+.containerright{    	
+    text-align: center;
+    float: right;
+    width: 49%;
+    height: 100%;
+}
+h1 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 2em;
+    margin: 0 auto 10px;
+}
+.form-container h1{
+    color: var(--light-blue-color) ;
+}
+.form-container {
+    position: absolute;
+    align-items: center;
+    height: 100%;
+    margin:0;
+    padding: 15px 20px;
+    width:50%;
+   
+}
+.container-social{
+     display: flex;
+}
+.social{
+    margin:0 auto;
+}
+.container-social i{
+    display: flex;
+    font-size: 18px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border:1px solid var(--icon-color);
+    align-items: center;
+    justify-content: center;
+}
+
+#sign{
+    z-index: 2;
+    /* opacity: 0; */
+    transition: .4s ease-in-out;
+
+}
+#create{
+    z-index: 1;
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+a{
+    text-decoration: none;
+    color: var(--body-font-color);
+
+    font-weight: 700;
+    font-size: 1em;
+    margin:8px auto;
+}
+span{
+    font-weight: 550;
+    margin: 10px 10px;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.input-container i{
+    position: absolute;
+    align-self: center;
+    width: 20px;
+    padding-left: 4px;
+    color: var(--icon-color);
+}
+.input-container{
+    width: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    position: relative;
+}
+.input-container .showpass
+{
+    left: auto;
+    right: 10px;
+    cursor: pointer;
+}
+input{
+    width: 100%;
+    padding: 8px 2px 8px 27px;
+    background-color: var(--input-bg-color);
+    border: none;
+    outline: none;    
+}
+input:focus{
+  border: 1px solid var(--icon-color);
+  border-radius: 6px;
+}
+button{
+    margin-bottom:10px ;
+    background-color: var(--light-blue-color);
+    width: 50%;
+    border: none;
+    padding:8px;
+    border-radius: 4px;
+    color: var(--color-white);
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+button:active {
+	transform: scale(0.97);
+}
+
+button:focus {
+	outline: none;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+}
+div .line{
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+}
+hr{
+    width: 10%;
+    border:.5px solid var(--body-font-color);
+    margin: 0;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: var(--color-white);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 12px;
+ 
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+#login_btn{
+  color: (--color-white);
+    opacity: 0.5;
+}
+#signup_btn
+{
+  color: (--color-white);
+    opacity: 0.5;
+}
+
+
+.container_left_mobile{
+  width: 0%;
+  height:0;
+  margin: 0;
+  visibility: hidden;
+}
+.container_right_mobile{
+  width: 0;
+  height:0;
+  margin:0;
+  visibility: hidden;
+}
+.wmobile{
+    height: 0%;
+    visibility: hidden;
+}
+
+.container-social-mobile{
+    height: 0%;
+    visibility: hidden;
+}
+
+.check {
+  cursor: pointer;
+}
+
+.hmobile,
+.check,
+.hmobile a {
+  color: var(--remember-me-color);
+}
+
+@media(min-width:681px)
+{
+  .hweb{
+    height: 0%;
+  }
+}
+.input-container .fas,
+.input-container .far {
+  color: var(--fas-color);
+}
+
+@media (max-width:680px)
+{
+  *{
+    margin: 0;
+  }
+
+  body{
+    background-image: var(--m-bg-image);
+    min-height: 600px;
+  }
+  span{
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    align-items: center;
+  }
+  .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 50px;
+  padding: 3px 0;
+  border-radius: 2px;
+}
+  .hmobile{
+    height: 0%;
+    visibility: hidden;
+  }
+  .wmobile{
+    padding-top: 7%;
+    padding-bottom:10%;
+    visibility: visible;
+    align-items: center;
+    font-weight: 300;
+    color: var(--w-mobile) !important;
+  }
+  .form-container h1{
+    color: var(--color-black);
+  }
+  
+
+.container-social{
+     display: flex;
+     align-content: center;
+     padding-top: 10%;
+     visibility: visible;
+     padding-left: 2%;
+     padding-right: 7%;
+     margin-bottom: 12px;
+}
+.container-social i{
+    display: flex;
+    font-size: 14px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin: 0 0px;
+    border:1px solid var(--icon-color);
+}
+.line{
+    height: 0%;
+    visibility: hidden;
+}
+  .containerleft{
+        height:0px;
+        width: 0%;
+  }
+  .containerright{
+    width: 100%;
+    height: 100%;
+  }
+  .heading h1{
+    visibility: hidden;
+    height: 0px;
+  }
+  .container{
+        position:absolute;
+        right: 0;
+        top: 0; 
+       width:100%;
+       margin:0%;
+       padding: 0%;
+       border-radius: 0%;
+       height:auto;
+       background-color: var(--m-container-bg-color);
+       box-shadow:  0 1px 1px var(--shadow-black-light),
+            0 6.7px 5.3px var(--shadow-black-medium),
+            0 12.5px 10px var(--shadow-black-dark);
+  }
+  .container_left_mobile{
+      text-align: center;
+      margin-top: 23%;
+       float: left;
+       width: 50%;
+       height: auto;
+       padding-top: 3%;
+       color: var(--color-white);
+       visibility: visible;
+       font-weight:300;
+       font-size: 28px;
+  }
+  #mlogin{
+       background-color: var(--m-login-bg-color);
+  }
+  .container_right_mobile{
+    margin-top: 23%;
+    text-align: center;
+    float: right;
+    width: 50%;
+    height:auto;
+    padding-top: 3%;
+    color: var(--color-white);
+    visibility: visible;
+    font-weight: 300;
+    font-size: 28px;
+  }
+  #msignup{
+    background-color: var(--m-container-bg-color);
+  }
+  .vertical{
+    height: 0%;
+    width: 0%;
+  }
+  form{
+    display:block;
+    margin-top:0%;
+    margin-left: 23%;
+  }
+  .form-container{
+    position: absolute;
+    width: 70%;
+    padding: 0%;
+    margin-top: 36%;
+  }
+  .input-container{
+    width: 90%;
+    padding-left: 0%;
+    margin-left: 5%;
+  }
+  button{
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  form .forgot_pass
+  {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .forgot_pass a
+  {
+    color: var(--light-blue-color);
+  }
+}
+
