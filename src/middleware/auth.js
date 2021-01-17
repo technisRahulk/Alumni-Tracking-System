@@ -15,6 +15,8 @@ const auth = async (req,res,next) => {
         
         req.token=token;
         req.user=user;
+        req.dbUser = await User.findById(user.userId);
+        
 
         next();    
     }

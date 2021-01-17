@@ -21,9 +21,9 @@ app.use(cookieParser({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(
-  express.urlencoded({
-    extended: true,
-  })
+    express.urlencoded({
+        extended: true,
+    })
 );
 // static file setup
 app.set("view engine", "ejs");
@@ -56,6 +56,15 @@ app.get("/failed",(req,res)=>{
 
 app.use(express.static(path.join(__dirname, "../public")));
 
+//Routes
+const blogRoutes = require("./routers/blog");
+
+app.use("/blog", blogRoutes);
+
+app.get("/", (req, res) => {
+    res.render("index.ejs");
+})
+
 app.listen(port, () => {
-  console.log("Server is up on port " + port);
+    console.log("Server is up on port " + port);
 });
