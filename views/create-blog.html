@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../public/css/dark-mode.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/create-blog.css">
+
+    <!-- ckeditor link for text area -->
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+
+</head>
+
+<body>
+
+    <div class="dark-switch-container">
+        <input type='checkbox' id='dark-mode-cbox' />
+        <label for='dark-mode-cbox'>Night</label>
+    </div>
+
+    <main>
+        <section class="blog-section">
+
+            <div class="blog-heading-container">
+                <h1 class="blog-heading">Create Blog</h1>
+            </div>
+
+            <!-- title & btn container -->
+            <div class="title-btn-container">
+
+                <div class="title-container">
+                    <input type="text" placeholder="Title" class="blog-title">
+                </div>
+
+                <div class="btn-container">
+                    <button class="b-cancel-btn">
+                        Cancel
+                    </button>
+                    <button class="b-publish-btn">
+                        Publish
+                    </button>
+                </div>
+
+            </div>
+            <!-- title & btn container ends -->
+            <!-- selection menu -->
+            <div class="selection-menu">
+                <div class="selection__option selection__option--field">
+                    <select name="blog-field" id="" class="b-field">
+                        <option value="" selected disabled class="display-none">Select Blog Field</option>
+                        <option value="0">Web Dev</option>
+                        <option value="1">Android Dev</option>
+                        <option value="2">Design</option>
+                        <option value="3">M L</option>
+                        <option value="4">Hacking and Cracking</option>
+                    </select>
+                </div>
+                <div class="selection__option selection__option--img">
+                    <label for="chose-img" class="b-img-label">Select Cover Image</label>
+                    <input type="file" id="chose-img" name="cover-img" class="b-img display-none"
+                        accept="image/png, image/jpg, image/jpeg">
+                </div>
+            </div>
+            <!-- selection menu ends -->
+
+            <!-- blog text -->
+            <div class="blog-text-container">
+                <textarea name="blog-text" id="blog-text"></textarea>
+
+                <script>
+                    CKEDITOR.replace('blog-text', { height: document.querySelector('.blog-text-container').clientHeight });
+                    CKEDITOR.add
+                    CKEDITOR.config.contentsCss = '/css/create-blog.css';     
+                </script>
+            </div>
+            <!-- blog text ends -->
+
+        </section>
+    </main>
+</body>
+<script src="../public/js/dark-mode.js"></script>
+
+</html>
