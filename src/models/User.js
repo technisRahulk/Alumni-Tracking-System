@@ -41,6 +41,11 @@ blogs: [{
         ref: "Blog",
     }],
     
+    likes: [{
+        type: Schema.Types.ObjectId,
+        ref: "Blog",
+    }],
+    
 
     tokens: [
       {

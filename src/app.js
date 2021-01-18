@@ -5,7 +5,7 @@ const cookieParser=require("cookie-parser");
 require("dotenv").config();
 require("./db/mongoose");
 require("./passport.setup")
-const Router = require("./routers/index");
+const Router = require("./routers/user");
 
 const app = express();
 const port = process.env.PORT || 4000;

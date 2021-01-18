@@ -97,19 +97,19 @@ router.post("/create",auth,upload.single("cover"), async(req, res) => {
                 "-" +
                 Math.random().toString(36).substr(2, 8)
             ).toLowerCase(),
-            author: req.user.userId,
+            author: req.user._id,
             category: blog.category,
             cover: cover,
             summary: blog.summary,
             body: blog.body,
             tags: (tagsArray.length===0) ? [] : tagsArray
         }).save();
-        if (req.dbUser.blogs) {
-            req.dbUser.blogs.push(saved);
+        if (req.user.blogs) {
+            req.user.blogs.push(saved);
         } else {
-            req.dbUser.blogs = [saved];
+            req.user.blogs = [saved];
         }
-        await req.dbUser.save();
+        await req.user.save();
         res.redirect("/blog");
     } catch (e) {
         console.log(e.message);
@@ -118,9 +118,101 @@ router.post("/create",auth,upload.single("cover"), async(req, res) => {
     }
 });
 
+router.get("/view/:slug", async(req, res) => {
+   
+    try {
+        //find the corresponding blog in db
+        let slug = req.params.slug;
+        if (!slug) {
+            res.render("404-page");
+        }
 
+        // const finduser = await User.find({
+        //     active: true
+        // }, null, {
+        //     sort: {
+        //         name: 1
+        //     }
+        // });
+        const blog = await Blog.findOneAndUpdate({
+            slug,
+        }, {
+            $inc: {
+                views: 1,
+            },
+        }, {
+            new: true,
+        }).populate("author");
+        if (!blog) {
+            res.render("404-page");
+        }
+        
+        
+        //  const token = req.header("Authorization").replace("Bearer ", "");
+        // console.log(token);
+        // // let user;
+        // if (token) {
+        //     const decodedToken = await jwt.verify(token, process.env.JWT_SECRET);
+        //     if (decodedToken)
+        //         user = await User.findById(decodedToken._id);
+        // }
+       
+        //render result page
+        // res.render("", {
+        //     
+        //     blog: blog,
+        //     
+        //    
+        // });
+       // res.send(blog);
+    } catch (e) {
+        console.log(e.message);
+        req.flash("error", "Something went wrong. Try again");
+        res.redirect("/");
+    }
+});
 
+//like a blog
+router.post("/appreciate/:blog_id", auth, async(req, res) => {
+    try {
+        let user = req.user;
+        let likesArr = user.likes || [];
+        let blog = await Blog.findById(req.params.blog_id);
+        if (likesArr.includes(req.params.blog_id)) {
+            likesArr.remove(req.params.blog_id);
+            blog.appreciateCount = blog.appreciateCount - 1;
+        } else {
+            likesArr.push(req.params.blog_id);
+            blog.appreciateCount = blog.appreciateCount + 1;
 
+        }
+        user.likes = likesArr;
+        await blog.save();
+        await user.save();
+         console.log(likesArr);
 
+        //res.redirect(req.get("referer"));
+    } catch (error) {
+        console.log(error);
+        req.flash("error", "Something went wrong. Try again");
+        res.redirect("/");
+    }
+});
+//delete a blog
+router.get("/delete/:blog_id", auth, async(req, res) => {
+    try {
+        const user = req.user;
+         
+        user.blogs = user.blogs.filter(
+            (blog) => !blog._id.equals(req.params.blog_id)
+        );
+        await user.save();
+ await Blog.findByIdAndRemove(req.params.blog_id);
+        res.redirect("/blog");
+    } catch (error) {
+        console.log(error);
+       
+    }
+});
 
 module.exports = router;
