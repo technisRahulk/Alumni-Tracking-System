@@ -131,7 +131,20 @@ h4{
 	font-size: 30px;
 	padding-right: 10px;
 }
-
+.search{
+	height:8vh;
+	width:58%;
+	background-color:	#B0B0B0;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	font-size: 18px;
+	padding-left: 20px;
+	border:0px;
+	margin-bottom: 15px;
+	outline: none;
+}
 @media (max-width:680px)
 {
 	.left-col{
