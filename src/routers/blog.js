@@ -167,48 +167,7 @@ router.get("/view/:slug", async(req, res) => {
         //    
         // });
        // res.send(blog);
-    } catch (e) {
-        console.log(e.message);
-
-
-        // const finduser = await User.find({
-        //     active: true
-        // }, null, {
-        //     sort: {
-        //         name: 1
-        //     }
-        // });
-        const blog = await Blog.findOneAndUpdate({
-            slug,
-        }, {
-            $inc: {
-                views: 1,
-            },
-        }, {
-            new: true,
-        }).populate("author");
-        if (!blog) {
-            res.render("404-page");
-        }
-
-
-        //  const token = req.header("Authorization").replace("Bearer ", "");
-        // console.log(token);
-        // // let user;
-        // if (token) {
-        //     const decodedToken = await jwt.verify(token, process.env.JWT_SECRET);
-        //     if (decodedToken)
-        //         user = await User.findById(decodedToken._id);
-        // }
-
-        //render result page
-        // res.render("", {
-        //     
-        //     blog: blog,
-        //     
-        //    
-        // });
-        // res.send(blog);
+    
     } catch (e) {
         console.log(e.message);
         req.flash("error", "Something went wrong. Try again");
