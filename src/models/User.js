@@ -32,18 +32,22 @@ const userSchema = new mongoose.Schema({
             // required:true,
             trim: true,
         },
-    
-    likes: [{
-        type: Schema.Types.ObjectId,
-        ref: "Blog",
-    }],
-    
+
+        likes: [{
+            type: Schema.Types.ObjectId,
+            ref: "Blog",
+        }],
+
 
         blogs: [{
             type: Schema.Types.ObjectId,
             ref: "Blog",
         }],
         bookmarkBlogs: [{
+            type: Schema.Types.ObjectId,
+            ref: "Blog",
+        }],
+        recentBlogs: [{
             type: Schema.Types.ObjectId,
             ref: "Blog",
         }],
