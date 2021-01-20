@@ -119,7 +119,7 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
     }
 });
 
-router.get("/view/:slug", async(req, res) => {
+router.get("/view/:slug", auth, async(req, res) => {
 
     try {
         //find the corresponding blog in db
@@ -129,13 +129,13 @@ router.get("/view/:slug", async(req, res) => {
         }
 
 
-        // const finduser = await User.find({
-        //     active: true
-        // }, null, {
-        //     sort: {
-        //         name: 1
-        //     }
-        // });
+        const finduser = await User.find({
+            active: true
+        }, null, {
+            sort: {
+                name: 1
+            }
+        });
         const blog = await Blog.findOneAndUpdate({
             slug,
         }, {
@@ -148,8 +148,13 @@ router.get("/view/:slug", async(req, res) => {
         if (!blog) {
             res.render("404-page");
         }
-        
-        
+        let user = await User.findById(req.user);
+        let recentArr = user.recentBlogs || [];
+        recentArr.push(blog._id);
+        user.recentBlogs = recentArr;
+        await user.save();
+        console.log(user);
+
         //  const token = req.header("Authorization").replace("Bearer ", "");
         // console.log(token);
         // // let user;
@@ -158,7 +163,7 @@ router.get("/view/:slug", async(req, res) => {
         //     if (decodedToken)
         //         user = await User.findById(decodedToken._id);
         // }
-       
+
         //render result page
         // res.render("", {
         //     
@@ -166,8 +171,8 @@ router.get("/view/:slug", async(req, res) => {
         //     
         //    
         // });
-       // res.send(blog);
-    
+        // res.send(blog);
+
     } catch (e) {
         console.log(e.message);
         req.flash("error", "Something went wrong. Try again");
@@ -221,7 +226,7 @@ router.post("/appreciate/:blog_id", auth, async(req, res) => {
         user.likes = likesArr;
         await blog.save();
         await user.save();
-         console.log(likesArr);
+        console.log(likesArr);
 
         //res.redirect(req.get("referer"));
     } catch (error) {
@@ -234,16 +239,16 @@ router.post("/appreciate/:blog_id", auth, async(req, res) => {
 router.get("/delete/:blog_id", auth, async(req, res) => {
     try {
         const user = req.user;
-         
+
         user.blogs = user.blogs.filter(
             (blog) => !blog._id.equals(req.params.blog_id)
         );
         await user.save();
- await Blog.findByIdAndRemove(req.params.blog_id);
+        await Blog.findByIdAndRemove(req.params.blog_id);
         res.redirect("/blog");
     } catch (error) {
         console.log(error);
-       
+
     }
 });
 
@@ -308,5 +313,22 @@ router.get("/bookmarks", auth, async(req, res) => {
     // res.send("Your Bookmarks");
 });
 
+router.get("/recentblogs", auth, async(req, res) => {
+
+    const user = await User.findById(req.user).populate("recentBlogs");
+    res.json(user.recentBlogs);
+    // const bookmarks = await Promise.all(
+    //     user.bookmarkBlogs.map(async(blog) => {
+    //         blog.author = await User.findById(blog.author);
+    //         return blog;
+    //     })
+    // );
+    // res.render("bookmarks", {
+    //     user: req.user,
+    //     found: finduser,
+    //     bookmarks: bookmarks,
+    // });
+    // res.send("Your Bookmarks");
+});
 
 module.exports = router;
