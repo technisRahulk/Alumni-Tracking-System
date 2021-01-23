@@ -106,6 +106,9 @@ let tab1=document.getElementById('tab1');
 let tab2=document.getElementById('tab2');
 let sec1=document.getElementById('sec1');
 let sec2=document.getElementById('sec2');
+let left=document.getElementById('left-container');
+let nav=document.getElementById('nav');
+let right=document.getElementById('right-container');
 
 function active1(){
     sec2.style.display="none";
@@ -127,7 +130,23 @@ function active2(){
     tab1.style.backgroundColor="rgb(211, 241, 255)";
     tab1.style.color="gray";
 }
+function active3(){
+    sec2.style.display="block";
+    sec1.style.display="none";
+     left.style.display="none";
+      nav.style.display="none";
+       right.style.display="block";
+       right.style.visibility="visible";
+}
+function active4(){
 
+     sec2.style.display="none";
+    sec1.style.display="none";
+    left.style.display="block";
+   nav.style.display="none";
+   right.style.display="none";
+   left.style.visibility="visible";
+}
 
 // ***********************************************left part almuni working description place**********************************************************************
 var myNodelist = document.getElementsByTagName("LI");

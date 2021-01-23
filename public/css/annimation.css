@@ -8,6 +8,7 @@
     }
 .full{
     height: 100vh;
+    display: block;
     }
 .animation{
         height: 80vh;       
@@ -15,7 +16,7 @@
         background-image: url("../img/Rectangle981.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        
+       
     } 
     /* here annimation popup text starts*/
 
@@ -88,5 +89,10 @@
 .fas{
     color: var(--black);
     padding-right: 10px;
+  }
+  @media (max-width : 680px) {
+    .full{
+     display: none;
+    }
   }
 /* -------------------------------------annimation ending-------------------------------------------------------*/

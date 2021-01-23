@@ -13,8 +13,86 @@ html,body{
 }
 .wrapper{
     height: 100%;
-    width: 100%;
+    width: 100%; 
+
 }
+
+#bod{   
+    background-color: var(--bod-bg-color);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: auto;
+
+}
+
+#right-container{
+    margin:5px;
+    height: 70vh;
+    width: 78%;
+    display: block;
+}
+#left-container, #right-container{
+    margin-top: 5vh;
+
+}
+#nav{
+    background-color: var(--navbg);
+    display: flex;
+    height: 30px;
+}
+.navbutton{
+    display: none;
+    margin-top: -20%;
+}
+hr{
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--white);
+    margin: 0;
+    border: none;
+}
+#nav a{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    text-decoration: none;
+    font-weight: bold;
+}
+#tab1{
+    background-color: var(--white);
+    color: var(--tab1);
+    transition: background-color .8s linear;
+}
+#tab2{
+    color:var(--gray);
+    transition: background-color .8s linear;
+
+}
+.timeline{
+    width:100%;
+    height: 100vh;   
+    margin: 3% auto;
+
+}
+.blogs{
+    display: none;
+}
+#left-container{
+    margin:20px;
+    margin-top: 65px;
+    height: 75vh;
+    width: 33vw;
+    background-color: var(--white);
+    border-radius: 15px;
+    
+}
+
 .intro{
     width: 100%;
     height: 63vh;
@@ -23,26 +101,7 @@ html,body{
     display: flex;
     flex-direction: column;
 }
-.bod{
-    
-    background-color: var(--bod-bg-color);
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: auto;
-}
-
-.right-container{
-    margin:5px;
-    height: 70vh;
-    width: 78%;
-
-}
-.left-container, .right-container{
-    margin-top: 5vh;
-}
-.cover-pic{
+.cover-pic,.cover-pic1{
     width: 90%;
     max-height: 65%;
     height: auto;
@@ -50,7 +109,7 @@ html,body{
     margin-top: 2%;
     box-shadow: 4px 4px 10px var(--coverpic);
 }
-.cover-pic img{
+.cover-pic img,.cover1-pic img{
     border-radius: 15px;
     width: 100%;
     height: 100%;
@@ -80,24 +139,24 @@ html,body{
 .bottom{
     display: flex;
     /* max-width: 80vw; */
-    width: 70%;
-    /* align-self: flex-end; */
+    width: 70vw;
+    
     align-items: center;
-    height: 37%;
+    height:30vh;
     margin-top: -5%;
     margin-left: 20%;
 }
 .name{
     height: 120px;
     width: 68%;
-    /* margin-right: 8%; */
+    
 }
 h1{
-    font-size: 3em;
+    font-size: 2,5vw;
     margin: 0;
 }
 .name p{
-    font-size: 1.5em;
+    font-size: 1.5vw;
     color: var(--gray);
     margin: 5px 2px;
 }
@@ -166,59 +225,11 @@ h1{
     float:right;
     transition: click 3s ease-in;
 }
-.nav{
-    background-color: var(--navbg);
-    display: flex;
-    height: 30px;
-}
-hr{
-    width: 100%;
-    height: 5px;
-    background-color: var(--white);
-    margin: 0;
-    border: none;
-}
-.nav a{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.4em;
-    text-decoration: none;
-    font-weight: bold;
-}
-#tab1{
-    background-color: var(--white);
-    color: var(--tab1);
-    transition: background-color .8s linear;
-}
-#tab2{
-    color:var(--gray);
-    transition: background-color .8s linear;
 
-}
-.timeline{
-    width:100%;
-    height: 100vh;   
-    margin: 3% auto;
-
-}
-.blogs{
-    display: none;
-}
  /* left container will start */
 
 
-.left-container{
-    margin:20px;
-    margin-top: 65px;
-    height: 75vh;
-    width: 29%;
-    background-color: var(--white);
-    border-radius: 15px;
-    
-}
+
  .content{
       box-shadow: 0 0 10px var(--boxshadow1);
      -moz-box-shadow: 0 0 10px var(--boxshadow1);
@@ -232,18 +243,19 @@ hr{
         height:12vh;
         border-bottom: 0.05rem solid var(--lightgray);
         text-align: center;
-        padding: 6px;
+        padding-top: 10px;
         font-family: Helvetica;
         letter-spacing: .5px;
+        font-size: 1.2vw;
     }
 .top1{
        height:10vh;
-       border-bottom: 0.05rem solid var(--lightgray);
-       padding-left: 9px;
-       padding-bottom: 10px;
+       border-bottom: 0.05rem solid var(--lightgray);     
+       padding: 0 0 0 35px;
        font-family: Helvetica;
        letter-spacing: .5px;
        color: grey;
+       font-size: 1.2vw;
     }
 .top2{
        height:8vh;
@@ -252,6 +264,7 @@ hr{
        letter-spacing: .5px;
        font-weight: bold;
        color: grey;
+       font-size: 1.2vw;
     }
 .top2box1{
     width:50%;
@@ -378,12 +391,12 @@ input {
      -o-box-shadow: 0 0 10px var(--boxshadow1);
      clip-path: inset(0 -5px -5px -5px);
      border-radius: 0 0 0 16px ; 
-     width: 68.5%;
+     width: 68%;
 }
 
 .addBtn {
         padding: 10px;
-        width: 27.5%;
+        width: 8vw;
         background: var(--white);
         color: var(--addbtnclr);
         float: left;
@@ -407,4 +420,158 @@ input {
 }
 #bt2{
         border-radius: 0 0 16px 0 ;
+}
+@media (max-width : 680px) {
+    .wrapper{
+        width: 100%;
+    }
+.addBtn{
+    width:24.3vw;
+}
+.cover-pic{
+    width: 100%;
+    max-height: 120%;
+    height: auto;   
+    border-radius: 0px;
+    margin-top: -2%;
+    box-shadow: 0 0 0 0;
+
+}
+.cover-pic img{
+    border-radius: 0px;
+    width: 100%;
+    height: 120%;
+    box-shadow: 0 8px 10px var(--coverpic);
+}
+.profile-pic{
+    box-sizing: content-box;
+    width: 26vw;
+    border: 10px solid var(--white);
+    margin-top: -12%;
+    align-self: start;
+    margin-left: 6%;
+    border-radius: 50%;
+    position: relative;
+    background-image:url("../img/logo.png");
+    background-color: var(--black);
+    background-size: cover;
+     box-shadow: 0 0 10px var(--boxshadow1);
+        -moz-box-shadow: 0 0 10px var(--boxshadow1);
+        -webkit-box-shadow: 0 0 10px var(--boxshadow2);
+        -o-box-shadow: 0 0 10px var(--boxshadow1);
+
+}
+.profile-pic:after{
+    content: "";
+    padding-bottom: 100%;
+    display: block;
+}
+.name{
+    height: 100px;
+    width: 68%;
+     margin-left: -25%; 
+}
+h1{
+    font-size: 20px;
+    margin: 0 ;
+}
+.name p{
+    font-size: 15px;
+    color: var(--gray);
+    margin: 5px 0px;
+}
+.chat{
+    display: none;
+}
+.logo{
+   
+    height: 120px;
+    width: 60px;
+ margin-left: 80px;
+}
+.logo img{
+    width:70px;
+}
+
+.intro{
+    width: 100%;
+    height: 69vh;
+    background-color: var(--body-bg-color);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.navbutton{
+   display: block;
+   width: 100%;
+   top: 10%;
+   height: 15vh;
+   position: relative;
+   left:15px;
+}
+.navbutton button{
+width: 26vw;
+height: 5vh;
+margin-left: 14px;
+margin-bottom: 14px;
+border-radius: 20px;
+ font-weight: bold;
+ border:none;
+ background-color: #A9A9A9;
+ cursor: pointer;
+ outline: 0;
+ 
+}
+.navbutton button:hover{
+    background-color: #4169E1;
+    color: white;
+}
+
+
+
+#bod{
+    height: 100vh;
+}
+.top h1{
+    font-size: 45px;
+}
+.top1{
+    font-size: 15px;
+}
+.top2{
+    font-size: 15px;
+}
+/* main solution to find out*/
+hr{
+    display:none;
+
+}
+#right-container{
+    width:100%;
+    margin-top: -30%;
+    visibility: hidden;
+   
+}
+#left-container{
+    width:90%;
+    height: 90vh;
+    margin-top: -5%;
+    visibility: visible;
+    position: absolute;
+}
+/* ------------------- */
+.read-more__link-wrap{
+    margin-bottom:2%; 
+}
+.cover1-pic{
+   width:96.5%;
+   margin-left: 2%;
+}
+#tab1{
+    display: none;
+}
+
+
 }
