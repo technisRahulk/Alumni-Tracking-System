@@ -1,10 +1,27 @@
+@import "./variables/blog-variables.css";
+
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700;800;900&display=swap');
 
 body{
 	margin:0px;
 	padding: 0px;
   	font-family: 'Gothic A1', sans-serif;
-  	background-color:#C8C8C8;
+	  background-color: var(--body-bg);
+	  color: var(--element-text-color);
+}
+.dark-switch-container {
+	position: fixed;
+	right: 3.5rem;
+	top: 1rem;
+	max-width: 3.5em;
+	width: 3.5em;
+	text-align: center;
+	margin: 0%;
+}
+#dark-mode-cbox+label {
+	padding: 0.4em;
+	height: 1.4em;
+	width: 74%;
 }
 .row{
 	padding-top: 10px;
@@ -32,7 +49,7 @@ body{
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 10px;
-	background-color: #E2E2E2;	
+	background-color: var(--element-bg);	
 }
 
 .profile{
@@ -46,9 +63,9 @@ body{
 	border-radius: 50%;
 	margin: 15px;
 	margin-top: 25px;
-	border:2px solid #ffffff;
-	
+	border:2px solid #ffffff;	
 }
+
 .list{
 	margin:25px;
 }
@@ -82,7 +99,7 @@ h4{
 .blog{
 	
 	margin-bottom: 10px;
-	background-color:#E2E2E2;
+	background-color:var(--element-bg);
 	display: inline-block;
 }
 
@@ -134,7 +151,7 @@ h4{
 .search{
 	height:8vh;
 	width:58%;
-	background-color:	#B0B0B0;
+	background-color:var(--search-color);
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -147,6 +164,15 @@ h4{
 }
 @media (max-width:680px)
 {
+	.dark-switch-container {
+		position: fixed;
+		right: 2%;
+		top: 1rem;
+		max-width: 3.5em;
+		width: 3.5em;
+		text-align: center;
+		margin: 0%;
+	}
 	.left-col{
 		height: 0px;
 		width: 0%;
