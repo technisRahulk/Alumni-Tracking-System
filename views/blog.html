@@ -1,76 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title></title>
 	<meta charset="UTF-8" />
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  	<meta http-equiv="X-UA-Comaptible" content="ie=edge" />
-	<script src="https://kit.fontawesome.com/d05c3d1935.js" crossorigin="anonymous"></script>
+	<meta http-equiv="X-UA-Comaptible" content="ie=edge" />
+	  
+	<link rel="stylesheet" href="../public/css/dark-mode.css">
 	<link rel="stylesheet" href="../public/css/blog.css">
+
+	<script src="https://kit.fontawesome.com/d05c3d1935.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<div>
-	<div class="row">
-		<div class="left-col">
-			<div class="bookmarks-activities">
-				<div class="profile">
-					<img class="pic1" src="https://bit.ly/2JWPcDM">
-					<h2 class="name1">ABC</h2>
+	<div class="dark-switch-container">
+			<input type='checkbox' id='dark-mode-cbox' />
+			<label for='dark-mode-cbox'>Night</label>
+	</div>
+<main>
+		<div>
+		<div class="row">
+			<div>
+				<form>
+					<input type="text" class="search" name="search" placeholder="Search Blog">
+				</form>
+			</div>
+			<div class="left-col">
+				<div class="bookmarks-activities">
+					<div class="profile">
+						<img class="pic1" src="https://bit.ly/2JWPcDM">
+						<h2 class="name1">ABC</h2>
+					</div>
+					
+					<div class="list">
+						<h4>My bookmarks</h4>
+						<div class="heading"><i class="fas fa-bookmark"></i> <h1> Bookmark 1</h1></div> <br>
+						<div class="heading"><i class="fas fa-bookmark"></i> <h1> Bookmark 2</h1></div> <br>
+						<div class="heading"><i class="fas fa-bookmark"></i> <h1> Bookmark 3</h1></div> <br>
+						<div class="heading"><i class="fas fa-bookmark"></i> <h1> Bookmark 4</h1></div> <br>
+						<div class="showmore"><i class="fas fa-chevron-circle-down"></i> <h1> See more</h1></div> <br>
+					</div>
 				</div>
 				
-				<div class="list">
-					<h4>My bookmarks</h4>
-					<div class="heading"><i class="fas fa-bookmark"></i> <h1> Bookmark 1</h1></div> <br>
-					<div class="heading"><i class="fas fa-bookmark"></i> <h1> Bookmark 2</h1></div> <br>
-					<div class="heading"><i class="fas fa-bookmark"></i> <h1> Bookmark 3</h1></div> <br>
-					<div class="heading"><i class="fas fa-bookmark"></i> <h1> Bookmark 4</h1></div> <br>
-					<div class="showmore"><i class="fas fa-chevron-circle-down"></i> <h1> See more</h1></div> <br>
+			</div>
+			<div class="center-col">
+			
+				<div class="blog">
+					<img class="profile_pic" src="https://bit.ly/2JWPcDM">
+					<div>
+						<h2 class="name">ABC</h2>
+						<p class="time">15 minutes ago</p>
+						<p class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<img class="pic" src="https://bit.ly/3boxd4o">
+						<div class="container-icon">
+						<i class="fas fa-thumbs-up"></i>
+						<i class="fas fa-bookmark"></i>
+						</div>
+					</div>
 				</div>
 			</div>
-			
-		</div>
-		<div class="center-col">
-			<div class="blog">
-				<img class="profile_pic" src="https://bit.ly/2JWPcDM">
-				<div>
-					<h2 class="name">ABC</h2>
-					<p class="time">15 minutes ago</p>
-					<p class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<img class="pic" src="https://bit.ly/3boxd4o">
-					<div class="container-icon">
-					<i class="fas fa-thumbs-up"></i>
-					<i class="fas fa-bookmark"></i>
+			<div class="right-col">
+				<div class="bookmarks-activities">
+					<div class="profile">
+						<img class="pic1" src="https://bit.ly/2JWPcDM">
+						<h2 class="name1">ABC</h2>
+					</div>
+					
+					<div class="list">
+						<h4>My Activity</h4>
+						<div class="heading"><i class="far fa-clock"></i> <h1> Activity 1</h1></div> <br>
+						<div class="heading"><i class="far fa-clock"></i> <h1> Activity 2</h1></div> <br>
+						<div class="heading"><i class="far fa-clock"></i> <h1> Activity 3</h1></div> <br>
+						<div class="heading"><i class="far fa-clock"></i> <h1> Activity 4</h1></div> <br>
+						<div class="showmore"><i class="fas fa-chevron-circle-down"></i> <h1> See more</h1></div> <br>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="right-col">
-			<div class="bookmarks-activities">
-				<div class="profile">
-					<img class="pic1" src="https://bit.ly/2JWPcDM">
-					<h2 class="name1">ABC</h2>
-				</div>
-				
-				<div class="list">
-					<h4>My Activity</h4>
-					<div class="heading"><i class="far fa-clock"></i> <h1> Activity 1</h1></div> <br>
-					<div class="heading"><i class="far fa-clock"></i> <h1> Activity 2</h1></div> <br>
-					<div class="heading"><i class="far fa-clock"></i> <h1> Activity 3</h1></div> <br>
-					<div class="heading"><i class="far fa-clock"></i> <h1> Activity 4</h1></div> <br>
-					<div class="showmore"><i class="fas fa-chevron-circle-down"></i> <h1> See more</h1></div> <br>
-				</div>
-			</div>
-		</div>
+
 	</div>
+</main>
 
-</div>
-
+<script src="../public/js/dark-mode.js"></script>
 
 </body>
 </html>

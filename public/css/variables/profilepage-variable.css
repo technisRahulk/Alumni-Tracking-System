@@ -1,0 +1,22 @@
+:root {
+	--body-bg-color:rgb(218, 218, 218);
+	--white:white;
+	--bod-bg-color:rgb(218, 218, 218);
+	--coverpic:rgb(141, 141, 141);
+	--black:black;
+	--chatbg:#9ab3f5;
+	--gray:gray;
+	--navbg:rgb(211, 241, 255);
+	--tab1:rgb(38, 38, 122);
+	--boxshadow1:rgba(0,0,0,0.6);
+	--boxshadow2:rgba(0,0.3,0,0.3);
+	--contentshadow:rgba(0,0,0,0.3);
+	--lightgray:lightgray;
+	--addbtnclr:#555;
+	--addbtnhover: #bbb;
+	--popbgcolor:#f5f5f5;
+	--borderpopcolor:#A9A9A9;
+	--editborder:#EE9A4D;
+	--editbgclr:#E2A76F;
+	--edithover:#DEB887;
+}

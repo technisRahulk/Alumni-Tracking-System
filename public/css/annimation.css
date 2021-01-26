@@ -1,0 +1,98 @@
+@import url('./variables/profilepage-variable.css');
+/* annimaton photos size */
+.paper-plane{
+        height: 200px;
+        top: 37%;
+        position: relative;
+        left:5%;
+    }
+.full{
+    height: 100vh;
+    display: block;
+    }
+.animation{
+        height: 80vh;       
+        position: relative;     
+        background-image: url("../img/Rectangle981.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+       
+    } 
+    /* here annimation popup text starts*/
+
+ #pop1,#pop2,#pop3{ 
+   padding: 1px;
+   width:10vw;
+   height: 7vh;
+   background-color:var(--popbgcolor);
+   box-sizing: border-box;
+   position: absolute;
+   display: none;
+   border: 1px solid var(--borderpopcolor);
+   font-weight: bold;
+   }
+
+#pop1:after,#pop3:after{
+  position: absolute;
+  width:20px;
+  height: 20px;
+  margin-left: 26px;
+  margin-top: -48%;
+  content: '';
+  transform:rotate(45deg);
+  background-color:var(--popbgcolor);
+  border-top: 1px solid var(--borderpopcolor);
+  border-left: 1px solid var(--borderpopcolor);
+}
+#pop2:after{
+  position: absolute;
+  width:20px;
+  height: 20px;
+  margin-left: 105px;
+  margin-top: -14%;
+  content: '';
+  transform:rotate(45deg);
+  background-color:var(--popbgcolor);
+  border-bottom: 1px solid var(--borderpopcolor);
+  border-right: 1px solid var(--borderpopcolor);
+}
+#pop1{ 
+    margin-top: 150px;
+    margin-left: 315px;
+}
+#pop2{  
+    margin-top: -20px;
+    margin-left: 410px;
+}
+#pop3{  
+    margin-top: 50px;
+    margin-left: 680px;
+}
+/*ending with timeline button*/
+.edit{
+    width:15vw;
+    height: 8vh;
+    margin-left: 25%;
+    margin-bottom: 5%;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: roboto condensed;
+    border: 3px solid var(--editborder);
+    font-weight: bold;
+    background-color:var(--editbgclr);
+    color: var(--black);
+    border-radius: 6px;
+  }
+.edit:hover{
+    background-color: var(--edithover);
+  }
+.fas{
+    color: var(--black);
+    padding-right: 10px;
+  }
+  @media (max-width : 680px) {
+    .full{
+     display: none;
+    }
+  }
+/* -------------------------------------annimation ending-------------------------------------------------------*/
