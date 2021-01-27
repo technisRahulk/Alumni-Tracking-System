@@ -61,9 +61,9 @@ app.get("/failed", (req, res) => {
 app.use(express.static(path.join(__dirname, "../public")));
 
 //Routes
-const blogRoutes = require("./routers/blog");
+// const blogRoutes = require("./routers/blog");
 
-app.use("/blog", blogRoutes);
+// app.use("/blog", blogRoutes);
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
