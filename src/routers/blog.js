@@ -69,7 +69,9 @@ router.get("/", auth, async(req, res) => {
 });
 
 // form to create blog
-router.get("/create", (req, res) => {});
+router.get("/create", (req, res) => {
+    res.send("Test")
+});
 
 
 
