@@ -16,7 +16,7 @@ exports.signUp = async (req, res) => {
       return res.status(400).send({ error: "Something went wrong" });
     }
     const token = await user.generateAuthToken();
-
+    
     res.status(201).send({ user: user.extractUser(), token });
   } catch (e) {
     res.status(400).send(e);
