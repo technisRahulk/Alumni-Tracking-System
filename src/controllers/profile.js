@@ -28,7 +28,7 @@ exports.profileDelete=async(req,res,next)=>{
 
         console.log("Jitul teron");
         await req.user.remove();
-        res.send({message:"Deleted",user:req.user});
+        res.send({message:"Deleted",user:req.user.extractUser()});
     }
     catch(e){
         res.status(500).send();
@@ -44,6 +44,21 @@ exports.profileCreate=async(req,res,next)=>{
             return res.status(400).send({error:"Something went wrong"});
         }
         res.status(201).send({user:user.extractUser,message:"Saved sucessfully"});
+
+    }
+    catch(e){
+            res.status(400).send(e);
+    }
+
+}
+
+exports.profileRead=async(req,res,next)=>{
+    try{
+            
+        const user=req.user;
+        if(user){
+            res.send(user.extractUser());
+        }
 
     }
     catch(e){
