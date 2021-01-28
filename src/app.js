@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 require("./db/mongoose");
 require("./passport.setup")
-const Router = require("./routers/user");
+const Router = require("./routers/index");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 
 
 
-app.use(Router);
+
 
 app.get("/only-test", (req, res) => {
         res.send("Test done")
@@ -61,9 +61,7 @@ app.get("/failed", (req, res) => {
 app.use(express.static(path.join(__dirname, "../public")));
 
 //Routes
-const blogRoutes = require("./routers/blog");
-
-app.use("/blog", blogRoutes);
+app.use(Router);
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
