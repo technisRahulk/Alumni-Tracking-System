@@ -71,9 +71,9 @@
 /*ending with timeline button*/
 .edit{
     width:15vw;
-    height: 8vh;
+    /* height: 8vh; */
     margin-left: 25%;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
     font-size: 20px;
     letter-spacing: 1px;
     font-family: roboto condensed;
