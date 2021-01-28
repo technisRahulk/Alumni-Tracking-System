@@ -8,4 +8,7 @@ router.patch("/users/me/profile_edit",auth,profileRouter.profileUpdate);
 // delete user profile
 router.delete("/users/me/profile_delete",auth,profileRouter.profileDelete);
 
+// create profile
+router.post("/users/me/profile_create",auth,profileRouter.profileCreate);
+
 module.exports=router;

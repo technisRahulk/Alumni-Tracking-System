@@ -33,4 +33,21 @@ exports.profileDelete=async(req,res,next)=>{
     catch(e){
         res.status(500).send();
     }
-} 
+}
+
+exports.profileCreate=async(req,res,next)=>{
+    try{
+            
+        const user=new User(req.body);
+        const userSaved=await user.save();
+        if(!userSaved){
+            return res.status(400).send({error:"Something went wrong"});
+        }
+        res.status(201).send({user:user.extractUser,message:"Saved sucessfully"});
+
+    }
+    catch(e){
+            res.status(400).send(e);
+    }
+
+}
