@@ -24,111 +24,102 @@
    </head> 
    <body>
 
-<div class="wrapper">
-<div class="intro">
-<div class="cover-pic">
-     <img src="../public/img/cover.jpg" alt="">
-</div>
+        <div class="wrapper">
+            <div class="intro">
+                <div class="cover-pic">
+                    <img src="../public/img/cover.jpg" alt="">
+                </div>
 
-<div class="profile-pic">
-</div>
+                <div class="profile-pic">
+                </div>
 
-<div class="bottom">
-<div class="name">
-<h1>Panda Sleepy Basisth</h1>
-<p>Lead Designer, ATS</p>
-</div>
+                <div class="bottom">
+                    <div class="name">
+                        <h1>Thcskirx Gdsrr Rsxiyg</h1>
+                        <p>Lead Designer, ATS</p>
+                    </div>
 
-<div class="chat">
-<a href="">Start Chat</a>
-</div>
+                    <div class="chat">
+                        <a href="">Start Chat</a>
+                    </div>
 
-<div class="logo">
-<img src="../public/img/cse_logo.png" alt="">
-</div>
+                    <div class="logo">
+                        <img src="../public/img/cse_logo.png" alt="">
+                    </div>
+                </div>
 
-</div>
-    <div class="navbutton">
-    <button  class="btn" onclick="active3()"  >Blogs</button>
-    <button class="btn active" onclick="active4()" >View About Panda</button>
-    <button    class="btn">Start Chat</button>
-    <button   class="btn">Create Blog</button>
-    </div>
-</div>
-    
-    <div id="bod">
-    <div id ="left-container">
-                 
-    <div class="content">
-    <div class="top">
-    <h1>About Panda</h1>
-    </div>
-    <div class="top1">
-    <p>UI/UX Designer ,3D Graphics, Machine learning,Cricket,Chess,Swimming and Storytelling enthusiast</p>
-    </div>
-    <div class="top2">
-    <div class="top2box1">
-    <p>Working At:</p>
-    </div>
-    <div class="top2box2">
-    <p>Year:</p>
-    </div>
-    </div>
-    </div>
-    <ul  id="myUL1" class="show1">
-    </ul>
-    <ul  id="myUL2" class="show2">
-    </ul>
+                <div class="navbutton">
+                    <button  class="btn" id="btn1" onclick="btn1()"  >Blogs</button>
+                    <button class="btn active" id="btn2" onclick="btn2()" >About Panda</button>
+                    <button   class="btn" id="btn3" onclick="btn3()" >Start Chat</button>
+                    <button   class="btn" id="btn4" onclick="btn4()">Create Blog</button>
+                </div>
+            </div>
+                            
+            <div id="bod">
+                <div class ="left-container">
 
-  <div id="myDIV" class="header">
-  <input type="text" id="myInput1" placeholder="working at...">
-  <input type="text" id="myInput2" placeholder="year...">
-  <span onclick="var temp =  newElement(); newElementa(); return temp;"  class="addBtn" id="bt2">Add &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></span>
-  </div>
+                    <div class="about">
+                        <div class="top">
+                            <span class="first-word">About</span>
+                            <span>Panda</span>
+                        </div>
+                        <div class="top1">
+                            <p>UI/UX Designer ,3D Graphics, Machine learning,Cricket,Chess,Swimming and Storytelling enthusiast</p>
+                        </div>
+                        <div class="top2">
+                            <div class="top2box1">
+                                <p>Working At:</p>
+                            </div>
+                            <div class="top2box2">
+                                <p>Year:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul  id="myUL1" class="show1">
+                    </ul>
+                    <ul  id="myUL2" class="show2">
+                    </ul>
 
-  </div>
+                    <div id="myDIV" class="header">
+                        <input type="text" id="myInput1" placeholder="working at...">
+                        <input type="text" id="myInput2" placeholder="year...">
+                        <span onclick="var temp =  newElement(); newElementa(); return temp;"  class="addBtn" id="bt2">Add &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></span>
+                    </div>
+                </div>
 
-
-   <div id="right-container">
-   <div id="nav">
-   <a href="#a" onclick="active1()" id="tab1" >Timeline</a>
-   <a href="#a" onclick="active2()" id="tab2" >Blogs</a>
-    </div>
-     
-    
-
-    <hr>
-
-    <div class="timeline" id="sec1">
-
-    <div class="full">
-    <section class="animation">
-    <img class="paper-plane" src="../public/img/abd.png" alt="paper-plane">  
-    <div id="pop1" > <p>2020</p> </div>
-    <div id="pop2" > <p>2021</p> </div>
-    <div id="pop3" > <p>2022</p> </div>
-    </section>
-    <button class="edit"><i class="fas fa-cogs"></i>Edit Timeline</button>
-    </div>
-    </div>
-
-
-                            <div class="blogs" id="sec2">
-                            <div>
-                                <div class="chat">
-                                <a href="">Create Blog</a>
+                <div class="right-container">
+                    <div id="nav">
+                        <a href="#a" class="tab_timeline" onclick="active1()" id="tab1" >Timeline</a>
+                        <a href="#a" class="tab_blogs" onclick="active2()" id="tab2" >Blogs</a>
+                    </div>
+                        
+                    <hr>
+                    <div class="timeline" id="sec1">
+                        <div class="full">
+                            <section class="animation">
+                                <img class="paper-plane" src="../public/img/abd.png" alt="paper-plane">  
+                                <div id="pop1" > <p>2020</p> </div>
+                                <div id="pop2" > <p>2021</p> </div>
+                                <div id="pop3" > <p>2022</p> </div>
+                            </section>
+                            <button class="edit"><i class="fas fa-cogs"></i>Edit Timeline</button>
+                        </div>
+                    </div>
+                    <div class="blogs" id="sec2">
+                        <div class="chat">
+                            <a href="">Create Blog</a>
+                        </div>
+                        <div class="blog-area">
+                            <div class="up">
+                                <div class="profile-pic">
+                                </div>
+                                <div class="name">
+                                    <h1>Panda Sleepy Basisth</h1>
+                                    <p>06/01/21 9:30pm</p>
                                 </div>
                             </div>
-                            <div class="blog-area">
-                                <div class="up">
-                                        <div class="profile-pic">
-                                        </div>
-                                    <div class="name">
-                                        <h1>Panda Sleepy Basisth</h1>
-                                        <p>06/01/21 9:30pm</p>
-                                    </div>
-                                </div>
-                                <div class="readmore js-read-more" data-rm-words="60">
+                            <div class="readmore js-read-more" data-rm-words="60">
                                 <p class="content">Felis catus has had a very long relationship with humans.
                                 Ancient Egyptians may have first domesticated cats as early 
                                 as 4,000 years ago. Plentiful rodents probably drew wild felines
@@ -152,23 +143,22 @@
                                 as their own companions. Cats communicate by marking trees, fence
                                 posts, or furniture with their claws or their waste. These 
                                 scent posts are meant to inform others of a cat's home range. 
-                                House cats employ a vocal repertoire that extends from a purr to a screech.
-                                </p></div>
-                                <div class="cover1-pic">
-                                    <img src="../public/img/cover.jpg" alt="">
+                                House cats employ a vocal repertoire that extends from a purr to a screech.</p>
+                            </div>
+                            <div class="cover1-pic">
+                                <img src="../public/img/cover.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="blog-area">
+                            <div class="up">
+                                <div class="profile-pic">
+                                </div>
+                                <div class="name">
+                                    <h1>Panda Sleepy Basisth</h1>
+                                    <p>06/01/21 9:30pm</p>
                                 </div>
                             </div>
-
-                            <div class="blog-area">
-                                <div class="up">
-                                    <div class="profile-pic">
-                                    </div>
-                                    <div class="name">
-                                        <h1>Panda Sleepy Basisth</h1>
-                                        <p>06/01/21 9:30pm</p>
-                                    </div>
-                                </div>
-                                <div class="readmore js-read-more" data-rm-words="60">
+                            <div class="readmore js-read-more" data-rm-words="60">
                                 <p class="content">Felis catus has had a very long relationship with humans.
                                 Ancient Egyptians may have first domesticated cats as early 
                                 as 4,000 years ago. Plentiful rodents probably drew wild felines
@@ -180,15 +170,13 @@
                                 as their own companions. Cats communicate by marking trees, fence
                                 posts, or furniture with their claws or their waste. These 
                                 scent posts are meant to inform others of a cat's home range. 
-                                House cats employ a vocal repertoire that extends from a purr to a screech.
-                                </p></div>
-                                <div class="cover1-pic">
-                                    <img src="../public/img/cover.jpg" alt="">
-                                </div>
+                                House cats employ a vocal repertoire that extends from a purr to a screech.</p>
                             </div>
-
+                            <div class="cover1-pic">
+                                <img src="../public/img/cover.jpg" alt="">
+                            </div>
                         </div>
-
+                    </div>
                 </div>
             </div>
         </div>

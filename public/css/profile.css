@@ -7,7 +7,6 @@
 }
 html,body{
     margin: 0;
-    /* margin-top: -8px; */
     background-color: var(--body-bg-color);
 
 }
@@ -18,25 +17,32 @@ html,body{
 }
 
 #bod{   
-    background-color: var(--bod-bg-color);
     width: 100%;
-    align-items: center;
     justify-content: center;
     display: flex;
     height: auto;
-
 }
 
-#right-container{
+.right-container{
     margin:5px;
     height: 70vh;
-    width: 78%;
+    width: 58vw;
     display: block;
 }
-#left-container, #right-container{
-    margin-top: 5vh;
-
+.left-container{
+    margin:5px;
+    margin-right: 50px;
+    height: 40vh;
+    width: 33vw;
+    background-color: var(--white);
+    border-radius: 15px;
+    display: block;
 }
+
+.left-container, .right-container{
+    margin-top: 7vh;
+}
+
 #nav{
     background-color: var(--navbg);
     display: flex;
@@ -60,18 +66,18 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.4em;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 600;
 }
-#tab1{
+.tab_timeline{
     background-color: var(--white);
     color: var(--tab1);
-    transition: background-color .8s linear;
+    transition: background-color .5s linear;
 }
-#tab2{
+.tab_blogs{
     color:var(--gray);
-    transition: background-color .8s linear;
+    transition: background-color .5s linear;
 
 }
 .timeline{
@@ -82,15 +88,6 @@ hr{
 }
 .blogs{
     display: none;
-}
-#left-container{
-    margin:20px;
-    margin-top: 65px;
-    height: 75vh;
-    width: 33vw;
-    background-color: var(--white);
-    border-radius: 15px;
-    
 }
 
 .intro{
@@ -103,8 +100,7 @@ hr{
 }
 .cover-pic,.cover-pic1{
     width: 90%;
-    max-height: 65%;
-    height: auto;
+    height: 65%;
     border-radius: 15px;
     margin-top: 2%;
     box-shadow: 4px 4px 10px var(--coverpic);
@@ -119,7 +115,7 @@ hr{
 .profile-pic{
     box-sizing: content-box;
     width: 12%;
-    border: 14px solid var(--white);
+    border: 12px solid var(--white);
     margin-top: -8%;
     align-self: start;
     margin-left: 10%;
@@ -140,7 +136,6 @@ hr{
     display: flex;
     /* max-width: 80vw; */
     width: 70vw;
-    
     align-items: center;
     height:30vh;
     margin-top: -5%;
@@ -152,11 +147,11 @@ hr{
     
 }
 h1{
-    font-size: 2,5vw;
+    font-size: 3em;
     margin: 0;
 }
-.name p{
-    font-size: 1.5vw;
+.name p, .top span{
+    font-size: 1.5em;
     color: var(--gray);
     margin: 5px 2px;
 }
@@ -180,7 +175,6 @@ h1{
     font-size: 1.5em;
 }
 .logo{
-    /* border: 1px solid red; */
     height: 90px;
     width: 90px;
     align-self: center;
@@ -230,7 +224,7 @@ h1{
 
 
 
- .content{
+ .about{
       box-shadow: 0 0 10px var(--boxshadow1);
      -moz-box-shadow: 0 0 10px var(--boxshadow1);
      -webkit-box-shadow: 0 0 10px var(--contentshadow);
@@ -240,23 +234,35 @@ h1{
 
   }
 .top{
-        height:12vh;
+        height:10vh;
         border-bottom: 0.05rem solid var(--lightgray);
-        text-align: center;
-        padding-top: 10px;
+        text-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 15px;
+        padding-left: 15px;
         font-family: Helvetica;
         letter-spacing: .5px;
-        font-size: 1.2vw;
+        font-size: 1.1vw;
     }
+.top .first-word{
+    font-size: 2.2em;
+    font-weight: 600;
+    color:var(--black);
+    margin-right: 10px;
+} 
+ 
 .top1{
-       height:10vh;
+       height:14vh;
        border-bottom: 0.05rem solid var(--lightgray);     
-       padding: 0 0 0 35px;
+       padding: 0 0 0 25px;
        font-family: Helvetica;
        letter-spacing: .5px;
        color: grey;
-       font-size: 1.2vw;
+       font-size: 1.2em;
     }
+
 .top2{
        height:8vh;
        border-bottom: 0.05rem solid var(--lightgray);
@@ -264,7 +270,7 @@ h1{
        letter-spacing: .5px;
        font-weight: bold;
        color: grey;
-       font-size: 1.2vw;
+       font-size: 1.2em;
     }
 .top2box1{
     width:50%;
@@ -327,12 +333,11 @@ ul li:hover {
 
 #myUL1 {
    float: left;
-   width:48%;
-   margin-left: 2%;
+   width:50%;
 }
 #myUL2 {
-  float: left;
-  width: 48%;
+  float: right;
+  width: 50%;
 }
 
 .close {
@@ -370,8 +375,7 @@ input {
   padding: 10px; 
   font-size: 16px;
   background-color: var(--white);
-  margin-left: 2%;
-  
+  outline: none;
 }
 
 #myInput1{
@@ -380,8 +384,7 @@ input {
      -webkit-box-shadow: 0 0 10px var(--boxshadow2);
      -o-box-shadow: 0 0 10px var(--boxshadow1);
      clip-path: inset(0 -5px 0 -5px);
-     width: 96%;
-     margin-top: -2%;
+     width: 100%;
 
 }
 #myInput2{
@@ -391,12 +394,12 @@ input {
      -o-box-shadow: 0 0 10px var(--boxshadow1);
      clip-path: inset(0 -5px -5px -5px);
      border-radius: 0 0 0 16px ; 
-     width: 68%;
+     width: 70%;
 }
 
 .addBtn {
         padding: 10px;
-        width: 8vw;
+        width: 30%;
         background: var(--white);
         color: var(--addbtnclr);
         float: left;
@@ -421,33 +424,50 @@ input {
 #bt2{
         border-radius: 0 0 16px 0 ;
 }
-@media (max-width : 680px) {
+
+.disp1_on{
+    display: block;
+}
+
+.disp1_off{
+    display: none;
+}
+
+.select{
+    background-color: var(--white);
+    color: var(--tab1);
+}
+
+.unselect{
+    background-color: var(--navbg);
+    color: var(--gray);
+}
+
+@media (max-width : 780px){
     .wrapper{
         width: 100%;
     }
-.addBtn{
-    width:24.3vw;
-}
-.cover-pic{
+    .timeline, #nav, hr, .chat{
+        display: none;
+    }
+    
+    .cover-pic{
     width: 100%;
-    max-height: 120%;
-    height: auto;   
+    height: 45%;
     border-radius: 0px;
     margin-top: -2%;
     box-shadow: 0 0 0 0;
-
-}
-.cover-pic img{
+    }
+    .cover-pic img{
     border-radius: 0px;
     width: 100%;
-    height: 120%;
     box-shadow: 0 8px 10px var(--coverpic);
-}
-.profile-pic{
+    }
+    .profile-pic{
     box-sizing: content-box;
-    width: 26vw;
-    border: 10px solid var(--white);
-    margin-top: -12%;
+    width: 100px;
+    border: 9px solid var(--white);
+    margin-top: -60px;
     align-self: start;
     margin-left: 6%;
     border-radius: 50%;
@@ -460,118 +480,149 @@ input {
         -webkit-box-shadow: 0 0 10px var(--boxshadow2);
         -o-box-shadow: 0 0 10px var(--boxshadow1);
 
-}
-.profile-pic:after{
+    }  
+    .profile-pic:after{
     content: "";
     padding-bottom: 100%;
     display: block;
-}
-.name{
-    height: 100px;
-    width: 68%;
-     margin-left: -25%; 
-}
-h1{
+    }
+    .bottom{
+    margin: 0;
+    height: 80px;
+    width: 95%;
+    }
+    .name{
+    height: 50px;
+    width: 90%;
+    margin: 0 15px;
+    }
+    h1{
     font-size: 20px;
+    line-height: 22.5px;
     margin: 0 ;
-}
-.name p{
+    }
+    .name p,.top span{
     font-size: 15px;
     color: var(--gray);
     margin: 5px 0px;
-}
-.chat{
-    display: none;
-}
-.logo{
-   
-    height: 120px;
-    width: 60px;
- margin-left: 80px;
-}
-.logo img{
-    width:70px;
-}
+    line-height: 17px;
+    }
+    .top .first-word{
+    font-size: 19px;
+    }
 
-.intro{
+    .logo{
+    height: 70px;
+    width: 72px;
+    }
+    .logo img{
     width: 100%;
-    height: 69vh;
+    height: 100%;
+    }
+
+    .intro{
+    width: 100%;
+    height: 320px;
     background-color: var(--body-bg-color);
     align-items: center;
     display: flex;
     flex-direction: column;
-   
-}
+   }
 
-.navbutton{
+    .navbutton{
    display: block;
    width: 100%;
-   top: 10%;
-   height: 15vh;
+   margin: 5px 0px;
+   height: 40px;
    position: relative;
-   left:15px;
-}
-.navbutton button{
-width: 26vw;
-height: 5vh;
-margin-left: 14px;
-margin-bottom: 14px;
-border-radius: 20px;
- font-weight: bold;
- border:none;
- background-color: #A9A9A9;
- cursor: pointer;
- outline: 0;
- 
-}
-.navbutton button:hover{
-    background-color: #4169E1;
-    color: white;
-}
+   display: flex;
+   justify-content: center;
+    }
+    .navbutton button{
+    width: 25vw;
+    height: 5vh;
+    margin: 0 1.5px;
+    border-radius: 20px;
+     font-weight: bold;
+     border:none;
+     background-color: #A9A9A9;
+     cursor: pointer;
+     outline: 0;
+    }
+    .navbutton button:first-child{
+    width: 19vw;
+    }
 
-
-
-#bod{
-    height: 100vh;
-}
-.top h1{
-    font-size: 45px;
-}
-.top1{
-    font-size: 15px;
-}
-.top2{
-    font-size: 15px;
-}
+    .btn.active{
+        color: white;
+        background-color: #4169E1;
+    }
+    
+    #bod{
+    height: 100%;
+    margin-top: 10px;
+    display: block;
+    }
+    .top1{
+    font-size: 17px;
+    }
+    .top2{
+    font-size: 17px;
+    }
 /* main solution to find out*/
-hr{
-    display:none;
+  
+    .right-container{
+    width:95%;
+    margin: 0 auto;
+    display: none;
 
-}
-#right-container{
-    width:100%;
-    margin-top: -30%;
-    visibility: hidden;
-   
-}
-#left-container{
-    width:90%;
-    height: 90vh;
-    margin-top: -5%;
-    visibility: visible;
-    position: absolute;
-}
+    }
+    .left-container{
+    width:95%;
+    height: 35vh;
+    margin: 0 auto 0;
+    }
 /* ------------------- */
-.read-more__link-wrap{
+    .read-more__link-wrap{
     margin-bottom:2%; 
-}
-.cover1-pic{
+    }
+    .cover1-pic{
    width:96.5%;
    margin-left: 2%;
-}
-#tab1{
-    display: none;
-}
+    }
 
+    div.disp2_on{
+        display: block;
+    }
 
+    div.disp2_off{
+        display: none;
+    }
+
+}
+@media (min-width:781px) and (max-width:1113px){
+    .profile-pic{
+        margin-left: 8%;
+    }
+    .chat{
+        margin-right: 3%;
+    }
+    .bottom{
+        width: 72vw;
+    }
+    .name{
+        width: 75%;
+    }
+    .left-container{
+        margin-right: 30px;
+        width: 39vw;
+    }
+}
+@media (min-width:781px) and (max-width:990px){
+    .profile-pic{
+    width: 13%;
+    }
+    h1{
+        font-size: 2.5em;
+    }
 }
