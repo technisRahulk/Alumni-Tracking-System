@@ -6,11 +6,12 @@ const flightPath ={
         values: [
         { x: 1710, y: -730 }, 
         { x: 1730, y: -800 },
-        { x: 1780, y: -830 },
-        { x: 1800, y: -850 },
+        { x: 1740, y: -830 },
+        { x: 1800, y: -860 },
         {x:window.innerWidth,y:-1400}]
         
        }
+      
       
 const tween = new TimelineLite();
       
@@ -42,7 +43,7 @@ const scene = new ScrollMagic.Scene({
 
 $(window).scroll(function(){ 
   
-  if($(window).scrollTop() >= 840 ){ 
+  if($(window).scrollTop() >= 760 ){ 
       $( "#pop1" ).css( "display", "block" ); 
  
   }
@@ -53,7 +54,7 @@ $(window).scroll(function(){
 }); 
 $(window).scroll(function(){ 
  
-   if($(window).scrollTop() >= 965 ){ 
+   if($(window).scrollTop() >= 885 ){ 
       $( "#pop2" ).css( "display", "block" ); 
  
  
@@ -67,7 +68,7 @@ $(window).scroll(function(){
 $(window).scroll(function(){ 
   
   
-  if($(window).scrollTop() >= 1030 ){ 
+  if($(window).scrollTop() >= 990 ){ 
       $( "#pop3" ).css( "display", "block" ); 
  
 
