@@ -1,7 +1,7 @@
 const express = require("express");
 const userController = require("../controllers/user");
 const auth = require("../middleware/auth");
-
+const User = require("../models/User");
 const multer = require("multer");
 
 
@@ -17,6 +17,37 @@ const upload = multer({
 });
 
 const router = new express.Router();
+router.get("/users",function(req,res)
+{
+console.log(req.query.search);
+if(req.query.search)
+{
+	 const rege = new RegExp(escapeRegex(req.query.search), 'gi');
+User.find({name:rege},function(err,users)
+{
+if(err)
+	console.log(err);
+else
+{
+	
+	res.json(users);
+}
+});
+}
+else
+{
+User.find({},function(err,users)
+{
+if(err)
+	console.log(err);
+else
+{
+	console.log(users);
+	res.json(users);
+}
+});
+}
+});
 
 router.post("/users", userController.signUp); //Signing Up
 
@@ -37,5 +68,10 @@ router.get("/users/:id/avatar", userController.getAvatar); //Get profile picture
 router.post("/users/me/avatar", auth, upload.single("avatar"), userController.uploadAvatar); //Upload profile picture or avatar
 
 router.delete("/users/me/avatar", auth, userController.deleteAvatar); //Delete profile picture or avatar
+
+
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 module.exports = router;
