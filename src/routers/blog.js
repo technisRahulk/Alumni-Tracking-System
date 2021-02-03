@@ -211,11 +211,12 @@ router.post("/appreciate/:blog_id", auth, async(req, res) => {
         res.redirect("/");
     }
 });
+
+
 //delete a blog
 router.get("/delete/:blog_id", auth, async(req, res) => {
     try {
         const user = req.user;
-
         user.blogs = user.blogs.filter(
             (blog) => !blog._id.equals(req.params.blog_id)
         );
