@@ -100,55 +100,60 @@ const ReadMore = (() => {
  
  ReadMore.init()
 
-//  *******************************************************************************************************************
-
-let tab1=document.getElementById('tab1');
-let tab2=document.getElementById('tab2');
-let sec1=document.getElementById('sec1');
-let sec2=document.getElementById('sec2');
-let left=document.getElementById('left-container');
-let nav=document.getElementById('nav');
-let right=document.getElementById('right-container');
+//  ********************button functions*********************************************
+let tab1=document.getElementById("tab1");
+let tab2=document.getElementById("tab2");
+let sec1=document.getElementById("sec1");
+let sec2=document.getElementById("sec2");
+let left=document.querySelector(".left-container");
+let right=document.querySelector(".right-container");
 
 function active1(){
-    sec2.style.display="none";
-    sec1.style.display="block";
-
-    tab1.style.backgroundColor="#fff";
-    tab1.style.color="rgb(38, 38, 122)";
-    tab2.style.backgroundColor="rgb(211, 241, 255)";
-    tab2.style.color="gray";
-
+  sec1.classList.remove("disp1_off");
+  sec2.classList.remove("disp1_on");
+  tab1.classList.remove("unselect");
+  tab1.classList.add("select");
+  tab2.classList.remove("select");
 }
-
 function active2(){
-    sec1.style.display="none";
-    sec2.style.display="block";
-
-    tab2.style.backgroundColor="#fff";
-    tab2.style.color="rgb(38, 38, 122)";
-    tab1.style.backgroundColor="rgb(211, 241, 255)";
-    tab1.style.color="gray";
+  sec2.classList.add("disp1_on");
+  sec1.classList.add("disp1_off");
+  tab2.classList.add("select");
+  tab1.classList.add("unselect");
 }
-function active3(){
-    sec2.style.display="block";
-    sec1.style.display="none";
-     left.style.display="none";
-      nav.style.display="none";
-       right.style.display="block";
-       right.style.visibility="visible";
+function btn1(){
+  sec2.classList.add("disp2_on");
+  sec2.classList.remove("disp2_off");
+  left.classList.add("disp2_off");
+  right.classList.remove("disp2_off");
+  right.classList.add("disp2_on");
+  document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
+  document.getElementById("btn1").classList.add("active");
 }
-function active4(){
-
-     sec2.style.display="none";
-    sec1.style.display="none";
-    left.style.display="block";
-   nav.style.display="none";
-   right.style.display="none";
-   left.style.visibility="visible";
+function btn2(){
+  sec2.classList.add("disp2_off");
+  sec2.classList.remove("disp2_on");
+  left.classList.remove("disp2_off");
+  right.classList.remove("disp2_on");
+  document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
+  document.getElementById("btn2").classList.add("active");
 }
+function btn3(){
+  left.classList.add("disp2_off");
+  right.classList.add("disp2_off");
+  document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
+  document.getElementById("btn3").classList.add("active");
+}
+function btn4(){
+  left.classList.add("disp2_off");
+  right.classList.add("disp2_off");
+  document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
+  document.getElementById("btn4").classList.add("active");
+}
+//  **********************************************************************************************************
 
-// ***********************************************left part almuni working description place**********************************************************************
+
+// ***********************************************left part almuni working description place***************************************************
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
