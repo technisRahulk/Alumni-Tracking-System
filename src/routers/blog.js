@@ -182,7 +182,31 @@ router.get("/view/:slug", auth, async(req, res) => {
     }
 });
 
+router.get("/blogs", function(req, res) {
+    console.log(req.query.search);
+    if (req.query.search) {
+        const rege = new RegExp(escapeRegex(req.query.search), 'gi');
+        Blog.find({
+            title: rege
+        }, function(err, blogs) {
+            if (err)
+                console.log(err);
+            else {
 
+                res.json(blogs);
+            }
+        });
+    } else {
+        Blog.find({}, function(err, blogs) {
+            if (err)
+                console.log(err);
+            else {
+                console.log(blogs);
+                res.json(blogs);
+            }
+        });
+    }
+});
 
 
 //like a blog
@@ -293,4 +317,7 @@ router.get("/recentblogs", auth, async(req, res) => {
     // res.send("Your Bookmarks");
 });
 
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 module.exports = router;
