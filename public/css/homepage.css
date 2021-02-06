@@ -7,6 +7,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 /* body font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+/* page 3 font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -449,6 +451,140 @@ body {
   }
 }
 /* page 2 styles ends */
+
+/* page 3 styles */
+.page-three {
+  position: relative;
+  height: 44rem;
+  width: 100vw;
+  background-color: #5053a5;
+  font-family: "Poppins", sans-serif;
+}
+.pth-container {
+  position: absolute;
+  width: 85vw;
+  height: 35rem;
+  padding-bottom: 2.5rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  color: white;
+
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  grid-template-areas:
+    "title detail detail"
+    "image box-1 box-2";
+
+  grid-row-gap: 25px;
+  grid-column-gap: 50px;
+}
+.pth-event-title {
+  grid-area: title;
+  justify-self: center;
+  align-self: center;
+  text-transform: uppercase;
+}
+.pth-event-title p {
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+.pth-event-title p span {
+  color: #39393f;
+}
+.pth-event-details {
+  grid-area: detail;
+  justify-self: center;
+  align-self: end;
+}
+.pth-event-details p {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+.pth-img-container {
+  grid-area: image;
+}
+.pth-img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+.about-box-1 {
+  grid-area: box-1;
+}
+.about-box-2 {
+  grid-area: box-2;
+}
+.pth-about-box {
+  border: 2px solid white;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.about-box-wrap {
+  position: absolute;
+  width: 85%;
+  height: 90%;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.msg-logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.msg-logo {
+  width: 100%;
+  height: 100%;
+}
+.box-title {
+  margin-top: 3.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.box-para {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 1500px) {
+  .box-title {
+    margin-top: 2.5rem;
+    font-size: 1.3rem;
+  }
+  .box-para {
+    margin-top: 0.8rem;
+    font-size: 0.7rem;
+  }
+  .pth-event-title p {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .box-title {
+    margin-top: 2.5rem;
+    font-size: 1rem;
+  }
+  .box-para {
+    margin-top: 0.4rem;
+    font-size: 0.5rem;
+  }
+  .pth-event-title p {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .pth-event-title p {
+    font-size: 1.5rem;
+  }
+}
+/* page 3 styles ends */
 
 /* footer styles */
 .footer {
