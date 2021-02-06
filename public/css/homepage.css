@@ -28,7 +28,7 @@ body {
 
 /* dark mode switch */
 .dark-switch-container {
-  position: fixed;
+  position: absolute;
   right: 2.2rem;
   top: 1.6rem;
   max-width: 3.5em;
@@ -96,6 +96,7 @@ body {
   color: #575bc9;
   font-weight: 600;
   transform: translateY(-1px) scale(1.05);
+  text-shadow: 0 1px 4px rgba(250, 250, 250, 0.8);
 }
 
 .login-logo {
@@ -248,7 +249,7 @@ body {
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 1);
 }
 
@@ -288,14 +289,14 @@ body {
 @media (max-width: 680px) {
   /* dark mode switch */
   .dark-switch-container {
-    top: 5.5rem;
-    right: 2rem;
+    top: 1.25rem;
+    right: 6rem;
   }
   /* darkmode switch ends */
 
   .carousel-one-container {
-    width: 80vw;
-    height: 45vh;
+    width: 100vw;
+    height: 60vh;
   }
 
   .carousel-one-text-container {
@@ -585,6 +586,165 @@ body {
   }
 }
 /* page 3 styles ends */
+
+/* top stories */
+.top-stories {
+  height: 65rem;
+  width: 100vw;
+  margin-top: 4.2rem;
+}
+.stories-text {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.stories-heading {
+  font-size: 3.5rem;
+  color: #5053a5;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+.stories-heading span {
+  color: #39393f;
+}
+.stories-para {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+}
+.stories-container {
+  background: rgba(162, 164, 227, 0.33);
+  height: 43rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5rem 5rem;
+  border-radius: 7px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr repeat(3, 2fr) 1fr;
+
+  grid-template-areas:
+    "popular recent"
+    "box-1 box-2"
+    "box-3 box-4"
+    "box-5 box-6"
+    "more more";
+
+  grid-gap: 20px;
+  grid-column-gap: 50px;
+}
+
+.stories-popular {
+  grid-area: popular;
+}
+.stories-recent {
+  grid-area: recent;
+}
+
+.stories-popular,
+.stories-recent {
+  font-size: 2rem;
+  font-weight: 500;
+  justify-self: left;
+  align-self: end;
+  font-family: "Oswald", sans-serif;
+}
+.stories-box--1 {
+  grid-area: box-1;
+}
+.stories-box--2 {
+  grid-area: box-2;
+}
+.stories-box--3 {
+  grid-area: box-3;
+}
+.stories-box--4 {
+  grid-area: box-4;
+}
+.stories-box--5 {
+  grid-area: box-5;
+}
+.stories-box--6 {
+  grid-area: box-6;
+}
+.stories-more {
+  font-family: "Poppins", sans-serif;
+  grid-area: more;
+  justify-self: center;
+  margin-top: 1rem;
+}
+
+.stories-box {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+}
+.story-img {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  padding-left: 0;
+}
+.story-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+.story-text {
+  flex: 3;
+}
+.story-head {
+  color: #4d52ef;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+.story-para {
+  color: #000;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 0 1rem;
+}
+
+.btn-more:link,
+.btn-more:visited {
+  padding: 0.5rem 3.5rem;
+  transition: all 0.5s;
+}
+.btn-more {
+  background-color: rgba(162, 164, 227, 0.33);
+  color: #000;
+  text-shadow: none;
+}
+.btn-more::after {
+  background-color: rgba(162, 164, 227, 0.33);
+  text-shadow: none;
+}
+@media only screen and (max-width: 1200px) {
+  .story-head {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+  .story-para {
+    font-size: 0.6rem;
+    padding: 0 0.7rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .story-head {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+  .story-para {
+    font-size: 0.4rem;
+    padding: 0 0.4rem;
+  }
+}
+/* top stories ends */
 
 /* footer styles */
 .footer {
