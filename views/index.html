@@ -13,24 +13,6 @@
 
 <body>
 
-    <!-- header -->
-
-    <header>
-        <nav>
-            <a href="#Home">
-                <img class="logo" src="../public/img/logo.png" alt="ATS">
-            </a>
-
-            <!--img src="public/menu.png" alt="Menu" class="hide-desktop show-mobile"-->
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#About">About Us</a></li>
-            </ul>
-
-            <input type="text" placeholder="Search for Alumni / Blog">
-        </nav>
-    </header>
-
     <div class="dark-switch-container">
         <input type='checkbox' id='dark-mode-cbox' />
         <label for='dark-mode-cbox'>Night</label>
@@ -38,11 +20,22 @@
 
     <div class="carousel-one-container">
         <div class="carousel-one-text-container">
-            <h1 class="carousel-one-text">
-                <div class="text-color-gradient">
-                    Alumni Tracking System
-                </div>
-            </h1>
+            <div class="carousel-text-box">
+                <h1 class="carousel-one-head">
+                    Lorem Ipsum Is Simply & Dummy
+                </h1>
+                <h3 class="carousel-one-subhead">
+                    Text of the Printing
+                </h3>
+                <p class="carousel-one-para">
+                    Typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                    <br>ever since the 1500s, when an unknown Lorem Ipsum is simply 
+                    <br>dummy text of the printing
+                </p>
+                <a href="#" class="btn btn--white">
+                    View Blog
+                </a>
+            </div>
         </div>
         <div class="slider-one-container">
             <div class="image-container">
@@ -63,97 +56,29 @@
         </div>
     </div>
 
-    <div class="carousel-two-container">
-        <div class="write">
-            <br>
-            <h1>TOP STORIES</h1>
+    <!-- header and navigation begins -->
+    <header class="header">
+        <div class="ats-logo-container">
+            <img src="./../public/img/logo.png" alt="Logo" class="ats-logo">
         </div>
-        <div class="containerfull">
-
-            <div class="containerleft">
-                <div class="contain">
-
-                </div>
-                <div class="contain1">
-
-                </div>
-                <div class="contain5Mobile">
-
-                </div>
-                <div class="contain6Mobile">
-
-                </div>
+        <nav class="navigation">
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#"><img src="./../public/img/login-logo.png" class="login-logo" alt=""></a></li>
+                </ul>
             </div>
-
-
-            <div class="containerright">
-
-                <div class="containerright1">
-                    <div class="contain2">
-
-                    </div>
-
-                    <div class="contain2">
-
-                    </div>
-
-                    <div class="contain2">
-
-                    </div>
-
-                    <div class="contain2">
-
-                    </div>
-                </div>
-
-                <div class="containerright2">
-                    <div class="contain3">
-
-                    </div>
-
-                    <div class="contain3">
-
-                    </div>
-
-                    <div class="contain3">
-
-                    </div>
-
-                    <div class="contain3">
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--gallery-->
-    <div class="gallery">
-        <div class="gallery-container">
-            <img class="gallery-item" src="../public/img/sOne-img-1.JPG">
-            <img class="gallery-item" src="../public/img/sOne-img-2.JPG">
-            <img class="gallery-item" src="../public/img/sOne-img-3.JPG">
-            <img class="gallery-item" src="../public/img/sOne-img-4.JPG">
-            <img class="gallery-item" src="../public/img/sOne-img-5.JPG">
-            <img class="gallery-item" src="../public/img/sOne-img-4.JPG">
-            <img class="gallery-item" src="../public/img/sOne-img-5.JPG">
-        </div>
-        <div class="gallery-controls"></div>
-
-        <!-- Contact-->
-        <div id="Contact" class="container">
-            <h1>Contact Us</h1>
-            <form>
-                <input class="input single-line" type="text" placeholder="Name" />
-                <input class="input single-line sub" type="text" placeholder="Subject" /><br />
-                <input class="input" type="text" placeholder="Email" /><br />
-                <textarea class="input" name="" id="" cols="30" rows="10" placeholder="Message"></textarea><br />
-                <input class="submit" type="submit" value="Submit">
-            </form>
-        </div>
-
+        </nav>
+    </header>
+    <!-- header and navigation ends -->
         <!-- footer begins -->
         <footer class="footer">
             <div class="footer-container">
