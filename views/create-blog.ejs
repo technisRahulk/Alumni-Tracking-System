@@ -7,8 +7,8 @@
     <title>Create Blog</title>
 
     <!-- css link -->
-    <link rel="stylesheet" href="../public/css/dark-mode.css">
-    <link rel="stylesheet" type="text/css" href="../public/css/create-blog.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <link rel="stylesheet" type="text/css" href="/css/create-blog.css">
 
     <!-- ckeditor link for text area -->
     <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
@@ -21,7 +21,7 @@
         <input type='checkbox' id='dark-mode-cbox' />
         <label for='dark-mode-cbox'>Night</label>
     </div>
-
+<form method="post" enctype="multipart/form-data" action="/blog/create">
     <main>
         <section class="blog-section">
 
@@ -30,17 +30,18 @@
             </div>
 
             <!-- title & btn container -->
+
             <div class="title-btn-container">
 
                 <div class="title-container">
-                    <input type="text" placeholder="Title" class="blog-title">
+                    <input type="text" placeholder="Title" class="blog-title" name="title">
                 </div>
 
                 <div class="btn-container">
-                    <button class="b-cancel-btn">
+                    <a class="b-cancel-btn" href="/blog">
                         Cancel
-                    </button>
-                    <button class="b-publish-btn">
+                    </a>
+                    <button class="b-publish-btn" type="submit">
                         Publish
                     </button>
                 </div>
@@ -50,17 +51,17 @@
             <!-- selection menu -->
             <div class="selection-menu">
                 <div class="selection__option selection__option--field">
-                    <select name="blog-field" id="" class="b-field">
+                    <select  id="" class="b-field" name="category">
                         <option value="" selected disabled class="display-none">Select Blog Field</option>
-                        <option value="0">Web Dev</option>
-                        <option value="1">Android Dev</option>
-                        <option value="2">Design</option>
-                        <option value="3">M L</option>
-                        <option value="4">Hacking and Cracking</option>
+                        <option value="Web Dev">Web Dev</option>
+                        <option value="Android Dev">Android Dev</option>
+                        <option value="Design">Design</option>
+                        <option value="M L">M L</option>
+                        <option value="Hacking and Cracking">Hacking and Cracking</option>
                     </select>
                 </div>
                 <div class="selection__option selection__option--img">
-                    <label for="chose-img" class="b-img-label">Select Cover Image</label>
+                    <label for="chose-img" class="b-img-label" id="p1">Select Cover Image</label>
                     <input type="file" id="chose-img" name="cover-img" class="b-img display-none"
                         accept="image/png, image/jpg, image/jpeg">
                 </div>
@@ -69,7 +70,7 @@
 
             <!-- blog text -->
             <div class="blog-text-container">
-                <textarea name="blog-text" id="blog-text"></textarea>
+                <textarea  id="blog-text" name="body"></textarea>
 
                 <script>
                     CKEDITOR.replace('blog-text', { height: document.querySelector('.blog-text-container').clientHeight });
@@ -81,7 +82,14 @@
 
         </section>
     </main>
+</form>
 </body>
-<script src="../public/js/dark-mode.js"></script>
+<script>
+    document.getElementById('chose-img').onchange = function () {
+        document.getElementById("p1").innerHTML = this.value;
+ 
+};
+</script>
+<script src="/js/dark-mode.js"></script>
 
 </html>

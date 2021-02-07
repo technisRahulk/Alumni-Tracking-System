@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
 
 
         const newDestination =
-            __dirname + `/../../public/upload/cover/`;
+             __dirname + `/../../public/`;
 
         cb(null, newDestination);
     },
@@ -70,29 +70,36 @@ router.get("/", auth, async(req, res) => {
 
 // form to create blog
 router.get("/create", (req, res) => {
-    res.send("Test")
+    let reqPath = path.join(__dirname, '../../views');
+res.render(reqPath+"/create-blog");
 });
 
 
 
 //route to save blog
-router.post("/create", auth, upload.single("cover"), async(req, res) => {
+router.post("/create",auth,upload.single("cover-img"), async(req, res) => {
     if (req.file) {
-        var cover = `/upload/cover/${req.file.filename}`;
+        var cover = `/${req.file.filename}`;
     } else {
         var cover =
             "https://cdn-images-1.medium.com/max/800/1*fDv4ftmFy4VkJmMR7VQmEA.png";
     }
     try {
         const blog = req.body;
-        // console.log(blog)
+        console.log(blog)
         if (!blog) {
             req.flash("Something went wrong");
             res.redirect("/");
         }
-        var tagsArray = [];
-        if (blog.tags)
-            tagsArray = blog.tags.split(" ");
+       //  var summary;
+       //  if(blog.body.length>62)
+       //      summary=blog.body.substr(0,60);
+       //  else
+       //     summary=blog.body; 
+       // console.log(summary);
+        // var tagsArray = [];
+        // if (blog.tags)
+        //     tagsArray = blog.tags.split(" ");
         const saved = await new Blog({
             title: blog.title,
             slug: (
@@ -103,9 +110,9 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
             author: req.user._id,
             category: blog.category,
             cover: cover,
-            summary: blog.summary,
-            body: blog.body,
-            tags: (tagsArray.length === 0) ? [] : tagsArray
+           // summary: summary,
+            body: blog.body
+            // tags: (tagsArray.length === 0) ? [] : tagsArray
         }).save();
         if (req.user.blogs) {
             req.user.blogs.push(saved);
@@ -117,7 +124,7 @@ router.post("/create", auth, upload.single("cover"), async(req, res) => {
     } catch (e) {
         console.log(e.message);
         req.flash("error", "Something went wrong. Try again");
-        res.redirect("/");
+        res.redirect("/blog/create");
     }
 });
 
