@@ -1,38 +1,71 @@
 :root {
-    --nav-bg-color: #9AB3F5;
-    --light-blue-color : #7093f3;
-    --dark-blue-color : #0044ff;
-    --black-color: #000;
-    --yellow:#faf19d ;
-    --footer-bg-grey: #858B9A;
-    --color-white: #fff;
-    --color-yellow: #ffff00;
-    --footer-heading-color: #32FCF3;
-    --shadow-one: rgba(0, 0, 0, 0.084);
-    --top-story-text: #61A6DA;
-    --shadow-gallery: rgba(255, 255, 255, 0.6);
-    --color-red: #ff0000;
-    --contact-h1-color: #646464;
-    --form-text-color: #9B9B9B;
-    --form-input-border: #A6A6A6;
-    --form-submit-btn-color: #0038FF;
+  --color-white: #fff;
+  --black: #000;
+  --nav-act-hov: #575bc9;
+  --txt-shadow-dark: rgba(0, 0, 0, 0.8);
+  --txt-shadow-light: rgba(0, 0, 0, 0.5);
+  --box-shadow-light: rgba(0, 0, 0, 0.3);
+  --box-shadow-dark: rgba(0, 0, 0, 1);
+  --btn-white-bg: #6e71d1;
+  --p4-span: #39393f;
+  --shadow-none: rgba(0, 0, 0, 0);
+
+  --nav-border-bottom: rgba(255, 255, 255, 0.3);
+  --btn-txt-shadow: rgba(250, 250, 250, 0.8);
+  --gradient-one: rgba(196, 196, 196, 0.2);
+  --gradient-two: rgba(196, 196, 196, 0.2);
+  --gradient-three: rgba(87, 91, 201, 0.99);
+  --p2-bg: #fff;
+  --p2-card-bg: #fff;
+  --card-txt: rgba(0, 0, 0, 1);
+  --p3-bg: #5053a5;
+  --p3-yr-color: #39393f;
+  --msg-logo: #39393f;
+  --top-stories-bg: #fff;
+  --p4-heading: #5053a5;
+  --stories-container-bg: rgba(162, 164, 227, 0.33);
+  --story-head: #4d52ef;
+  --stories-pop-rec: #39393f;
+  --stories-box-bg: transparent;
+  --btn-more-color: #000;
+  --btn-more-border: #000000;
+
+  --footer-heading-color: #32fcf3;
+  --footer-bg-grey: #858b9a;
 }
 
 .dark-mode {
-    --nav-bg-color: white;
-    --light-blue-color: ;
-    --dark-blue-color : ;
-    --black-color: ;
-    --yellow: ;
-    --footer-bg-grey: ;
-    --color-white: ;
-    --footer-heading-color: ;
-    --shadow-one: ;
-    --top-story-text: ;
-    --shadow-gallery: ;
-    --color-red: ;
-    --contact-h1-color: ;
-    --form-text-color: ;
-    --form-input-border: ;
-    --form-submit-btn-color: ;
+  --color-white: #fff;
+  --black: #000;
+  --nav-act-hov: #575bc9;
+  --txt-shadow-dark: rgba(0, 0, 0, 0.8);
+  --txt-shadow-light: rgba(0, 0, 0, 0.5);
+  --box-shadow-light: rgba(0, 0, 0, 0.3);
+  --box-shadow-dark: rgba(0, 0, 0, 1);
+  --btn-white-bg: #6e71d1;
+  --p4-span: #39393f;
+  --shadow-none: rgba(0, 0, 0, 0);
+
+  --nav-border-bottom: rgba(255, 255, 255, 0.3);
+  --btn-txt-shadow: rgba(250, 250, 250, 0.8);
+  --gradient-one: rgba(196, 196, 196, 0.2);
+  --gradient-two: rgba(106, 106, 106, 0.6);
+  --gradient-three: rgba(52, 68, 78, 0.99);
+  --p2-bg: rgba(204, 204, 204, 1);
+  --p2-card-bg: rgba(63, 87, 100, 1);
+  --card-txt: rgba(236, 236, 236, 1);
+  --p3-bg: rgba(52, 73, 85, 1);
+  --p3-yr-color: rgba(99, 240, 235, 1);
+  --msg-logo: #63f0eb;
+  --top-stories-bg: rgba(204, 204, 204, 0.52);
+  --p4-heading: rgba(10, 239, 212, 1);
+  --stories-container-bg: rgba(87, 105, 115, 1);
+  --story-head: #242424;
+  --stories-pop-rec: #0aefd4;
+  --stories-box-bg: rgba(233, 241, 248, 0.67);
+  --btn-more-color: rgba(233, 241, 248, 0.67);
+  --btn-more-border: rgba(233, 241, 248, 0.67);
+
+  --footer-heading-color: #32fcf3;
+  --footer-bg-grey: #576973;
 }

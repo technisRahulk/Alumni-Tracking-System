@@ -12,6 +12,7 @@ body {
 }
 
 .dark-switch-container {
+  position: absolute;
   top: 7vh;
   right: 6.5vw;
 }
@@ -65,7 +66,7 @@ hr {
   display: block;
   width: 100%;
   height: 5px;
-  background-color: var(--white);
+  background-color: var(--hr-bg);
   margin: 0;
   border: none;
 }
@@ -80,7 +81,7 @@ hr {
   font-weight: 600;
 }
 .tab_timeline {
-  background-color: var(--white);
+  background-color: var(--timeline-bg);
   color: var(--tab1);
   transition: background-color 0.5s linear;
 }
@@ -123,13 +124,13 @@ hr {
 .profile-pic {
   box-sizing: content-box;
   width: 12%;
-  border: 12px solid var(--white);
+  border: 12px solid var(--profile-pic-border);
   margin-top: -8%;
   align-self: start;
   margin-left: 10%;
   border-radius: 50%;
   position: relative;
-  background-image: url("../img/logo.png");
+  background-image: url("../img/my-proff-pic.jpeg");
   background-color: var(--black);
   background-size: cover;
 }
@@ -151,6 +152,7 @@ hr {
 .name {
   height: 120px;
   width: 68%;
+  color: var(--black);
 }
 h1 {
   font-size: 3em;
@@ -178,7 +180,7 @@ h1 {
 }
 .chat a {
   text-decoration: none;
-  color: var(--white);
+  color: var(--chat-font);
   font-size: 1.5em;
 }
 .logo {
@@ -263,7 +265,7 @@ h1 {
   padding: 0 0 0 25px;
   font-family: Helvetica;
   letter-spacing: 0.5px;
-  color: grey;
+  color: var(--gray);
   font-size: 1.2em;
 }
 
@@ -273,7 +275,7 @@ h1 {
   font-family: Helvetica;
   letter-spacing: 0.5px;
   font-weight: bold;
-  color: grey;
+  color: var(--gray);
   font-size: 1.2em;
 }
 .top2box1 {
@@ -326,7 +328,7 @@ li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: grey;
+  color: var(--gray);
 }
 ul li:hover {
   background: var(--white);
@@ -431,7 +433,7 @@ input {
 }
 
 .select {
-  background-color: var(--white);
+  background-color: var(--hr-bg);
   color: var(--tab1);
 }
 
@@ -494,7 +496,7 @@ input {
     margin-left: 6%;
     border-radius: 50%;
     position: relative;
-    background-image: url("../img/logo.png");
+    background-image: url("../img/my-proff-pic.jpeg");
     background-color: var(--black);
     background-size: cover;
     box-shadow: 0 0 10px var(--boxshadow1);
@@ -567,7 +569,7 @@ input {
     border-radius: 20px;
     font-weight: bold;
     border: none;
-    background-color: #a9a9a9;
+    background-color: var(--borderpopcolor);
     cursor: pointer;
     outline: 0;
   }
@@ -576,8 +578,8 @@ input {
   }
 
   .btn.active {
-    color: white;
-    background-color: #4169e1;
+    color: var(--white);
+    background-color: var(--btn-active-bg);
   }
 
   #bod {
