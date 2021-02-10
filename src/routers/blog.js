@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
 
 
         const newDestination =
-             __dirname + `/../../public/`;
+            __dirname + `/../../public/`;
 
         cb(null, newDestination);
     },
@@ -62,22 +62,53 @@ var upload = multer({
 
 // blogs page home (show one full blog along with other new and popular blogs)
 // clicking any blog will redirect to view blog route (/blog/view/:slug)
-router.get("/", auth, async(req, res) => {
-    Blog.find({}, (err, blog) => {
-        res.json(blog);
-    })
+router.get("/", async(req, res) => {
+    try {
+        const token = req.cookies.authorization;
+        const finduser = await User.find({
+            active: true
+        }, null, {
+            sort: {
+                name: 1
+            }
+        });
+        let user;
+        if (token) {
+            jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
+                if (err) console.log(err);
+                else user = payload;
+            });
+        }
+        if (user) user = await User.findById(user.userId);
+        const popularBlogs = await Blog.find({})
+            .sort({
+                views: -1,
+            })
+            .limit(5)
+            .populate("author");
+        res.render("blog", {
+            user: user,
+            found: finduser,
+            popularBlogs: popularBlogs || [],
+        });
+        console.log("Hi");
+    } catch (err) {
+        console.error(err);
+        res.redirect("/");
+    }
+
 });
 
 // form to create blog
 router.get("/create", (req, res) => {
     let reqPath = path.join(__dirname, '../../views');
-res.render(reqPath+"/create-blog");
+    res.render(reqPath + "/create-blog");
 });
 
 
 
 //route to save blog
-router.post("/create",auth,upload.single("cover-img"), async(req, res) => {
+router.post("/create", auth, upload.single("cover-img"), async(req, res) => {
     if (req.file) {
         var cover = `/${req.file.filename}`;
     } else {
@@ -91,12 +122,12 @@ router.post("/create",auth,upload.single("cover-img"), async(req, res) => {
             req.flash("Something went wrong");
             res.redirect("/");
         }
-       //  var summary;
-       //  if(blog.body.length>62)
-       //      summary=blog.body.substr(0,60);
-       //  else
-       //     summary=blog.body; 
-       // console.log(summary);
+        //  var summary;
+        //  if(blog.body.length>62)
+        //      summary=blog.body.substr(0,60);
+        //  else
+        //     summary=blog.body; 
+        // console.log(summary);
         // var tagsArray = [];
         // if (blog.tags)
         //     tagsArray = blog.tags.split(" ");
@@ -110,9 +141,9 @@ router.post("/create",auth,upload.single("cover-img"), async(req, res) => {
             author: req.user._id,
             category: blog.category,
             cover: cover,
-           // summary: summary,
+            // summary: summary,
             body: blog.body
-            // tags: (tagsArray.length === 0) ? [] : tagsArray
+                // tags: (tagsArray.length === 0) ? [] : tagsArray
         }).save();
         if (req.user.blogs) {
             req.user.blogs.push(saved);
