@@ -1,0 +1,57 @@
+:root {
+  --body-bg-color: #e0e0e0;
+  --white: white;
+  --coverpic: rgb(141, 141, 141);
+  --black: black;
+  --chat-font: white;
+  --chatbg: #9ab3f5;
+  --gray: #808080;
+  --navbg: rgb(211, 241, 255);
+  --tab1: rgb(38, 38, 122);
+  --boxshadow1: rgba(0, 0, 0, 0.6);
+  --boxshadow2: rgba(0, 0.3, 0, 0.3);
+  --contentshadow: rgba(0, 0, 0, 0.3);
+  --lightgray: lightgray;
+  --addbtnclr: #555;
+  --addbtnhover: #bbb;
+  --popbgcolor: #f5f5f5;
+  --borderpopcolor: #a9a9a9;
+  --editborder: #ee9a4d;
+  --editbgclr: #e2a76f;
+  --edithover: #deb887;
+  --btn-active-bg: 4169e1;
+  --timeline-bg: #fff;
+  --hr-bg: #fff;
+
+  --profile-pic-border: #fff;
+  --dm-bg-color: #b1b1b1;
+}
+
+.dark-mode {
+  --body-bg-color: #acacac;
+  --white: #3f5764;
+  --coverpic: rgba(0, 0, 0, 0.25);
+  --black: #fff;
+  --chat-font: white;
+  --chatbg: #232f34;
+  --gray: #fff;
+  --navbg: rgb(40, 100, 133, 0.8);
+  --tab1: #181f33;
+  --boxshadow1: rgba(0, 0, 0, 0.6);
+  --boxshadow2: rgba(0, 0, 0, 0.3);
+  --contentshadow: rgba(0, 0, 0, 0.3);
+  --lightgray: lightgray;
+  --addbtnclr: #555;
+  --addbtnhover: #bbb;
+  --popbgcolor: #f5f5f5;
+  --borderpopcolor: #a9a9a9;
+  --editborder: #ee9a4d;
+  --editbgclr: #e2a76f;
+  --edithover: #deb887;
+  --btn-active-bg: #4169e1;
+  --timeline-bg: #a3d8f4;
+  --hr-bg: #135f74;
+
+  --profile-pic-border: #232f34;
+  --dm-bg-color: #000000;
+}
