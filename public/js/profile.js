@@ -100,33 +100,126 @@ const ReadMore = (() => {
  
  ReadMore.init()
 
-//  *******************************************************************************************************************
-
-let tab1=document.getElementById('tab1');
-let tab2=document.getElementById('tab2');
-let sec1=document.getElementById('sec1');
-let sec2=document.getElementById('sec2');
+//  ********************button functions*********************************************
+let tab1=document.getElementById("tab1");
+let tab2=document.getElementById("tab2");
+let sec1=document.getElementById("sec1");
+let sec2=document.getElementById("sec2");
+let left=document.querySelector(".left-container");
+let right=document.querySelector(".right-container");
 
 function active1(){
-    sec2.style.display="none";
-    sec1.style.display="block";
-
-    tab1.style.backgroundColor="#fff";
-    tab1.style.color="rgb(38, 38, 122)";
-    tab2.style.backgroundColor="rgb(211, 241, 255)";
-    tab2.style.color="gray";
-
+  sec1.classList.remove("disp1_off");
+  sec2.classList.remove("disp1_on");
+  tab1.classList.remove("unselect");
+  tab1.classList.add("select");
+  tab2.classList.remove("select");
 }
-
 function active2(){
-    sec1.style.display="none";
-    sec2.style.display="block";
+  sec2.classList.add("disp1_on");
+  sec1.classList.add("disp1_off");
+  tab2.classList.add("select");
+  tab1.classList.add("unselect");
+}
+function btn1(){
+  sec2.classList.add("disp2_on");
+  sec2.classList.remove("disp2_off");
+  left.classList.add("disp2_off");
+  right.classList.remove("disp2_off");
+  right.classList.add("disp2_on");
+  document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
+  document.getElementById("btn1").classList.add("active");
+}
+function btn2(){
+  sec2.classList.add("disp2_off");
+  sec2.classList.remove("disp2_on");
+  left.classList.remove("disp2_off");
+  right.classList.remove("disp2_on");
+  document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
+  document.getElementById("btn2").classList.add("active");
+}
+function btn3(){
+  left.classList.add("disp2_off");
+  right.classList.add("disp2_off");
+  document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
+  document.getElementById("btn3").classList.add("active");
+}
+function btn4(){
+  left.classList.add("disp2_off");
+  right.classList.add("disp2_off");
+  document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
+  document.getElementById("btn4").classList.add("active");
+}
+//  **********************************************************************************************************
 
-    tab2.style.backgroundColor="#fff";
-    tab2.style.color="rgb(38, 38, 122)";
-    tab1.style.backgroundColor="rgb(211, 241, 255)";
-    tab1.style.color="gray";
+
+// ***********************************************left part almuni working description place***************************************************
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
 }
 
 
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput1").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue != '') {
+    document.getElementById("myUL1").appendChild(li);
+  }
+  document.getElementById("myInput1").value = "";
 
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+    }
+  }
+}
+function newElementa() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput2").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue != '') {
+    document.getElementById("myUL2").appendChild(li);
+  }
+  document.getElementById("myInput2").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+    }
+  }
+}
+
+
+//*********************************************************************************************//
