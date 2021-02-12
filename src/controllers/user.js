@@ -14,8 +14,8 @@ exports.signUp = async (req, res) => {
       return res.status(400).send({ error: "Something went wrong" });
     }
     const token = await user.generateAuthToken();
-
-    res.status(201).send({ user, token });
+// extractUser;
+    res.status(201).send({ user: user.extractUser(), token });
   } catch (e) {
     res.status(400).send(e);
   }
@@ -34,7 +34,7 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.logout = async (req, res) => {
+exports.logout = async (req,res) => {
   try {
     req.user.tokens = req.user.tokens.filter((token) => {
       return token.token !== req.token;
@@ -46,6 +46,7 @@ exports.logout = async (req, res) => {
     res.status(500).send();
   }
 };
+// diffrence det logout and logoutall
 
 exports.logoutAll = async (req, res) => {
   try {

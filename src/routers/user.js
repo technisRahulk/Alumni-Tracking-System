@@ -11,7 +11,7 @@ router.post("/login", userController.login);
 router.post("/logout", auth, userController.logout);
 
 router.post("/logoutAll", auth, userController.logoutAll);
-
+// cookie implementation
 router.get("/login", auth, userController.readUser);
 
 module.exports = router;
