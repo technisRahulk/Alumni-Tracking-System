@@ -28,7 +28,7 @@ app.use(
 // static file setup
 app.set("view engine", "ejs");
 
-
+app.use(express.static(path.join(__dirname, "../public")));
 
 
 
@@ -58,13 +58,16 @@ app.get("/failed", (req, res) => {
     res.send("You have failed to login please go back and try again");
 });
 
-app.use(express.static(path.join(__dirname, "../public")));
+
 
 //Routes
 app.use(Router);
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    let reqPath = path.join(__dirname, '../views');
+   // console.log(__dirname);
+    res.render(reqPath+'/index.ejs');
+    //res.send('hi');
 })
 
 app.listen(port, () => {
