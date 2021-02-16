@@ -1,10 +1,11 @@
 const User = require("../models/User");
 const sharp = require("sharp");
-
+const path=require("path");
 /*Endpoints for Signing Up, Logging In, Logging Out, and Logging out from all sessions*/
+
+
 exports.signUp = async (req, res) => {
   const user = new User(req.body);
-
   const doesExits = await User.findOne({ email : user.email });
   if (doesExits) {
     return res.json("Account already exits");
@@ -15,13 +16,29 @@ exports.signUp = async (req, res) => {
     if (!savedUser) {
       return res.status(400).send({ error: "Something went wrong" });
     }
-    const token = await user.generateAuthToken();
-    
-    res.status(201).send({ user: user.extractUser(), token });
+    const token = await user.generateAuthToken()
+    res.cookie("authorization",token,{
+      maxAge: 24 * 60 * 60 * 1000,
+      httpOnly: false,
+    })
+     
+     res.redirect("/users/me/show")
+  
   } catch (e) {
     res.status(400).send(e);
   }
 };
+
+exports.login_get=async (req,res)=>{
+  try{
+    let reqPath = path.join(__dirname, '../views/index.ejs');
+    res.render("signup");
+
+  }
+  catch (e){
+    res.status(400).send({Error: "Unable to show login",e});
+  }
+}
 
 exports.login = async (req, res) => {
   try {
@@ -30,8 +47,12 @@ exports.login = async (req, res) => {
       req.body.password
     );
     const token = await user.generateAuthToken();
-
-    res.send({ user: user.extractUser(), token });
+    res.cookie("authorization",token,{
+      maxAge: 24 * 60 * 60 * 1000,
+      httpOnly: false,
+    })
+    res.redirect("/users/me/show")
+  
   } catch (e) {
     res.status(400).send({Error: "Invalid Email or Password!"});
   }
@@ -48,6 +69,7 @@ exports.logout = async (req,res) => {
   } catch (e) {
     res.status(500).send();
   }
+  
 };
 
 exports.logoutAll = async (req, res) => {
