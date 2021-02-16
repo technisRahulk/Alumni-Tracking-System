@@ -28,7 +28,13 @@
                         <input type="text" class="search" name="search" placeholder="Search Blog">
                     </form>
                 </div>
-                <div class="left-col">
+
+                <div class="navbutton">
+                    <button  class="btn active" id="btn1" onclick="btn1()"  >Blogs</button>
+                    <button class="btn" id="btn2" onclick="btn2()" >My Bookmarks</button>
+                    <button   class="btn" id="btn3" onclick="btn3()" >My Activity</button>
+                </div>
+                <div class="left-col" id="sec1">
                     <div class="bookmarks-activities">
                         <div class="profile">
                             <img class="pic1" src="https://bit.ly/2JWPcDM">
@@ -56,17 +62,18 @@
                     </div>
 
                 </div>
-                <div class="center-col">
-                    <% popularBlogs.forEach(function(blog){%>
+                <div class="center-col" id="sec2">
+                  <% popularBlogs.forEach(function(blog){%> 
                         <div class="blog">
                             <img class="profile_pic" src="https://bit.ly/2JWPcDM">
                             <div>
                                 <h2 class="name">
-                                    <%= blog.title%>
+                                    
+                                   <%= blog.title%> 
                                 </h2>
                                 <p class="time">15 minutes ago</p>
                                 <p class="body">
-                                    <%=blog.body%>
+                                  <%=blog.body%> 
                                 </p>
                                 <img class="pic" src="<%=blog.cover%>">
                                 <div class="container-icon">
@@ -75,11 +82,11 @@
                                 </div>
                             </div>
                         </div>
-                        <%})%>
+                        <%})%> 
 
 
                 </div>
-                <div class="right-col">
+                <div class="right-col" id="sec3">
                     <div class="bookmarks-activities">
                         <div class="profile">
                             <img class="pic1" src="https://bit.ly/2JWPcDM">
@@ -111,7 +118,8 @@
         </div>
     </main>
 
-    <script src="../public/js/dark-mode.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/blog.js"></script>
 
 </body>
 
