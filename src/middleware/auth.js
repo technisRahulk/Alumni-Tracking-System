@@ -7,7 +7,7 @@ const auth = async (req,res,next) => {
         // console.log("yoyo");
         // // const token = req.header("Authorization").replace("Bearer ", "");
         const token =req.cookies.authorization;
-        console.log(token);
+        // console.log(token);
         const userInfo = jwt.verify(token,process.env.JWT_SECRET);
         const user = await User.findOne({
             _id: userInfo._id,
