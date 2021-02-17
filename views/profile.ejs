@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Profile</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Comaptible" content="ie=edge"/>
+        
+        <link rel="stylesheet" href="/css/dark-mode.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" href="/css/annimation.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>        
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js" integrity="sha512-RvUydNGlqYJapy0t4AH8hDv/It+zKsv4wOQGb+iOnEfa6NnF2fzjXgRy+FDjSpMfC3sjokNUzsfYZaZ8QAwIxg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js" integrity="sha512-pvDW4tehKKsohH97164HwKwRGFpzayEFWTVbk8HuUoLIQ7Jp+WLN5XYokVuoCj2aT6dy8ihbW8SRTG1k0W4mSQ==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineLite.min.js" integrity="sha512-tSIDeirKC6suYILHqqPuZH3s0MvD4a5vCHXhBIcdmq4gQXZ2IB3fEYA5x2f3D2p/CbSqzKEvuTEVbS5VZ2u+ew==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js" integrity="sha512-ocsFo48WU8Xq6Y1Lwi7psXRAujG9E4TKNR4q1DbrKzaaxOMTEoao/a+mDoB+cYzY4lwbyxvqjkp/ZA1/MNlfsg==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/BezierPlugin.min.js" integrity="sha512-plyexAULVlTExvDn2yUZFJV9F8q+53MC/GpU9dEuNGXmrrI3J8Rcffjvxg3OOBALBvF+UILPLIBEoCeF2maqTQ==" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+   </head> 
+   <body>
+
+    <div class="dark-switch-container">
+        <input type='checkbox' id='dark-mode-cbox' />
+        <label for='dark-mode-cbox'>Night</label>
+    </div>
+
+        <div class="wrapper">
+            <div class="intro">
+                <div class="cover-pic">
+                    <img src="/img/cover.jpg" alt="">
+                </div>
+
+                <div class="profile-pic">
+                </div>
+
+                <div class="bottom">
+                    <div class="name">
+                        <h1>Thcskirx Gdsrr Rsxiyg</h1>
+                        <p>Lead Designer, ATS</p>
+                    </div>
+
+                    <div class="chat">
+                        <a href="">Start Chat</a>
+                    </div>
+
+                    <div class="logo">
+                        <img src="/img/cse_logo.png" alt="">
+                    </div>
+                </div>
+
+                <div class="navbutton">
+                    <button  class="btn" id="btn1" onclick="btn1()"  >Blogs</button>
+                    <button class="btn active" id="btn2" onclick="btn2()" >About Panda</button>
+                    <button   class="btn" id="btn3" onclick="btn3()" >Start Chat</button>
+                    <button   class="btn" id="btn4" onclick="btn4()">Create Blog</button>
+                </div>
+            </div>
+                            
+            <div id="bod">
+                <div class ="left-container">
+
+                    <div class="about">
+                        <div class="top">
+                            <span class="first-word">About</span>
+                            
+                            <span><%=user.name%></span>
+                        </div>
+                        <div class="top1">
+                            <p>UI/UX Designer ,3D Graphics, Machine learning,Cricket,Chess,Swimming and Storytelling enthusiast</p>
+                        </div>
+                        <div class="top2">
+                            <div class="top2box1">
+                                <p>Working At:</p>
+                            </div>
+                            <div class="top2box2">
+                                <p>Year:</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul  id="myUL1" class="show1">
+                    </ul>
+                    <ul  id="myUL2" class="show2">
+                    </ul>
+
+                    <div id="myDIV" class="header">
+                        <input type="text" id="myInput1" placeholder="working at...">
+                        <input type="text" id="myInput2" placeholder="year...">
+                        <span onclick="var temp =  newElement(); newElementa(); return temp;"  class="addBtn" id="bt2">Add &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+
+                <div class="right-container">
+                    <div id="nav">
+                        <a href="#a" class="tab_timeline" onclick="active1()" id="tab1" >Timeline</a>
+                        <a href="#a" class="tab_blogs" onclick="active2()" id="tab2" >Blogs</a>
+                    </div>
+                        
+                    <hr>
+                    <div class="timeline" id="sec1">
+                        <div class="full">
+                            <section class="animation">
+                                <img class="paper-plane" src="/img/abd.png" alt="paper-plane">  
+                                <div id="pop1" > <p>2020</p> </div>
+                                <div id="pop2" > <p>2021</p> </div>
+                                <div id="pop3" > <p>2022</p> </div>
+                            </section>
+                            <button class="edit"><i class="fas fa-cogs"></i>Edit Timeline</button>
+                        </div>
+                    </div>
+                    <div class="blogs" id="sec2">
+                        <div class="chat">
+                            <a href="/blog">Create Blog</a>
+                        </div>
+                        <div class="blog-area">
+                            <div class="up">
+                                <div class="profile-pic">
+                                </div>
+                                <div class="name">
+                                    <h1>Panda Sleepy Basisth</h1>
+                                    <p>06/01/21 9:30pm</p>
+                                </div>
+                            </div>
+                            <div class="readmore js-read-more" data-rm-words="60">
+                                <p class="content">Felis catus has had a very long relationship with humans.
+                                Ancient Egyptians may have first domesticated cats as early 
+                                as 4,000 years ago. Plentiful rodents probably drew wild felines
+                                to human communities. The cats' skill in killing them may have 
+                                first earned the affectionate attention of humans. Early 
+                                Egyptians worshipped a cat goddess and even mummified their
+                                beloved pets for their journey to the next world—accompanied 
+                                by mummified mice! Cultures around the world later adopted cats 
+                                as their own companions. Cats communicate by marking trees, fence
+                                posts, or furniture with their claws or their waste. These 
+                                scent posts are meant to inform others of a cat's home range. 
+                                House cats employ a vocal repertoire that extends from a purr to a screech.
+                                Felis catus has had a very long relationship with humans.
+                                Ancient Egyptians may have first domesticated cats as early 
+                                as 4,000 years ago. Plentiful rodents probably drew wild felines
+                                to human communities. The cats' skill in killing them may have 
+                                first earned the affectionate attention of humans. Early 
+                                Egyptians worshipped a cat goddess and even mummified their
+                                beloved pets for their journey to the next world—accompanied 
+                                by mummified mice! Cultures around the world later adopted cats 
+                                as their own companions. Cats communicate by marking trees, fence
+                                posts, or furniture with their claws or their waste. These 
+                                scent posts are meant to inform others of a cat's home range. 
+                                House cats employ a vocal repertoire that extends from a purr to a screech.</p>
+                            </div>
+                            <div class="cover1-pic">
+                                <img src="/img/cover.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="blog-area">
+                            <div class="up">
+                                <div class="profile-pic">
+                                </div>
+                                <div class="name">
+                                    <h1>Panda Sleepy Basisth</h1>
+                                    <p>06/01/21 9:30pm</p>
+                                </div>
+                            </div>
+                            <div class="readmore js-read-more" data-rm-words="60">
+                                <p class="content">Felis catus has had a very long relationship with humans.
+                                Ancient Egyptians may have first domesticated cats as early 
+                                as 4,000 years ago. Plentiful rodents probably drew wild felines
+                                to human communities. The cats' skill in killing them may have 
+                                first earned the affectionate attention of humans. Early 
+                                Egyptians worshipped a cat goddess and even mummified their
+                                beloved pets for their journey to the next world—accompanied 
+                                by mummified mice! Cultures around the world later adopted cats 
+                                as their own companions. Cats communicate by marking trees, fence
+                                posts, or furniture with their claws or their waste. These 
+                                scent posts are meant to inform others of a cat's home range. 
+                                House cats employ a vocal repertoire that extends from a purr to a screech.</p>
+                            </div>
+                            <div class="cover1-pic">
+                                <img src="/img/cover.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<script src="/js/animation.js"></script>
+<script src="/js/profile.js"></script>
+<script src="/js/dark-mode.js"></script>
+
+
+</body>
+</html>

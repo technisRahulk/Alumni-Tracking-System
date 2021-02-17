@@ -1,0 +1,21 @@
+:root {
+    --body-bg:#C8C8C8;
+    --element-bg: #E2E2E2;
+    --element-text-color: #000000;
+    --search-color:#B0B0B0;
+    --white: white;
+  --borderpopcolor: #a9a9a9;
+  
+  --btn-active-bg: 4169e1;
+}
+
+.dark-mode {
+
+  --btn-active-bg: #4169e1;
+  --white: #3f5764;
+  --borderpopcolor: #a9a9a9;
+    --body-bg: #304049;
+    --element-bg: #4a6572;
+    --element-text-color: rgb(212, 205, 205);
+    --search-color:#242f36;
+}

@@ -17,6 +17,7 @@ const upload = multer({
 });
 
 const router = new express.Router();
+
 router.get("/users",function(req,res)
 {
 console.log(req.query.search);
@@ -49,8 +50,10 @@ else
 }
 });
 
+// router.get("/users/register",userController.register_get)
 router.post("/users", userController.signUp); //Signing Up
 
+router.get("/users/login", userController.login_get);
 router.post("/users/login", userController.login); //Login
 
 router.post("/users/logout", auth, userController.logout); //Logout
