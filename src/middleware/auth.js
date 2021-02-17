@@ -4,7 +4,10 @@ const User = require("../models/User");
 
 const auth = async (req,res,next) => {
     try{
-        const token = req.header("Authorization").replace("Bearer ", "");
+        // console.log("yoyo");
+        // // const token = req.header("Authorization").replace("Bearer ", "");
+        const token =req.cookies.authorization;
+        // console.log(token);
         const userInfo = jwt.verify(token,process.env.JWT_SECRET);
         const user = await User.findOne({
             _id: userInfo._id,
@@ -14,6 +17,8 @@ const auth = async (req,res,next) => {
         
         req.token=token;
         req.user=user;
+       
+        
 
         next();    
     }

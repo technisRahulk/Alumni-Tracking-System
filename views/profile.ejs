@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Comaptible" content="ie=edge"/>
         
-        <link rel="stylesheet" href="../public/css/profile.css">
-        <link rel="stylesheet" href="../public/css/annimation.css">
+        <link rel="stylesheet" href="/css/dark-mode.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" href="/css/annimation.css">
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
-        
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>        
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js" integrity="sha512-RvUydNGlqYJapy0t4AH8hDv/It+zKsv4wOQGb+iOnEfa6NnF2fzjXgRy+FDjSpMfC3sjokNUzsfYZaZ8QAwIxg==" crossorigin="anonymous"></script>
@@ -24,10 +24,15 @@
    </head> 
    <body>
 
+    <div class="dark-switch-container">
+        <input type='checkbox' id='dark-mode-cbox' />
+        <label for='dark-mode-cbox'>Night</label>
+    </div>
+
         <div class="wrapper">
             <div class="intro">
                 <div class="cover-pic">
-                    <img src="../public/img/cover.jpg" alt="">
+                    <img src="/img/cover.jpg" alt="">
                 </div>
 
                 <div class="profile-pic">
@@ -44,7 +49,7 @@
                     </div>
 
                     <div class="logo">
-                        <img src="../public/img/cse_logo.png" alt="">
+                        <img src="/img/cse_logo.png" alt="">
                     </div>
                 </div>
 
@@ -62,7 +67,8 @@
                     <div class="about">
                         <div class="top">
                             <span class="first-word">About</span>
-                            <span>Panda</span>
+                            
+                            <span><%=user.name%></span>
                         </div>
                         <div class="top1">
                             <p>UI/UX Designer ,3D Graphics, Machine learning,Cricket,Chess,Swimming and Storytelling enthusiast</p>
@@ -98,7 +104,7 @@
                     <div class="timeline" id="sec1">
                         <div class="full">
                             <section class="animation">
-                                <img class="paper-plane" src="../public/img/abd.png" alt="paper-plane">  
+                                <img class="paper-plane" src="/img/abd.png" alt="paper-plane">  
                                 <div id="pop1" > <p>2020</p> </div>
                                 <div id="pop2" > <p>2021</p> </div>
                                 <div id="pop3" > <p>2022</p> </div>
@@ -108,7 +114,7 @@
                     </div>
                     <div class="blogs" id="sec2">
                         <div class="chat">
-                            <a href="">Create Blog</a>
+                            <a href="/blog">Create Blog</a>
                         </div>
                         <div class="blog-area">
                             <div class="up">
@@ -146,7 +152,7 @@
                                 House cats employ a vocal repertoire that extends from a purr to a screech.</p>
                             </div>
                             <div class="cover1-pic">
-                                <img src="../public/img/cover.jpg" alt="">
+                                <img src="/img/cover.jpg" alt="">
                             </div>
                         </div>
                         <div class="blog-area">
@@ -173,7 +179,7 @@
                                 House cats employ a vocal repertoire that extends from a purr to a screech.</p>
                             </div>
                             <div class="cover1-pic">
-                                <img src="../public/img/cover.jpg" alt="">
+                                <img src="/img/cover.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -184,8 +190,9 @@
 
 
 
-<script src="../public/js/animation.js"></script>
-<script src="../public/js/profile.js"></script>
+<script src="/js/animation.js"></script>
+<script src="/js/profile.js"></script>
+<script src="/js/dark-mode.js"></script>
 
 
 </body>

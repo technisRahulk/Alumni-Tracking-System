@@ -42,7 +42,7 @@ body{
 }
 .center-col{
 	width:60%;
-	height:80%;
+	height:auto;
 	float:left;
 }
 .bookmarks-activities{
@@ -162,8 +162,53 @@ h4{
 	margin-bottom: 15px;
 	outline: none;
 }
-@media (max-width:680px)
+.navbutton {
+  display: none;
+  margin-top: -20%;
+}
+
+
+
+div.disp2_on {
+display: block;
+}
+
+div.disp2_off {
+display: none;
+}
+
+@media (max-width:960px)
 {
+	
+	.navbutton {
+    display: block;
+    width: 100%;
+    margin: 5px 0px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .navbutton button {
+    width: 25vw;
+    height: 5vh;
+    margin: 0 1.5px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: none;
+    background-color: var(--borderpopcolor);
+    cursor: pointer;
+    outline: 0;
+  }
+  .navbutton button:first-child {
+    width: 19vw;
+  }
+  
+  .btn.active {
+    color: var(--white);
+    background-color: var(--btn-active-bg);
+  }
+
 	.dark-switch-container {
 		position: fixed;
 		right: 2%;
@@ -174,19 +219,16 @@ h4{
 		margin: 0%;
 	}
 	.left-col{
-		height: 0px;
-		width: 0%;
-		visibility: hidden;
-		clear: both;
+		width: 100%;
+		height: auto;
 	}
 	.right-col{
-		height: 0px;
-		width: 0%;
-		visibility: hidden;
-		clear: both;
+		width: 100%;
+		height: auto;
 	}
 	.center-col{
 		width: 100%;
+		height: auto;
 	}
 	.profile_pic{
 		height:50px;
