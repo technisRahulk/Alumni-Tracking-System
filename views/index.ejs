@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Tracking System</title>
-    <link rel="stylesheet" href="/css/homepage.css">
+    
+    <!-- req for new navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Jomhuria&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- homepage's own css -->
+    <link rel="stylesheet" href="./../public/css/homepage.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,25 +46,25 @@
         </div>
         <div class="slider-one-container">
             <div class="image-container">
-                <img src="/img/sOne-img-1.JPG" alt="Image-One">
+                <img src="./../public/img/sOne-img-1.JPG" alt="Image-One">
             </div>
             <div class="image-container">
-                <img src="/img/sOne-img-2.jpg" alt="Image-Two">
+                <img src="./../public/img/sOne-img-2.jpg" alt="Image-Two">
             </div>
             <div class="image-container">
-                <img src="/img/sOne-img-3.jpg" alt="Image-Three">
+                <img src="./../public/img/sOne-img-3.jpg" alt="Image-Three">
             </div>
             <div class="image-container">
-                <img src="/img/sOne-img-4.jpg" alt="Image-Four">
+                <img src="./../public/img/sOne-img-4.jpg" alt="Image-Four">
             </div>
             <div class="image-container">
-                <img src="/img/sOne-img-5.jpg" alt="Image-Five">
+                <img src="./../public/img/sOne-img-5.jpg" alt="Image-Five">
             </div>
         </div>
     </div>
 
-    <!-- header and navigation begins -->
-    <header class="header">
+    <!-- Shivam's header and navigation begins -->
+    <!-- <header class="header">
         <div class="ats-logo-container">
             <img src="/img/logo.png" alt="Logo" class="ats-logo">
         </div>
@@ -79,15 +86,30 @@
                 </ul>
             </div>
         </nav>
-    </header>
-    <!-- header and navigation ends -->
+    </header> -->
+    <!-- Shivam's header and navigation ends -->
+
+    <div class="Navbar" id="IdNavbar">
+        <a href="#">
+            <img class="ATSlogo" src="./../public/img/logo.png" alt="ATS">
+        </a>
+    
+        <div class="Navbar-contents">
+            <a href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+            <a><input type="text" placeholder=" Search for Alumni / Blog...."></a>
+        </div>
+    </div>
 
     <!-- page 2 -->
     <section class="page-two">
         <div class="card-container">
             <div class="card card--1">
                 <div class="card-img-container">
-                    <img src="/img/page-two-image.jpg" alt="" class="card-image">
+                    <img src="./../public/img/page-two-image.jpg" alt="" class="card-image">
                 </div>
                 <div class="card-text-container">
                     <p class="card-text">
@@ -97,7 +119,7 @@
             </div>
             <div class="card card--2">
                 <div class="card-img-container">
-                    <img src="/img/page-two-image.jpg" alt="" class="card-image">
+                    <img src="./../public/img/page-two-image.jpg" alt="" class="card-image">
                 </div>
                 <div class="card-text-container">
                     <p class="card-text">
@@ -107,7 +129,7 @@
             </div>
             <div class="card card--3">
                 <div class="card-img-container">
-                    <img src="/img/page-two-image.jpg" alt="" class="card-image">
+                    <img src="./../public/img/page-two-image.jpg" alt="" class="card-image">
                 </div>
                 <div class="card-text-container">
                     <p class="card-text">
@@ -129,7 +151,7 @@
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of.</p>
             </div>
             <div class="pth-bars pth-img-container">
-                <img src="/img/page-three-convo.png" alt="">
+                <img src="./../public/img/page-three-convo.png" alt="">
             </div>
             <div class="pth-bars pth-about-box about-box-1">
                 <div class="about-box-wrap">
@@ -141,8 +163,10 @@
                         Lorem Ipsum
                     </p>
                     <p class="box-para">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when an unknown.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        <span class="mobile-clip">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.
+                        </span>
                     </p>
                 </div>
             </div>
@@ -156,8 +180,10 @@
                         Lorem Ipsum
                     </p>
                     <p class="box-para">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s, when an unknown.
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        <span class="mobile-clip">
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.
+                        </span>
                     </p>
                 </div>
             </div>
@@ -172,7 +198,11 @@
                 <span>TOP </span>STORIES
             </p>
             <p class="stories-para">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                <span class="mobile-clip">
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                    when an unknown Lorem Ipsum is simply dummy text of.
+                </span>
             </p>
         </div>
         <div class="stories-container">
@@ -184,79 +214,96 @@
             </div>
             <div class="stories-box stories-box--1">
                 <div class="story-img">
-                    <img src="/img/top-stories.png" alt="">
+                    <img src="./../public/img/page-three-convo.png" alt="">
                 </div>
                 <div class="story-text">
                     <p class="story-head">
                         Lorem Ipsum is simply dummy
                     </p>
                     <p class="story-para">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        <span class="mobile-clip">
+                            , when an unknown Lorem Ipsum is simply dummy text of.
+                        </span>
                     </p>
                 </div>
             </div>
             <div class="stories-box stories-box--2">
                 <div class="story-img">
-                    <img src="/img/top-stories.png" alt="">
+                    <img src="./../public/img/page-three-convo.png" alt="">
                 </div>
                 <div class="story-text">
                     <p class="story-head">
                         Lorem Ipsum is simply dummy
                     </p>
                     <p class="story-para">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        <span class="mobile-clip">
+                            , when an unknown Lorem Ipsum is simply dummy text of.
+                        </span>
                     </p>
                 </div>
             </div>
             <div class="stories-box stories-box--3">
                 <div class="story-img">
-                    <img src="/img/top-stories.png" alt="">
+                    <img src="./../public/img/page-three-convo.png" alt="">
                 </div>
                 <div class="story-text">
                     <p class="story-head">
                         Lorem Ipsum is simply dummy
                     </p>
                     <p class="story-para">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        <span class="mobile-clip">
+                            , when an unknown Lorem Ipsum is simply dummy text of.
+                        </span>
                     </p>
                 </div>
             </div>
             <div class="stories-box stories-box--4">
                 <div class="story-img">
-                    <img src="/img/top-stories.png" alt="">
+                    <img src="./../public/img/page-three-convo.png" alt="">
                 </div>
                 <div class="story-text">
                     <p class="story-head">
                         Lorem Ipsum is simply dummy
                     </p>
                     <p class="story-para">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        <span class="mobile-clip">
+                            , when an unknown Lorem Ipsum is simply dummy text of.
+                        </span>
                     </p>
                 </div>
             </div>
             <div class="stories-box stories-box--5">
                 <div class="story-img">
-                    <img src="/img/top-stories.png" alt="">
+                    <img src="./../public/img/page-three-convo.png" alt="">
                 </div>
                 <div class="story-text">
                     <p class="story-head">
                         Lorem Ipsum is simply dummy
                     </p>
                     <p class="story-para">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                        <span class="mobile-clip">
+                            , when an unknown Lorem Ipsum is simply dummy text of.
+                        </span>
                     </p>
                 </div>
             </div>
             <div class="stories-box stories-box--6">
                 <div class="story-img">
-                    <img src="/img/top-stories.png" alt="">
+                    <img src="./../public/img/page-three-convo.png" alt="">
                 </div>
                 <div class="story-text">
                     <p class="story-head">
                         Lorem Ipsum is simply dummy
                     </p>
                     <p class="story-para">
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown Lorem Ipsum is simply dummy text of.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<span class="mobile-clip">
+                            , when an unknown Lorem Ipsum is simply dummy text of.
+                        </span>
                     </p>
                 </div>
             </div>
@@ -271,10 +318,10 @@
         <div class="footer-container">
             <div class="footer-nits-aa-container">
                 <div class="mobile-ats-logo-container">
-                    <img class="footer-ats-logo" src="/img/logo.png" alt="ATS Logo">
+                    <img class="footer-ats-logo" src="./../public/img/logo.png" alt="ATS Logo">
                 </div>
                 <div class="footer-nits-logo-container">
-                    <img class="footer-nits-logo" src="/img/nits-logo-white-text.png" alt="NITS Logo">
+                    <img class="footer-nits-logo" src="./../public/img/nits-logo-white-text.png" alt="NITS Logo">
                 </div>
                 <div class="footer-contact-aa">
                     <a href="">
@@ -299,7 +346,7 @@
             </div>
             <div class="footer-ats-col-container">
                 <div class="footer-ats-logo-container">
-                    <img class="footer-ats-logo" src="/img/logo.png" alt="ATS Logo">
+                    <img class="footer-ats-logo" src="./../public/img/logo.png" alt="ATS Logo">
                 </div>
                 <div class="footer-heading">
                     <h4 class="">Alumni Tracking System</h4>
@@ -320,7 +367,7 @@
 
 </body>
 
-<script src="/js/index.js"></script>
-<script src="/js/dark-mode.js"></script>
+<script src="./../public/js/index.js"></script>
+<script src="./../public/js/dark-mode.js"></script>
 
 </html>

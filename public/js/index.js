@@ -42,3 +42,14 @@ setInterval(function () {
   moveSlide();
 }, 5000);
 // top slider ends
+
+// navbar
+  function myFunction() {
+  var x = document.getElementById("IdNavbar");
+  if (x.className === "Navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "Navbar";
+  }
+  }
+// navbar
