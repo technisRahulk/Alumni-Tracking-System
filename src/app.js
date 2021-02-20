@@ -33,7 +33,10 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 
 app.get("/only-test", (req, res) => {
-        res.send("Test done")
+         let reqPath = path.join(__dirname, '../views');
+   // console.log(__dirname);
+    res.render(reqPath+'/profile.ejs');
+    //res.send('hi');
     })
     // oauth 
 app.get('/google', passport.authenticate('google', {
