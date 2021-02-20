@@ -1,3 +1,5 @@
+const { login } = require("./user");
+
 exports.profileUpdate=async (req,res,next)=>{
     try{
         const user=req.user;
@@ -55,9 +57,12 @@ exports.profileCreate=async(req,res,next)=>{
 exports.profileRead=async(req,res,next)=>{
     try{
             
+     
         const user=req.user;
+        const token=req.token;
+        // console.log(user);
         if(user){
-            res.send(user.extractUser());
+            res.render("profile",{user:user,token:token})
         }
 
     }
