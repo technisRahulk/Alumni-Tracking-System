@@ -11,7 +11,7 @@ body{
 }
 .dark-switch-container {
 	position: fixed;
-	right: 3.5rem;
+	right: 3rem;
 	top: 1rem;
 	max-width: 3.5em;
 	width: 3.5em;
@@ -25,23 +25,27 @@ body{
 }
 .row{
 	padding-top: 10px;
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 }
 
 .left-col{
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 	width:20%;
 	height:30%;
 	float:left;
 }
 
 .right-col{
+	padding-left: 2.5%;
+	padding-right: 2.5%;
 	width: 20%;
 	height: 30%;
 	float:left;
 }
 .center-col{
-	width:60%;
+	width:50%;
 	height:auto;
 	float:left;
 }
@@ -97,7 +101,7 @@ h4{
 	margin-bottom: 20px;
 }
 .blog{
-	
+	width: 100%;
 	margin-bottom: 10px;
 	background-color:var(--element-bg);
 	display: inline-block;
@@ -131,8 +135,9 @@ h4{
 	padding-bottom: 30px;
 }
 .pic{
-	width:75%;
-	height:50vh;
+	width:auto;
+	height:auto;
+	max-width: 80%;
 	border-radius: 30px;
 	display: block;
 	margin-left: auto;
@@ -149,8 +154,8 @@ h4{
 	padding-right: 10px;
 }
 .search{
-	height:8vh;
-	width:58%;
+	height:50px;
+	width:50%;
 	background-color:var(--search-color);
 	display: block;
 	margin-left: auto;
@@ -179,6 +184,10 @@ display: none;
 
 @media (max-width:960px)
 {
+	.search{
+		width: 60%;
+		height: 45px;
+	}
 	
 	.navbutton {
     display: block;
@@ -191,7 +200,7 @@ display: none;
   }
   .navbutton button {
     width: 25vw;
-    height: 5vh;
+    height: 90%;
     margin: 0 1.5px;
     border-radius: 20px;
     font-weight: bold;
@@ -209,6 +218,7 @@ display: none;
     background-color: var(--btn-active-bg);
   }
 
+
 	.dark-switch-container {
 		position: fixed;
 		right: 2%;
@@ -219,10 +229,14 @@ display: none;
 		margin: 0%;
 	}
 	.left-col{
+		padding-left: 0%;
+		padding-right: 0%;
 		width: 100%;
 		height: auto;
 	}
 	.right-col{
+		padding-left: 0%;
+		padding-right: 0%;
 		width: 100%;
 		height: auto;
 	}
@@ -237,24 +251,28 @@ display: none;
 		margin-top: 20px;
 	}
 	.name{
-		padding-top: 8px;
+		padding-top: 25px;
+		margin-top: 0px;
 	}
 	.body{
 		margin-left: 20px;
 		margin-top: 20px;
 		padding-right:20px;
 		font-weight: 300;
-		font-size: 16px;
+		font-size: 18px;
 	}
 	.pic{
-		width:93%;
-		height:40vh;
+		width:auto;
+		height:auto;
+		max-width: 90%;
 		border-radius: 30px;
 	}
 
 	.blog{
-		margin-left: 10px;
-		margin-right: 10px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width:95%;
 		margin-bottom: 20px;
 		border-radius: 10px;
 	}
