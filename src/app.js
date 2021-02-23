@@ -10,8 +10,6 @@ const Router = require("./routers/index");
 const app = express();
 const port = process.env.PORT || 4000;
 
-
-
 app.use(express.json());
 app.use(cookieParser({
     name: "auth",
@@ -29,7 +27,7 @@ app.use(
 app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "../public")));
-
+app.use(express.static(path.join(__dirname, "../partials")));
 
 
 app.get("/only-test", (req, res) => {
@@ -76,3 +74,8 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log("Server is up on port " + port);
 });
+
+
+
+
+

@@ -30,13 +30,13 @@ body {
 
 /* dark mode switch */
 .dark-switch-container {
-  position: absolute;
   right: 2.2rem;
-  top: 1.6rem;
+  top: 2.2rem;
   max-width: 3.5em;
   width: 3.5em;
   text-align: center;
   z-index: 99999;
+  position: fixed;
 }
 /* darkmode switch ends */
 
@@ -192,7 +192,7 @@ body {
   z-index: 99;
   height: 15vh;
   width: 100vw;
-  background: linear-gradient(#966fd6, #d3d3d3);
+  background: linear-gradient( #5053a5, #d3d3d3);
 }
 .Navbar-contents {
   margin-left: 40%;
@@ -219,7 +219,7 @@ body {
 
 .Navbar .icon {
   display: none;
-  margin-top: 5%;
+  /* margin-top: 5%;*/
 }
 .Navbar input {
   float: left;
@@ -229,7 +229,6 @@ body {
   border: 2px solid white;
   background-color: inherit;
   height: 5vh;
-  margin-top: -3px;
   border-radius: 20px;
   position: fixed;
   width: 14%;
@@ -255,18 +254,34 @@ input:focus {
   .Navbar a.icon {
     float: right;
     display: block;
+    margin-top: 1.2%;
+
   }
 }
 
 @media screen and (max-width: 768px) {
   .Navbar.responsive {
-    position: absolute;
+    position: fixed;
     height: 45%;
   }
   .Navbar.responsive .icon {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 20px;
+  }
+  ::placeholder {
+  font-size: 11px;
+}
+/* dark mode switch */
+  .dark-switch-container {
+    top: 8rem;
+    right: 1rem;
+  }
+  /* darkmode switch ends */
+  .icon .fa{
+    border: none;
+    /*margin-top: -2%;*/
+     margin-left: -60px;
   }
   .Navbar.responsive a {
     float: none;
@@ -275,9 +290,9 @@ input:focus {
   }
   .ATSlogo {
     margin-top: -5%;
-    width: 4em;
+    width: 3em;
     position: absolute;
-    margin-left: -5%;
+    margin-left:-2%;
   }
 
   .Navbar input {
@@ -288,6 +303,17 @@ input:focus {
   .Navbar-contents {
     margin-top: 3%;
   }
+  .Navbar {
+  position: fixed;
+}
+}
+@media only screen and (max-width: 1200px) {
+  /* dark mode switch */
+  .dark-switch-container {
+    top: 7.5rem;
+    right: 1rem;
+  }
+  /* darkmode switch ends */
 }
 /* navbar ends */
 
@@ -404,12 +430,7 @@ input:focus {
 
 /* mobile view */
 @media (max-width: 680px) {
-  /* dark mode switch */
-  .dark-switch-container {
-    top: 7rem;
-    right: 1rem;
-  }
-  /* darkmode switch ends */
+  
 
   .carousel-one-container {
     width: 100vw;
