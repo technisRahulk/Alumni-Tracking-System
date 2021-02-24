@@ -18,7 +18,7 @@ const upload = multer({
 
 const router = new express.Router();
 
-router.get("/users",function(req,res)
+router.get("/user",function(req,res)
 {
 console.log(req.query.search);
 if(req.query.search)
