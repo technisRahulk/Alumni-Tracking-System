@@ -6,6 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Comaptible" content="ie=edge"/>
         
+         <!-- req for new navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Jomhuria&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <link rel="stylesheet" href="/css/dark-mode.css">
         <link rel="stylesheet" href="/css/profile.css">
         <link rel="stylesheet" href="/css/annimation.css">
@@ -23,7 +28,7 @@
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
    </head> 
    <body>
-
+<%- include('partials/header') %>
     <div class="dark-switch-container">
         <input type='checkbox' id='dark-mode-cbox' />
         <label for='dark-mode-cbox'>Night</label>
@@ -189,7 +194,7 @@
 
 
 
-
+<%- include('partials/footer') %>
 <script src="/js/animation.js"></script>
 <script src="/js/profile.js"></script>
 <script src="/js/dark-mode.js"></script>
