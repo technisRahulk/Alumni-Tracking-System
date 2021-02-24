@@ -3,7 +3,6 @@ let sec2=document.getElementById("sec2");
 let sec3=document.getElementById("sec3");
 
 
-console.log(screen.width);
 
 window.addEventListener("resize", checksize);
 if(screen.width < 960)
@@ -13,8 +12,9 @@ if(screen.width < 960)
   sec1.classList.add("disp2_off");
   sec3.classList.add("disp2_off");
 }
+let pw=screen.width;
 function checksize(){
-  if(screen.width < 960)
+  if(pw!=screen.width&&screen.width < 960)
   {
 	sec2.classList.remove("disp2_off");
 	sec2.classList.add("disp2_on");
@@ -22,14 +22,14 @@ function checksize(){
 	sec3.classList.add("disp2_off");
   document.querySelectorAll('.btn').forEach(el => el.classList.remove("active"));
   document.getElementById("btn1").classList.add("active");
-  
   }
-  else
+  else if(pw!=screen.width)
   {
   sec1.classList.remove("disp2_off");
   sec2.classList.remove("disp2_off");
   sec3.classList.remove("disp2_off");
   }
+  pw=screen.width;
 }
 function btn1(){
 	sec2.classList.remove("disp2_off");
