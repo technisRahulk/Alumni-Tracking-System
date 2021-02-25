@@ -1,6 +1,7 @@
 :root {
   --color-white: #fff;
   --black: #000;
+  --red: #ff0000;
   --nav-act-hov: #575bc9;
   --txt-shadow-dark: rgba(0, 0, 0, 0.8);
   --txt-shadow-light: rgba(0, 0, 0, 0.5);
@@ -19,6 +20,7 @@
   --p2-card-bg: #fff;
   --card-txt: rgba(0, 0, 0, 1);
   --p3-bg: #5053a5;
+  --contact-bg: #5053a5;
   --p3-yr-color: #39393f;
   --msg-logo: #39393f;
   --top-stories-bg: #fff;
@@ -27,6 +29,8 @@
   --story-head: #4d52ef;
   --stories-pop-rec: #39393f;
   --stories-box-bg: transparent;
+  --input-bg: #fff;
+  --form-bg: rgba(162, 164, 227, 1);
   --btn-more-color: #000;
   --btn-more-border: #000000;
 
@@ -37,6 +41,7 @@
 .dark-mode {
   --color-white: #fff;
   --black: #000;
+  --red: #ff0000;
   --nav-act-hov: #575bc9;
   --txt-shadow-dark: rgba(0, 0, 0, 0.8);
   --txt-shadow-light: rgba(0, 0, 0, 0.5);
@@ -55,6 +60,7 @@
   --p2-card-bg: rgba(63, 87, 100, 1);
   --card-txt: rgba(236, 236, 236, 1);
   --p3-bg: rgba(52, 73, 85, 1);
+  --contact-bg: rgba(52, 73, 85, 1);
   --p3-yr-color: rgba(99, 240, 235, 1);
   --msg-logo: #63f0eb;
   --top-stories-bg: rgba(204, 204, 204, 0.52);
@@ -63,6 +69,8 @@
   --story-head: #242424;
   --stories-pop-rec: #0aefd4;
   --stories-box-bg: rgba(233, 241, 248, 0.67);
+  --form-bg: rgba(233, 241, 248, 0.67);
+  --input-bg: rgba(255, 255, 255, 0.8);
   --btn-more-color: rgba(233, 241, 248, 0.67);
   --btn-more-border: rgba(233, 241, 248, 0.67);
 

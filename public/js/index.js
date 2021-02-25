@@ -1,11 +1,3 @@
-//toggle navbar
-const toggleButton = document.getElementsByClassName('toggle-button')[0];
-            const navbarLinks = document.getElementsByClassName('navbar-links')[0];
-
-            toggleButton.addEventListener('click', () => {
-                navbarLinks.classList.toggle('active');
-            });
-
 // Top slider
 let slideIndex,
   slides = document.querySelectorAll(".image-container");
@@ -53,3 +45,11 @@ setInterval(function () {
   }
   }
 // navbar
+
+//toggle navbar
+// const toggleButton = document.getElementsByClassName('toggle-button')[0];
+// const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+
+// toggleButton.addEventListener('click', () => {
+//     navbarLinks.classList.toggle('active');
+// });
