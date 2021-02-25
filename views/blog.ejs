@@ -9,13 +9,17 @@
     <meta http-equiv="X-UA-Comaptible" content="ie=edge" />
 
     <link rel="stylesheet" href="/css/dark-mode.css">
+    <!-- req for new navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Jomhuria&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/blog.css">
 
     <script src="https://kit.fontawesome.com/d05c3d1935.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
+<%- include('partials/header') %>
     <div class="dark-switch-container">
         <input type='checkbox' id='dark-mode-cbox' />
         <label for='dark-mode-cbox'>Night</label>
@@ -117,7 +121,7 @@
 
         </div>
     </main>
-
+ <%- include('partials/footer') %>
     <script src="js/dark-mode.js"></script>
     <script src="js/blog.js"></script>
 
