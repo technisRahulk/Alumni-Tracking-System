@@ -6,11 +6,14 @@ require("dotenv").config();
 require("./db/mongoose");
 require("./passport.setup")
 const Router = require("./routers/index");
+const flash=require("connect-flash");
+//Creating nodeMailer account
+const nodeMailer = require("./controllers/Nodemailer");
+
+const Mail  = require("./models/Mail");
 
 const app = express();
 const port = process.env.PORT || 4000;
-
-
 
 app.use(express.json());
 app.use(cookieParser({
@@ -29,11 +32,14 @@ app.use(
 app.set("view engine", "ejs");
 
 app.use(express.static(path.join(__dirname, "../public")));
-
+app.use(express.static(path.join(__dirname, "../partials")));
 
 
 app.get("/only-test", (req, res) => {
-        res.send("Test done")
+         let reqPath = path.join(__dirname, '../views');
+   // console.log(__dirname);
+    res.render(reqPath+'/profile.ejs');
+    //res.send('hi');
     })
     // oauth 
 app.get('/google', passport.authenticate('google', {
@@ -63,6 +69,39 @@ app.get("/failed", (req, res) => {
 //Routes
 app.use(Router);
 
+app.post("/contact", function(req, res) {
+    console.log(req.body);
+    nodeMailer.contact({
+          email: req.body.email,
+          name: req.body.name,
+          message: req.body.message,
+          subject: req.body.subject,
+        });
+
+    const newMail = new Mail({
+          email: req.body.email,
+          name: req.body.name,
+          message: req.body.message,
+          subject: req.body.subject,
+        });
+     
+        newMail
+          .save()
+          .then((result) => {
+             console.log("sucess");
+           
+            res.redirect("/");
+          })
+          .catch((err) => {
+            console.log(err);
+            res.locals.flashMessages = req.flash(
+              "Something went wrong. Please try again"
+            );
+            res.redirect("/blog/create");
+          });
+});
+
+
 app.get("/", (req, res) => {
     let reqPath = path.join(__dirname, '../views');
    // console.log(__dirname);
@@ -73,3 +112,8 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log("Server is up on port " + port);
 });
+
+
+
+
+

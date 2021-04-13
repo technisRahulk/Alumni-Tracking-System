@@ -30,13 +30,13 @@ body {
 
 /* dark mode switch */
 .dark-switch-container {
-  position: absolute;
   right: 2.2rem;
-  top: 1.6rem;
+  top: 2.2rem;
   max-width: 3.5em;
   width: 3.5em;
   text-align: center;
   z-index: 99999;
+  position: fixed;
 }
 /* darkmode switch ends */
 
@@ -192,7 +192,7 @@ body {
   z-index: 99;
   height: 15vh;
   width: 100vw;
-  background: linear-gradient(#966fd6, #d3d3d3);
+  background: linear-gradient(#5053a5, #d3d3d3);
 }
 .Navbar-contents {
   margin-left: 40%;
@@ -219,7 +219,7 @@ body {
 
 .Navbar .icon {
   display: none;
-  margin-top: 5%;
+  /* margin-top: 5%;*/
 }
 .Navbar input {
   float: left;
@@ -229,7 +229,6 @@ body {
   border: 2px solid white;
   background-color: inherit;
   height: 5vh;
-  margin-top: -3px;
   border-radius: 20px;
   position: fixed;
   width: 14%;
@@ -255,18 +254,33 @@ input:focus {
   .Navbar a.icon {
     float: right;
     display: block;
+    margin-top: 1.2%;
   }
 }
 
 @media screen and (max-width: 768px) {
   .Navbar.responsive {
-    position: absolute;
+    position: fixed;
     height: 45%;
   }
   .Navbar.responsive .icon {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 20px;
+  }
+  ::placeholder {
+    font-size: 11px;
+  }
+  /* dark mode switch */
+  .dark-switch-container {
+    top: 8rem;
+    right: 1rem;
+  }
+  /* darkmode switch ends */
+  .icon .fa {
+    border: none;
+    /*margin-top: -2%;*/
+    margin-left: -60px;
   }
   .Navbar.responsive a {
     float: none;
@@ -275,9 +289,9 @@ input:focus {
   }
   .ATSlogo {
     margin-top: -5%;
-    width: 4em;
+    width: 3em;
     position: absolute;
-    margin-left: -5%;
+    margin-left: -2%;
   }
 
   .Navbar input {
@@ -288,6 +302,17 @@ input:focus {
   .Navbar-contents {
     margin-top: 3%;
   }
+  .Navbar {
+    position: fixed;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  /* dark mode switch */
+  .dark-switch-container {
+    top: 7.5rem;
+    right: 1rem;
+  }
+  /* darkmode switch ends */
 }
 /* navbar ends */
 
@@ -404,13 +429,6 @@ input:focus {
 
 /* mobile view */
 @media (max-width: 680px) {
-  /* dark mode switch */
-  .dark-switch-container {
-    top: 7rem;
-    right: 1rem;
-  }
-  /* darkmode switch ends */
-
   .carousel-one-container {
     width: 100vw;
     height: 63vh;
@@ -1144,6 +1162,245 @@ input:focus {
   }
 }
 /* top stories ends */
+
+/* contact us begin */
+.contact-us {
+  background: var(--contact-bg);
+  width: 100vw;
+  max-width: 100vw;
+  height: 120vh;
+}
+
+.contact-title {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.contact-title p {
+  font-size: 3.5rem;
+  color: var(--color-white);
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+.contact-title span {
+  color: var(--p3-yr-color);
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+}
+
+.form-container {
+  background: var(--form-bg);
+  width: 56vw;
+  margin: 0 auto;
+  height: 72vh;
+  padding: 3rem 8vw;
+  border-radius: 5px;
+}
+.contact-form input,
+.contact-form label {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group-1 {
+  display: block;
+}
+.form-group-2,
+.form-group-3 {
+  display: inline-block;
+  width: 47%;
+}
+.form-group-2 input,
+.form-group-3 input {
+  width: 100%;
+}
+.form-group-3 {
+  float: right;
+}
+
+.contact-form input {
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  border-radius: 3px;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  background: var(--input-bg);
+}
+.contact-form input:focus {
+  outline: none;
+  box-shadow: 0 10px 20px var(--box-shadow-light);
+  border-bottom: 3px solid var(--p3-yr-color);
+}
+.form-group-1 input {
+  width: 100%;
+}
+.message {
+  display: block;
+  width: 100%;
+  height: 27vh;
+  font-size: 0.9rem;
+  padding: 0.7rem 1rem;
+  border-radius: 3px;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  letter-spacing: 0.5px;
+  background: var(--input-bg);
+}
+.message:focus {
+  outline: none;
+  box-shadow: 0 10px 20px var(--box-shadow-light);
+}
+.contact-form textarea::-webkit-input-placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.form-group input:focus:invalid {
+  border-bottom: 3px solid var(--red);
+}
+.contact-form input::-webkit-input-placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  margin-top: 0.4rem;
+  display: block;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.form-group input:placeholder-shown + label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2.5rem);
+}
+.btn-submit {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .contact-us {
+    width: 100vw;
+    max-width: 100vw;
+    height: 118vh;
+  }
+  .contact-title {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+  .contact-title p {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .form-container {
+    background: var(--form-bg);
+    width: 80vw;
+    margin: 0 auto;
+    height: 78vh;
+    padding: 1.5rem 5vw;
+  }
+  .contact-form input,
+  .contact-form label {
+    display: block;
+  }
+
+  .form-group {
+    margin-bottom: 0.7rem;
+  }
+
+  .form-group-1 {
+    display: block;
+  }
+  .form-group-2,
+  .form-group-3 {
+    display: block;
+    width: 100%;
+  }
+  .form-group-2 input,
+  .form-group-3 input {
+    width: 100%;
+  }
+  .form-group-3 {
+    float: none;
+  }
+
+  .contact-form input {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 3px;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    background: var(--input-bg);
+  }
+  .contact-form input:focus {
+    outline: none;
+    box-shadow: 0 7px 15px var(--box-shadow-light);
+    border-bottom: 3px solid var(--p3-yr-color);
+  }
+  .form-group-1 input {
+    width: 100%;
+  }
+  .message {
+    display: block;
+    width: 100%;
+    height: 27vh;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .contact-form textarea::-webkit-input-placeholder {
+    font-size: 0.8rem;
+  }
+
+  .form-group input:focus:invalid {
+    border-bottom: 2px solid var(--red);
+  }
+  .contact-form input::-webkit-input-placeholder {
+    font-size: 0.8rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
+    margin-left: 0.8rem;
+    margin-top: 0.4rem;
+    display: block;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+  }
+
+  .form-group input:placeholder-shown + label {
+    transform: translateY(-2rem);
+  }
+  .btn-submit {
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+/* contact us ends */
 
 /* footer styles */
 .footer {
