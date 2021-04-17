@@ -235,7 +235,6 @@ body {
 }
 .ATSlogo {
   margin-top: -35%;
-  width: 4.5em;
 }
 input:focus {
   outline: none;
@@ -289,7 +288,6 @@ input:focus {
   }
   .ATSlogo {
     margin-top: -5%;
-    width: 3em;
     position: absolute;
     margin-left: -2%;
   }
