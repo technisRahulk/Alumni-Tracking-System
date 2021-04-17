@@ -10,16 +10,21 @@
 }
 
 body {
-  font-family: 'Gothic A1', sans-serif;
-    box-sizing: border-box;
-    background-image: var(--body-bg-img);
+    font-family: 'Gothic A1', sans-serif;
+    box-sizing: border-box;   
     max-height: 100vh;
     background-size: 100% 100%;
 }
-
+main{
+    background-image: var(--body-bg-img);
+    height: 100%;
+    margin-top: 15vh;
+    padding: 20px;
+}
 .dark-switch-container {
     top: 7vh;
     right: 9vw;
+    margin: 0%;
 }
 
 /* section design */
