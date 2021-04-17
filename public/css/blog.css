@@ -6,8 +6,13 @@ body{
 	margin:0px;
 	padding: 0px;
   	font-family: 'Gothic A1', sans-serif;
-	  background-color: var(--body-bg);
-	  color: var(--element-text-color);
+	background-color: var(--body-bg);
+	color: var(--element-text-color);
+	height: auto;
+}
+
+main {
+	margin-top: 15vh;
 }
 .dark-switch-container {
 	position: fixed;
