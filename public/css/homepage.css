@@ -192,7 +192,7 @@ body {
   z-index: 99;
   height: 15vh;
   width: 100vw;
-  background: linear-gradient(#5053a5, #d3d3d3);
+  background: linear-gradient(var(--navbar-bg), #d3d3d3);
 }
 .Navbar-contents {
   margin-left: 40%;
@@ -235,7 +235,6 @@ body {
 }
 .ATSlogo {
   margin-top: -35%;
-  width: 4.5em;
 }
 input:focus {
   outline: none;
@@ -289,7 +288,6 @@ input:focus {
   }
   .ATSlogo {
     margin-top: -5%;
-    width: 3em;
     position: absolute;
     margin-left: -2%;
   }
@@ -1292,7 +1290,7 @@ input:focus {
 }
 .btn-submit {
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0.2rem;
 }
 
 @media only screen and (max-width: 700px) {

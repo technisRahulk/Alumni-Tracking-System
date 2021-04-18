@@ -39,7 +39,7 @@
                     <br>ever since the 1500s, when an unknown Lorem Ipsum is simply
                     <br>dummy text of the printing
                 </p>
-                <a href="#" class="btn btn--white">
+                <a href="/blog" class="btn btn--white">
                     View Blog
                 </a>
             </div>
@@ -280,6 +280,7 @@
                     </p>
                 </div>
             </div>
+
             <div class="stories-box stories-box--6">
                 <div class="story-img">
                     <img src="/img/page-three-convo.png" alt="">
@@ -295,9 +296,9 @@
                     </p>
                 </div>
             </div>
-            <div class="stories-more">
+        <!--    <div class="stories-more">
                 <a href="" class="btn-more">More</a>
-            </div>
+            </div>   -->
         </div>
     </section>
     <!-- top stories ends -->
@@ -311,23 +312,24 @@
                 </p>
             </div>
             <div class="form-container">
-                <form action="#" class="contact-form">
+                <form action="/contact" method="post" class="contact-form">
                     <div class="form-group form-group-1">
-                        <input type="email" id="email" placeholder="Email">
+                        <input type="email" id="email" placeholder="email" name="email">
                         <label for="email">Email</label>
                     </div>
                     <div class="form-group form-group-2">
-                        <input type="text" id="name" placeholder="Full Name">
+                        <input type="text" id="name" placeholder="name" name="name">
                         <label for="name">Full Name</label>
                     </div>
                     <div class="form-group form-group-3">
-                        <input type="subject" id="subject" placeholder="Subject">
+                        <input type="subject" id="subject" placeholder="subject" name="subject">
                         <label for="subject">Subject</label>
                     </div>
                     <textarea name="message" id="message" class="message" cols="30" rows="10" placeholder="Message"></textarea>
-                    <div class="stories-more btn-submit">
-                        <a href="" class="btn-more">Submit</a>
-                    </div>
+                    
+            <div class="stories-more btn-submit">
+                <a href="" class="btn-more">Submit</a>
+            </div>  
                 </form>
             </div>
         </section>

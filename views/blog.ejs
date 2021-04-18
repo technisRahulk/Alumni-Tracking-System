@@ -9,13 +9,17 @@
     <meta http-equiv="X-UA-Comaptible" content="ie=edge" />
 
     <link rel="stylesheet" href="/css/dark-mode.css">
+    <!-- req for new navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Jomhuria&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/blog.css">
 
     <script src="https://kit.fontawesome.com/d05c3d1935.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
+<%- include('partials/header') %>
     <div class="dark-switch-container">
         <input type='checkbox' id='dark-mode-cbox' />
         <label for='dark-mode-cbox'>Night</label>
@@ -34,88 +38,91 @@
                     <button class="btn" id="btn2" onclick="btn2()" >My Bookmarks</button>
                     <button   class="btn" id="btn3" onclick="btn3()" >My Activity</button>
                 </div>
-                <div class="left-col" id="sec1">
-                    <div class="bookmarks-activities">
-                        <div class="profile">
-                            <img class="pic1" src="/img/logo.png">
-                            <h2 class="name1">ABC</h2>
-                        </div>
+                    <div class="main-body">
+                        <div class="left-col" id="sec1">
+                            <div class="bookmarks-activities">
+                                <div class="profile">
+                                    <img class="pic1" src="/img/logo.png">
+                                    <h2 class="name1">ABC</h2>
+                                </div>
 
-                        <div class="list">
-                            <h4>My bookmarks</h4>
-                            <div class="heading"><i class="fas fa-bookmark"></i>
-                                <h1> Bookmark 1</h1>
-                            </div> <br>
-                            <div class="heading"><i class="fas fa-bookmark"></i>
-                                <h1> Bookmark 2</h1>
-                            </div> <br>
-                            <div class="heading"><i class="fas fa-bookmark"></i>
-                                <h1> Bookmark 3</h1>
-                            </div> <br>
-                            <div class="heading"><i class="fas fa-bookmark"></i>
-                                <h1> Bookmark 4</h1>
-                            </div> <br>
-                            <div class="showmore"><i class="fas fa-chevron-circle-down"></i>
-                                <h1> See more</h1>
-                            </div> <br>
-                        </div>
-                    </div>
+                                <div class="list">
+                                    <h4>My bookmarks</h4>
+                                    <div class="heading"><i class="fas fa-bookmark"></i>
+                                        <h1> Bookmark 1</h1>
+                                    </div> <br>
+                                    <div class="heading"><i class="fas fa-bookmark"></i>
+                                        <h1> Bookmark 2</h1>
+                                    </div> <br>
+                                    <div class="heading"><i class="fas fa-bookmark"></i>
+                                        <h1> Bookmark 3</h1>
+                                    </div> <br>
+                                    <div class="heading"><i class="fas fa-bookmark"></i>
+                                        <h1> Bookmark 4</h1>
+                                    </div> <br>
+                                    <div class="showmore"><i class="fas fa-chevron-circle-down"></i>
+                                        <h1> See more</h1>
+                                    </div> <br>
+                                </div>
+                            </div>
 
-                </div>
-                <div class="center-col" id="sec2">
-                  <% popularBlogs.forEach(function(blog){%> 
-                        <div class="blog">
-                            <img class="profile_pic" src="/img/logo.png">
-                            <div>
-                                <h2 class="name">
-                                    
-                                   <%= blog.title%> 
-                                </h2>
-                                <p class="time">15 minutes ago</p>
-                                <p class="body">
-                                  <%=blog.body%> 
-                                </p>
-                                <img class="pic" src="<%=blog.cover%>">
-                                <div class="container-icon">
-                                    <i class="fas fa-thumbs-up"></i>
-                                    <i class="fas fa-bookmark"></i>
+                        </div>
+                        <div class="center-col" id="sec2">
+                        <% popularBlogs.forEach(function(blog){%> 
+                                <div class="blog">
+                                    <img class="profile_pic" src="/img/logo.png">
+                                    <div>
+                                        <h2 class="name">
+                                            
+                                        <%= blog.title%> 
+                                        </h2>
+                                        <p class="time">15 minutes ago</p>
+                                        <p class="body">
+                                        <%=blog.body%> 
+                                        </p>
+                                        <img class="pic" src="<%=blog.cover%>">
+                                        <div class="container-icon">
+                                            <i class="fas fa-thumbs-up"></i>
+                                            <i class="fas fa-bookmark"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%})%> 
+
+
+                        </div>
+                        <div class="right-col" id="sec3">
+                            <div class="bookmarks-activities">
+                                <div class="profile">
+                                    <img class="pic1" src="/img/logo.png">
+                                    <h2 class="name1">ABC</h2>
+                                </div>
+
+                                <div class="list">
+                                    <h4>My Activity</h4>
+                                    <div class="heading"><i class="far fa-clock"></i>
+                                        <h1> Activity 1</h1>
+                                    </div> <br>
+                                    <div class="heading"><i class="far fa-clock"></i>
+                                        <h1> Activity 2</h1>
+                                    </div> <br>
+                                    <div class="heading"><i class="far fa-clock"></i>
+                                        <h1> Activity 3</h1>
+                                    </div> <br>
+                                    <div class="heading"><i class="far fa-clock"></i>
+                                        <h1> Activity 4</h1>
+                                    </div> <br>
+                                    <div class="showmore"><i class="fas fa-chevron-circle-down"></i>
+                                        <h1> See more</h1>
+                                    </div> <br>
                                 </div>
                             </div>
                         </div>
-                        <%})%> 
-
-
-                </div>
-                <div class="right-col" id="sec3">
-                    <div class="bookmarks-activities">
-                        <div class="profile">
-                            <img class="pic1" src="/img/logo.png">
-                            <h2 class="name1">ABC</h2>
-                        </div>
-
-                        <div class="list">
-                            <h4>My Activity</h4>
-                            <div class="heading"><i class="far fa-clock"></i>
-                                <h1> Activity 1</h1>
-                            </div> <br>
-                            <div class="heading"><i class="far fa-clock"></i>
-                                <h1> Activity 2</h1>
-                            </div> <br>
-                            <div class="heading"><i class="far fa-clock"></i>
-                                <h1> Activity 3</h1>
-                            </div> <br>
-                            <div class="heading"><i class="far fa-clock"></i>
-                                <h1> Activity 4</h1>
-                            </div> <br>
-                            <div class="showmore"><i class="fas fa-chevron-circle-down"></i>
-                                <h1> See more</h1>
-                            </div> <br>
-                        </div>
                     </div>
-                </div>
             </div>
 
-        </div>
+        </div><br>
+        <%- include('partials/footer') %>
     </main>
 
     <script src="js/dark-mode.js"></script>

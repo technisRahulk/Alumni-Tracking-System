@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Blog</title>
+    <!-- req for new navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Jomhuria&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- css link -->
     <link rel="stylesheet" href="/css/dark-mode.css">
@@ -16,6 +20,8 @@
 </head>
 
 <body>
+
+    <%- include('partials/header') %>
 
     <div class="dark-switch-container">
         <input type='checkbox' id='dark-mode-cbox' />
@@ -70,7 +76,7 @@
 
             <!-- blog text -->
             <div class="blog-text-container">
-                <textarea  id="blog-text" name="body"></textarea>
+                <textarea  id="blog-text" name="bdy"></textarea>
 
                 <script>
                     CKEDITOR.replace('blog-text', { height: document.querySelector('.blog-text-container').clientHeight });
@@ -83,6 +89,7 @@
         </section>
     </main>
 </form>
+ <%- include('partials/footer') %>
 </body>
 <script>
     document.getElementById('chose-img').onchange = function () {
