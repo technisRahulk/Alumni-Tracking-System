@@ -212,11 +212,9 @@ body {
 .Navbar a:hover {
   color: #6a5acd;
 }
-
 .Navbar a.active {
   color: #6a5acd;
 }
-
 .Navbar .icon {
   display: none;
   /* margin-top: 5%;*/
@@ -235,6 +233,7 @@ body {
 }
 .ATSlogo {
   margin-top: -35%;
+  width: 12vw;
 }
 input:focus {
   outline: none;
@@ -287,9 +286,10 @@ input:focus {
     text-align: left;
   }
   .ATSlogo {
-    margin-top: -5%;
+    margin-top: -3%;
     position: absolute;
     margin-left: -2%;
+    width: 25vw;
   }
 
   .Navbar input {
@@ -424,9 +424,16 @@ input:focus {
   z-index: -1;
   transition: all 0.4s;
 }
-
 /* mobile view */
 @media (max-width: 680px) {
+
+
+  .Navbar input {
+    margin-left: -15%;
+    position: fixed;
+    width: 45%;
+    height:7.5%;
+  }
   .carousel-one-container {
     width: 100vw;
     height: 63vh;
