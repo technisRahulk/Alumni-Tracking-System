@@ -17,7 +17,7 @@
         background-repeat: no-repeat;
         background-size: 100% 100%;
        
-    } 
+    }  
     /* here annimation popup text starts*/
 
  #pop1,#pop2,#pop3{ 
@@ -31,13 +31,15 @@
    border: 1px solid var(--borderpopcolor);
    font-weight: bold;
    }
-
+   #pop1 p,#pop2 p,#pop3 p{
+     text-align: center;
+   }
 #pop1:after,#pop3:after{
   position: absolute;
   width:20px;
   height: 20px;
   margin-left: 26px;
-  margin-top: -48%;
+  margin-top: -24%;
   content: '';
   transform:rotate(45deg);
   background-color:var(--popbgcolor);
@@ -49,7 +51,7 @@
   width:20px;
   height: 20px;
   margin-left: 105px;
-  margin-top: -14%;
+  margin-top: 10%;
   content: '';
   transform:rotate(45deg);
   background-color:var(--popbgcolor);

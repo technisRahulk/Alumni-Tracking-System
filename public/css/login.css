@@ -20,7 +20,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+#dark-mode-cbox + label {
+  width: 74%;
+}
 .heading h1{
     text-align: center;
     font-weight: 300;

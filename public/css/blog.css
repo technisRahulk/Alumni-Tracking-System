@@ -13,22 +13,26 @@ body{
 	position: fixed;
 	right: 3rem;
 	top: 1rem;
-	max-width: 3.5em;
-	width: 3.5em;
+	max-width: 3.9em;
+	width: 3.9em;
 	text-align: center;
 	margin: 0%;
 }
 #dark-mode-cbox+label {
 	padding: 0.4em;
 	height: 1.4em;
-	width: 74%;
+	width: 94%;
 }
 .row{
 	padding-top: 10px;
 	height: 100%;
 	width: 100%;
+	margin-top: 18vh;
+	margin-left: 4vw;
 }
-
+.footer{
+	margin-top:340vh;
+}
 .left-col{
 	padding-left: 2.5%;
 	padding-right: 2.5%;
@@ -158,8 +162,8 @@ h4{
 	width:50%;
 	background-color:var(--search-color);
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 20vw;
+	
 	border-radius: 30px;
 	font-size: 18px;
 	padding-left: 20px;
@@ -184,11 +188,13 @@ display: none;
 
 @media (max-width:960px)
 {
+	.footer{
+		margin-top:320vh;
+	}
 	.search{
 		width: 60%;
 		height: 45px;
 	}
-	
 	.navbutton {
     display: block;
     width: 100%;
