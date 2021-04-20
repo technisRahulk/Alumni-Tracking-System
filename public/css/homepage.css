@@ -192,7 +192,7 @@ body {
   z-index: 99;
   height: 15vh;
   width: 100vw;
-  background: linear-gradient(#5053a5, #d3d3d3);
+  background: linear-gradient(var(--navbar-bg), #d3d3d3);
 }
 .Navbar-contents {
   margin-left: 40%;
@@ -212,11 +212,9 @@ body {
 .Navbar a:hover {
   color: #6a5acd;
 }
-
 .Navbar a.active {
   color: #6a5acd;
 }
-
 .Navbar .icon {
   display: none;
   /* margin-top: 5%;*/
@@ -235,7 +233,7 @@ body {
 }
 .ATSlogo {
   margin-top: -35%;
-  width: 4.5em;
+  width: 12vw;
 }
 input:focus {
   outline: none;
@@ -288,10 +286,10 @@ input:focus {
     text-align: left;
   }
   .ATSlogo {
-    margin-top: -5%;
-    width: 3em;
+    margin-top: -3%;
     position: absolute;
     margin-left: -2%;
+    width: 25vw;
   }
 
   .Navbar input {
@@ -426,9 +424,16 @@ input:focus {
   z-index: -1;
   transition: all 0.4s;
 }
-
 /* mobile view */
 @media (max-width: 680px) {
+
+
+  .Navbar input {
+    margin-left: -15%;
+    position: fixed;
+    width: 45%;
+    height:7.5%;
+  }
   .carousel-one-container {
     width: 100vw;
     height: 63vh;
@@ -1292,7 +1297,7 @@ input:focus {
 }
 .btn-submit {
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0.2rem;
 }
 
 @media only screen and (max-width: 700px) {

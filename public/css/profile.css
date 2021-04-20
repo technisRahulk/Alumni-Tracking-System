@@ -9,20 +9,22 @@ html,
 body {
   margin: 0;
   background-color: var(--body-bg-color);
-}
+} 
 
 .dark-switch-container {
   position: absolute;
   top: 7vh;
   right: 6.5vw;
-}
+
+} 
 #dark-mode-cbox + label {
   background-color: var(--dm-bg-color);
 }
-
+ 
 .wrapper {
   height: 100%;
   width: 100%;
+  margin-top: 7vh;
 }
 
 #bod {
@@ -62,6 +64,12 @@ body {
   display: none;
   margin-top: -20%;
 }
+.footer {
+  margin-left: -70%;
+  margin-right: -6%;
+}
+
+
 hr {
   display: block;
   width: 100%;
@@ -455,7 +463,7 @@ input {
     padding-top: 0.1em;
     padding-left: 0.2em;
     height: 1.4em;
-    width: 74%;
+    width: 94%;
   }
   #dark-mode-cbox + label:before {
     transform: translate(calc(var(--i) * (70% + 0.12em)))
