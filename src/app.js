@@ -107,6 +107,12 @@ app.get("/", (req, res) => {
    // console.log(__dirname);
     res.render(reqPath+'/index.ejs');
     //res.send('hi');
+});
+app.get("/test", (req, res) => {
+    let reqPath = path.join(__dirname, '../views');
+   // console.log(__dirname);
+    res.render(reqPath+'/signup.ejs');
+    //res.send('hi');
 })
 
 app.listen(port, () => {
