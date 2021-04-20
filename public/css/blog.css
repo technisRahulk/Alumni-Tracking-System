@@ -82,22 +82,16 @@ form{
 	margin-right: 2.5%;
 	width:20%;
 	height:30%;
-	/* margin-top: -30px;	 */
-
 }
 
 .right-col{
 	margin-left: 2.5%;
 	width: 20%;
 	height: 30%;
-	/* margin-top: -30px;	 */
-
 }
 .center-col{
 	width:50%;
 	height:auto;
-	/* margin-top: -30px;	 */
-
 }
 .margin{
 	margin-top: -30px;
@@ -209,31 +203,39 @@ h4{
 .container-icon .fas{
 	font-size: 30px;
 	padding-right: 10px;
-	color: var(--element-text-color);
 	-webkit-transition: .8s ease-out;
 	transition: .8s ease-out;
+	text-decoration: none;
+	color: black;
 	/* transform: scale(2); */
 }
+.selected{
+	color: #4169e1;
+}
+.container-icon div{
+	color: var(--element-text-color);
+
+}
 .container-icon .fas:focus{
-	-webkit-animation: squeeze 1s ease-out;
-	animation: squeeze 1s ease-out;
+	/* -webkit-animation: squeeze 1s ease-out; */
+	/* animation: squeeze 1s ease-out; */
 }
 
 @keyframes squeeze {
-	25% {
+	/* 25% {
 	opacity: 1;
 	  transform: scale(0.8);
-	}
+	} */
 	50% {
 	opacity: 1;
 
-	  transform: scale(1);
+	  transform: scale(.8);
 	}
-	75% {
+	/* 75% {
 	opacity: 0;
 
 	  transform: scale(0.8);
-	}
+	} */
 	100% {
 	opacity: 0;
 
@@ -276,9 +278,10 @@ display: none;
     justify-content: center;
 }
 .navbutton button {
-    width: 25vw;
+    width: 30vw;
     height: 90%;
     margin: 0 3.5px;
+	padding: 2px;
     font-weight: bold;
     border: none;
 	background-color: white;
@@ -289,15 +292,13 @@ display: none;
   }
 .navbutton button:first-child{
 	  width: 10vw;
-	  border-radius: 5px;
-  }
+}
 .navbutton img{
 	height: 35px;
 }
 .navbutton button:nth-child(2){
-    width: 19vw;
+    width: 17vw;
 }
-  
 .btn.active {
     color: var(--white);
     /* background-color: var(--btn-active-bg); */

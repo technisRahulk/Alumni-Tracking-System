@@ -12,11 +12,15 @@
 body {
   font-family: 'Gothic A1', sans-serif;
     box-sizing: border-box;
-    background-image: var(--body-bg-img);
+    /* background-image: var(--body-bg-img); */
     max-height: 100vh;
     background-size: 100% 100%;
 }
-
+main{
+    background-image: var(--body-bg-img);
+    background-size: cover;
+    height: 98vh;
+}
 .dark-switch-container {
     top: 7vh;
     right: 9vw;
@@ -25,7 +29,7 @@ body {
 /* section design */
 .blog-section {
     width: 90vw;
-    height: 98vh;
+    height: 96vh;
     margin: 20vh auto 2vh;
     border-radius: 7px;
     box-shadow: 0 1rem 2.5rem var(--box-shadow-color);
@@ -163,7 +167,7 @@ body {
 .blog-text-container {
     width: 90%;
     margin: 1rem auto;
-    height: 52vh;
+    height: 48vh;
     border-radius: 5px;
     /* background-color: white; */
     background-image: none;
@@ -177,7 +181,11 @@ body {
 
 @media only screen and (max-width: 900px) {
     body {
+        /* background-image: var(--body-mbbg-img); */
+    }
+    main{
         background-image: var(--body-mbbg-img);
+        background-size: cover;
     }
     .dark-switch-container {
         top: 4.2vh;

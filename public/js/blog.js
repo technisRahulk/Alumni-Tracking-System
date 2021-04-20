@@ -46,18 +46,26 @@ function checksize(){
 
 thumbsUp.addEventListener("click", function()
 {
-  if(this.children[0].style.color=="black")
-    this.children[0].style.color="#4169e1";
+  if(this.style.color=="black")
+    this.style.color="#4169e1";
   else
-  this.children[0].style.color="black";
+  this.style.color="black";
 })
+
+// thumbsUp.addEventListener("click", function()
+// {
+//   if(this.classList.contains("selected"))
+//     this.classList.remove("selected");
+//   else
+//   this.classList.add("selected");
+// })
 
 bookmark.addEventListener("click", function()
 {
-  if(this.children[0].style.color=="black")
-    this.children[0].style.color="#4169e1";
+  if(this.style.color=="black")
+    this.style.color="#4169e1";
   else
-  this.children[0].style.color="black";
+  this.style.color="black";
 })
 
 function btn2(){
