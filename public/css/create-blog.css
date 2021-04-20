@@ -25,8 +25,8 @@ body {
 /* section design */
 .blog-section {
     width: 90vw;
-    height: 96vh;
-    margin: 20vh auto;
+    height: 98vh;
+    margin: 20vh auto 2vh;
     border-radius: 7px;
     box-shadow: 0 1rem 2.5rem var(--box-shadow-color);
     background-color: var(--blog-sec-bg);
@@ -168,7 +168,9 @@ body {
     /* background-color: white; */
     background-image: none;
 }
-
+#cke_1_contents, .cke_inner, #cke_blog-text{
+    background-repeat: no-repeat;
+}
 
 /* mobile-view */
 
@@ -199,7 +201,7 @@ body {
     /* section design */
     .blog-section {
         width: 90vw;
-        margin: 2vh auto;
+        margin: 20vh auto 2vh;
     }
     /* section design ends */
 
@@ -210,7 +212,7 @@ body {
         padding: 1vh 0;
     }
     .blog-heading {
-        margin-left: 7%;
+        margin-left: 2.5%;
         text-shadow: 0 .4rem .8rem var(--text-shadow-color);
     }
     /* blog heading ends */
