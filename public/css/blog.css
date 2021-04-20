@@ -207,7 +207,6 @@ h4{
 	transition: .8s ease-out;
 	text-decoration: none;
 	color: black;
-	/* transform: scale(2); */
 }
 .selected{
 	color: #4169e1;
