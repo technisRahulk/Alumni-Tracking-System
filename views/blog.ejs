@@ -50,18 +50,12 @@
 
                                 <div class="list">
                                     <h4>My bookmarks</h4>
+                                    <% bookmarks.forEach(function(blogtitle){%>
                                     <div class="heading"><i class="fas fa-bookmark"></i>
-                                        <h1> Bookmark 1</h1>
+                                        <h1> <%= blogtitle.title%></h1>
                                     </div> <br>
-                                    <div class="heading"><i class="fas fa-bookmark"></i>
-                                        <h1> Bookmark 2</h1>
-                                    </div> <br>
-                                    <div class="heading"><i class="fas fa-bookmark"></i>
-                                        <h1> Bookmark 3</h1>
-                                    </div> <br>
-                                    <div class="heading"><i class="fas fa-bookmark"></i>
-                                        <h1> Bookmark 4</h1>
-                                    </div> <br>
+                                    
+                                    <% }) %>
                                     <div class="showmore"><i class="fas fa-chevron-circle-down"></i>
                                         <h1> See more</h1>
                                     </div> <br>
@@ -84,8 +78,8 @@
                                         </p>
                                         <img class="pic" src="<%=blog.cover%>">
                                         <div class="container-icon">
-                                            <div id="thumbs"><i class="fas fa-thumbs-up"></i></div>
-                                            <div id="bookmark"><i class="fas fa-bookmark"></i></div>
+                                            <a class="fas fa-thumbs-up" href="/blog/appreciate/<%=blog._id%>"></a>
+                                            <a class="fas fa-bookmark" href="/blog/bookmark/<%=blog._id%>"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -102,18 +96,11 @@
 
                                 <div class="list">
                                     <h4>My Activity</h4>
+                                    <% recentactivity.forEach(function(blogtitle){%>
                                     <div class="heading"><i class="far fa-clock"></i>
-                                        <h1> Activity 1</h1>
+                                        <h1><%= blogtitle.title %></h1>
                                     </div> <br>
-                                    <div class="heading"><i class="far fa-clock"></i>
-                                        <h1> Activity 2</h1>
-                                    </div> <br>
-                                    <div class="heading"><i class="far fa-clock"></i>
-                                        <h1> Activity 3</h1>
-                                    </div> <br>
-                                    <div class="heading"><i class="far fa-clock"></i>
-                                        <h1> Activity 4</h1>
-                                    </div> <br>
+                                   <% }) %>
                                     <div class="showmore"><i class="fas fa-chevron-circle-down"></i>
                                         <h1> See more</h1>
                                     </div> <br>
