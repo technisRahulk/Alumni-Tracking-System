@@ -43,7 +43,7 @@ const scene = new ScrollMagic.Scene({
 
 $(window).scroll(function(){ 
   
-  if($(window).scrollTop() >= 760 ){ 
+  if($(window).scrollTop() >= 780 ){ 
       $( "#pop1" ).css( "display", "block" ); 
  
   }
@@ -54,7 +54,7 @@ $(window).scroll(function(){
 }); 
 $(window).scroll(function(){ 
  
-   if($(window).scrollTop() >= 885 ){ 
+   if($(window).scrollTop() >= 895 ){ 
       $( "#pop2" ).css( "display", "block" ); 
  
  
@@ -68,7 +68,7 @@ $(window).scroll(function(){
 $(window).scroll(function(){ 
   
   
-  if($(window).scrollTop() >= 990 ){ 
+  if($(window).scrollTop() >= 960 ){ 
       $( "#pop3" ).css( "display", "block" ); 
  
 
@@ -77,5 +77,5 @@ $(window).scroll(function(){
       
      $( "#pop3" ).css( "display", "none" ); 
   } 
-});  
+});   
 //*********************annimation javascript ends here***************************************//
