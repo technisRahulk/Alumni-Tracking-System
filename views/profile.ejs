@@ -33,7 +33,94 @@
         <input type='checkbox' id='dark-mode-cbox' />
         <label for='dark-mode-cbox'>Night</label>
     </div>
+    <!--modal-begins -->
+    <div id="myModal" class="modal">
 
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="cross">&times;</span>
+        <div class="ep_heading">
+        <h2 class="ep">Edit Profile</h2>
+        </div>
+        <form>
+        <div class="row">
+            <div class="half">
+                <label>Name:</label>
+                <input class="in" type="text" name="name">
+            </div>
+            <div class="half">
+                <label>Phone No:</label>
+                <input class="in" type="Number" name="phone">
+            </div>
+        </div>
+        <div class="row">
+            <div class="half">
+                <label>Branch:</label>
+                <input class="in" type="text" name="branch">
+            </div>
+            <div class="half">
+                <label>Batch:</label>
+                <input class="in" type="Number" name="batch">
+            </div>
+        </div>
+        <div class="row">
+            <div class="half">
+                <label>Works At:</label>
+                <input class="in" type="text" name="worksAt">
+            </div>
+            <div class="half">
+                <label>Job Role:</label>
+                <input class="in" type="text" name="jobRole">
+            </div>
+        </div>
+        <div class="row">
+            <div class="half">
+                <label>Specialization:</label>
+                <input class="in" type="text" name="specialization">
+            </div>
+            <div class="half">
+                <label>Duration:</label>
+                <input class="in" type="text" name="duration">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+            <label class="desclabel">Description:</label>
+            <input class="desc" type="text" name="description">
+            </div>
+        </div>
+        <div class="row">
+            <div class="three">
+                <label>Facebook Link:</label>
+                <input class="in" type="text" name="fb">
+            </div>
+            <div class="three">
+                <label>LinkedIn Link:</label>
+                <input class="in" type="text" name="linkDin">
+            </div>
+            <div class="three">
+                <label>Any Other Link:</label>
+                <input class="in" type="text" name="others">
+            </div>
+        </div>
+        <div class="row">
+            <div class="half file">
+                <label for="choose-resume" class="b-img-label" id="resume">Upload Resume</label>
+                <input class="display-none in" id="choose-resume" type="file" name="resume" accept=".doc, .docx,.txt,.pdf">
+            </div>
+            <div class="half file">
+                <label for="choose-profile" class="b-img-label" id="profilepic">Upload Profile Picture</label>
+                <input class="display-none in" id="choose-profile" type="file" name="avatar" accept="image/png, image/jpg, image/jpeg">
+            </div>
+        </div>
+        <div class="btncontainer">
+        <button class="btn-submit" type="submit">Submit</button>
+        </div>
+        </form>
+      </div>
+
+    </div>
+    <!--modal-end -->
         <div class="wrapper">
             <div class="intro">
                 <div class="cover-pic">
@@ -93,9 +180,9 @@
                     </ul>
 
                     <div id="myDIV" class="header">
-                        <input type="text" id="myInput1" placeholder="working at...">
-                        <input type="text" id="myInput2" placeholder="year...">
-                        <span onclick="var temp =  newElement(); newElementa(); return temp;"  class="addBtn" id="bt2">Add &nbsp;<i class="fas fa-plus"></i></span>
+                        <input type="text" id="myInput1" placeholder="working at..." readonly>
+                        <input type="text" id="myInput2" placeholder="year..." readonly>
+                        <span onclick="var temp =  newElement(); newElementa(); return temp;"       class="addBtn" id="bt2">Add &nbsp;<i class="fas fa-plus"></i></span>
                     </div>
                 </div>
 
