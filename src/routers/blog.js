@@ -85,7 +85,7 @@ router.get("/",auth,async(req, res) => {
         console.log(user);
         const popularBlogs = await Blog.find({})
             .sort({
-                views: -1,
+                createdAt:-1,
             })
             // .limit(5)
             .populate("author");
@@ -117,7 +117,7 @@ user = await User.findById(req.user).populate('bookmarkBlogs')
 });
 
 // form to create blog
-router.get("/create", (req, res) => {
+router.get("/create", auth,(req, res) => {
     let reqPath = path.join(__dirname, '../../views');
     res.render(reqPath + "/create-blog");
 });

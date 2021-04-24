@@ -21,7 +21,8 @@ exports.signUp = async (req, res) => {
       maxAge: 24 * 60 * 60 * 1000,
       httpOnly: false,
     })
-     
+    //  let reqPath = path.join(__dirname, '../../views');
+    // res.render(reqPath + "/profile.ejs",{user:savedUser,token:token});
      res.redirect("/users/me/show")
   
   } catch (e) {
