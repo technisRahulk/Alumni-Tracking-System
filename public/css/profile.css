@@ -374,7 +374,7 @@ ul li:hover {
   display: table;
   clear: both;
 }
-
+/*
 input {
   margin: 0;
   border: none;
@@ -384,9 +384,18 @@ input {
   font-size: 16px;
   background-color: var(--white);
   outline: none;
-}
+}*/
 
 #myInput1 {
+
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  float: left;
+  padding: 10px;
+  font-size: 16px;
+  background-color: var(--white);
+  outline: none;
   box-shadow: 0 0 10px var(--boxshadow1);
   -moz-box-shadow: 0 0 10px var(--boxshadow1);
   -webkit-box-shadow: 0 0 10px var(--boxshadow2);
@@ -395,6 +404,15 @@ input {
   width: 100%;
 }
 #myInput2 {
+
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  float: left;
+  padding: 10px;
+  font-size: 16px;
+  background-color: var(--white);
+  outline: none;
   box-shadow: 0 0 10px var(--boxshadow1);
   -moz-box-shadow: 0 0 10px var(--boxshadow1);
   -webkit-box-shadow: 0 0 10px var(--boxshadow2);
@@ -449,8 +467,192 @@ input {
   background-color: var(--navbg);
   color: var(--gray);
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.ep_heading{
+    display: block;
+    font-size: 2.2rem;
+    text-align: center;
+    padding: 2vh 0;
 
+}
+.ep{
+    width: fit-content;
+    margin: 0 auto;
+    background-image: linear-gradient(to bottom, #767AE8,#f7489c );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 .4rem 1rem var(--text-shadow-color);
+}
+.editform{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+  .in {
+  font-size: 18px;
+  width: 100%;
+  padding: 8px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.row{
+  width: 100%;
+  display:inline-block;
+}
+.half{
+  float: left;
+  width:40%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.three{
+  float: left;
+  width:26.5%;
+  margin-left: 5%;
+}
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  
+  border-radius: 20px;
+  background-color: var(--body-bg-color);
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+.cross {
+  margin-top: -10px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.cross:hover,
+.cross:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+label{
+  font-size: 18px; 
+}
+.desclabel{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.desc{
+  margin-left: 5%;
+  margin-right: 5%;
+  resize: none;
+  width: 90%;
+  height: 6%;
+  font-size: 18px;
+  padding: 8px 15px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  outline: none;
+}
+.display-none {
+    display: none;
+}
+.file{
+  margin-top: 25px;
+  margin-right: 0%;
+  width: 45%;
+}
+.b-img-label {
+    font-weight: 600;
+    border-radius: 5px;
+    color: var(--element-text-color);
+    border: 2px solid var(--color-grey);
+    background-color: var(--element-bg);
+}
+.b-img-label {
+
+    font-size: 1.1rem;
+    padding: .6rem 3.1rem;
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+}
+.btn-submit{
+    padding: .5rem 1.73rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.btn-submit {
+  background-image: linear-gradient(to bottom, #767AE8,#f7489c );
+  margin:auto;
+  margin-top: 15px;
+  height: 20%;
+  width: 20%;
+  font-size: 22px;
+}
+.btn-submit:hover {
+    box-shadow: 0 .62rem 1.25rem var(--btn-shadow);
+}
+.btncontainer{
+  text-align: center;
+
+}
 @media (max-width: 780px) {
+  .modal{
+    margin-top: 13%;
+  }
+  .modal-content
+  {
+    width: 90%;
+  }
+  .ep_heading{
+    font-size: 24px;
+  }
+  .half{
+    width: 90%;
+  }
+  .three{
+    width: 90%;
+  }
+  .file{
+    width: 100%;
+  }
+  .btn-submit{
+      height: 5%;
+      width: 30%;
+      font-size: 18px;
+      margin-top: 5px;
+      padding: 0px;
+      padding-bottom: 3%;
+  }
   .dark-switch-container {
     top: 25vh;
     right: 0.75vw;

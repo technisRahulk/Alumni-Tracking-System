@@ -223,3 +223,34 @@ function newElementa() {
 
 
 //*********************************************************************************************//
+
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("bt2");
+
+
+var span = document.getElementsByClassName("cross")[0];
+
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+document.getElementById('choose-resume').onchange = function () {
+    document.getElementById("resume").innerHTML = this.value?this.files[0].name:"Upload Resume";
+};
+
+document.getElementById('choose-profile').onchange = function () {
+    document.getElementById("profilepic").innerHTML = this.value?this.files[0].name:"Upload Profile Picture";
+};
