@@ -78,8 +78,8 @@
                                         </p>
                                         <img class="pic" src="<%=blog.cover%>">
                                         <div class="container-icon">
-                                            <a class="fas fa-thumbs-up" id="thumbs" href="/blog/appreciate/<%=blog._id%>"></a>
-                                            <a class="fas fa-bookmark" id="bookmark" href="/blog/bookmark/<%=blog._id%>"></a>
+                                            <i class="fas fa-thumbs-up" id="thumbs"  onclick="LikeFunction('<%= blog._id%>')"></i>
+                                            <i class="fas fa-bookmark" id="bookmark" onclick="BMFunction('<%= blog._id%>')"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -113,10 +113,42 @@
         </div><br>
         <%- include('partials/footer') %>
     </main>
+<script >
+        function LikeFunction(val){
+            console.log(val);
 
+fetch('/blog/appreciate/'+val, { method: 'get'})
+  .then(function (response) {
+    if (response.ok) {
+      console.log('done')
+      return
+    }
+    throw new Error('Request failed.')
+  })
+  .catch(function (error) {
+    console.log(error)
+  })
+}
+function BMFunction(val){
+            console.log(val);
+
+fetch('/blog/bookmark/'+val, { method: 'get'})
+  .then(function (response) {
+    if (response.ok) {
+      console.log('done')
+      return
+    }
+    throw new Error('Request failed.')
+  })
+  .catch(function (error) {
+    console.log(error)
+  })
+}
+
+    </script>
     <script src="js/dark-mode.js"></script>
     <script src="js/blog.js"></script>
-
+ 
 </body>
 
 </html>
