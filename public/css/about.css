@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700;800;900&display=swap");
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Gothic A1", sans-serif;
+}
+body,html{
+    height: 100%;
+}
+.container-head{
+    margin: 0;
+    height:280px;
+    background-color: #7D7FC3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.heading{
+    font-size: 3em;
+    margin-bottom: -15px;
+}
+h1{
+    color: white;
+    text-transform: uppercase;
+}
+.bar{
+    width:60%;
+    height:10px;
+    background-color: white;
+    margin: 20px auto;
+}
+.intro{
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.DSC-lottie iframe{
+    height: 250px;
+    width: 420px;
+    border: 1px solid white;
+}
+.DSC-intro{
+    width: 60%;
+}
+.director-section{
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+}
+.director-section .DSC-lottie, .director-section .DSC-intro{
+    width: 50%;
+}
+.headers{
+    margin: 40px;
+    width:40%;
+    height: 8%;
+    background-color: #93A5C7;
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 85% 100%);
+}
+.headers h1{
+    width: 50%;
+    margin-left: 25px;
+    padding-top: 5px;
+}
