@@ -148,6 +148,9 @@ router.post("/create", auth, upload.single("cover-img"), async(req, res) => {
         // var tagsArray = [];
         // if (blog.tags)
         //     tagsArray = blog.tags.split(" ");
+        let p="";
+        for(let i=3;i<blog.body.length-6;i++)
+            p+=blog.body[i];
         const saved = await new Blog({
             title: blog.title,
             slug: (
@@ -159,7 +162,7 @@ router.post("/create", auth, upload.single("cover-img"), async(req, res) => {
             category: blog.category,
             cover: cover,
             // summary: summary,
-            body: blog.body
+            body: p
                 // tags: (tagsArray.length === 0) ? [] : tagsArray
         }).save();
         if (req.user.blogs) {
@@ -173,7 +176,7 @@ router.post("/create", auth, upload.single("cover-img"), async(req, res) => {
         res.redirect("/blog");
     } catch (e) {
         console.log(e.message);
-        req.flash("error", "Something went wrong. Try again");
+        // req.flash("error", "Something went wrong. Try again");
         res.redirect("/blog/create");
     }
 });
