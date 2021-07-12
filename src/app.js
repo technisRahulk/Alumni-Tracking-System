@@ -13,7 +13,7 @@ const nodeMailer = require("./controllers/Nodemailer");
 const Mail  = require("./models/Mail");
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cookieParser({
@@ -115,7 +115,7 @@ app.get("/test", (req, res) => {
     //res.send('hi');
 })
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log("Server is up on port " + port);
 });
 
