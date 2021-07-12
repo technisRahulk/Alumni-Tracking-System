@@ -69,37 +69,37 @@ app.get("/failed", (req, res) => {
 //Routes
 app.use(Router);
 
-// app.post("/contact", function(req, res) {
-//     console.log(req.body);
-//     nodeMailer.contact({
-//           email: req.body.email,
-//           name: req.body.name,
-//           message: req.body.message,
-//           subject: req.body.subject,
-//         });
+app.post("/contact", function(req, res) {
+    console.log(req.body);
+    nodeMailer.contact({
+          email: req.body.email,
+          name: req.body.name,
+          message: req.body.message,
+          subject: req.body.subject,
+        });
 
-//     const newMail = new Mail({
-//           email: req.body.email,
-//           name: req.body.name,
-//           message: req.body.message,
-//           subject: req.body.subject,
-//         });
+    const newMail = new Mail({
+          email: req.body.email,
+          name: req.body.name,
+          message: req.body.message,
+          subject: req.body.subject,
+        });
      
-//         newMail
-//           .save()
-//           .then((result) => {
-//              console.log("sucess");
+        newMail
+          .save()
+          .then((result) => {
+             console.log("sucess");
            
-//             res.redirect("/");
-//           })
-//           .catch((err) => {
-//             console.log(err);
-//             res.locals.flashMessages = req.flash(
-//               "Something went wrong. Please try again"
-//             );
-//             res.redirect("/blog/create");
-//           });
-// });
+            res.redirect("/");
+          })
+          .catch((err) => {
+            console.log(err);
+            res.locals.flashMessages = req.flash(
+              "Something went wrong. Please try again"
+            );
+            res.redirect("/blog/create");
+          });
+});
 
 
 app.get("/", (req, res) => {
