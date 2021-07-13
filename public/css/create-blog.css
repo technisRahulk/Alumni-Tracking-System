@@ -12,11 +12,14 @@
 body {
   font-family: 'Gothic A1', sans-serif;
     box-sizing: border-box;
-    background-image: var(--body-bg-img);
     max-height: 100vh;
     background-size: 100% 100%;
 }
-
+main{
+    background-image: var(--body-bg-img);
+    background-size: cover;
+    height: 98vh;
+}
 .dark-switch-container {
     top: 7vh;
     right: 9vw;
@@ -26,7 +29,7 @@ body {
 .blog-section {
     width: 90vw;
     height: 96vh;
-    margin: 20vh auto;
+    margin: 20vh auto 2vh;
     border-radius: 7px;
     box-shadow: 0 1rem 2.5rem var(--box-shadow-color);
     background-color: var(--blog-sec-bg);
@@ -163,19 +166,23 @@ body {
 .blog-text-container {
     width: 90%;
     margin: 1rem auto;
-    height: 52vh;
+    height: 48vh;
     border-radius: 5px;
     /* background-color: white; */
     background-image: none;
 }
-
+#cke_1_contents, .cke_inner, #cke_blog-text{
+    background-repeat: no-repeat;
+}
 
 /* mobile-view */
 
 
 @media only screen and (max-width: 900px) {
-    body {
+    
+    main{
         background-image: var(--body-mbbg-img);
+        background-size: cover;
     }
     .dark-switch-container {
         top: 4.2vh;
@@ -199,7 +206,7 @@ body {
     /* section design */
     .blog-section {
         width: 90vw;
-        margin: 2vh auto;
+        margin: 20vh auto 2vh;
     }
     /* section design ends */
 
@@ -210,7 +217,7 @@ body {
         padding: 1vh 0;
     }
     .blog-heading {
-        margin-left: 7%;
+        margin-left: 2.5%;
         text-shadow: 0 .4rem .8rem var(--text-shadow-color);
     }
     /* blog heading ends */

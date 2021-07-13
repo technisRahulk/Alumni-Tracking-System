@@ -5,11 +5,11 @@
         top: 43%;
         position: relative;
         left:5%;
-    }
+    } 
 .full{
     height: 100vh;
     display: block;
-    }
+    } 
 .animation{
         height: 80vh;       
         position: relative;     
@@ -71,27 +71,6 @@
     margin-left: 560px;
 }
 /*ending with timeline button*/
-.edit{
-    width:15vw;
-    /* height: 8vh; */
-    margin-left: 25%;
-    /* margin-bottom: 5%; */
-    font-size: 20px;
-    letter-spacing: 1px;
-    font-family: roboto condensed;
-    border: 3px solid var(--editborder);
-    font-weight: bold;
-    background-color:var(--editbgclr);
-    color: var(--black);
-    border-radius: 6px;
-  }
-.edit:hover{
-    background-color: var(--edithover);
-  }
-.fas{
-    color: var(--black);
-    padding-right: 10px;
-  }
   @media (max-width : 680px) {
     .full{
      display: none;

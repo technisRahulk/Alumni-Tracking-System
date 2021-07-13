@@ -62,8 +62,10 @@ var upload = multer({
 
 // blogs page home (show one full blog along with other new and popular blogs)
 // clicking any blog will redirect to view blog route (/blog/view/:slug)
-router.get("/", async(req, res) => {
+router.get("/",auth,async(req, res) => {
     try {
+         let reqPath = path.join(__dirname, '../../views');
+   
         const token = req.cookies.authorization;
         const finduser = await User.find({
             active: true
@@ -79,19 +81,34 @@ router.get("/", async(req, res) => {
                 else user = payload;
             });
         }
-        if (user) user = await User.findById(user.userId);
+        if (req.user) user =req.user; 
+        console.log(user);
         const popularBlogs = await Blog.find({})
             .sort({
-                views: -1,
+                createdAt:-1,
             })
-            .limit(5)
+            // .limit(5)
             .populate("author");
-        res.render("blog", {
+            
+
+user = await User.findById(req.user).populate('bookmarkBlogs')
+    const bookmarks = await Promise.all(
+        user.bookmarkBlogs.map(async(blog) => {
+            blog.author = await User.findById(blog.author);
+            return blog;
+        })
+    );
+    user = await User.findById(req.user).populate('blogs')
+            console.log(user);
+        res.render(reqPath + "/blog", {
             user: user,
             found: finduser,
             popularBlogs: popularBlogs || [],
+             bookmarks: bookmarks||[],
+              recentactivity: user.blogs || []
+
         });
-        console.log("Hi");
+       // console.log(popularBlogs);
     } catch (err) {
         console.error(err);
         res.redirect("/");
@@ -100,7 +117,7 @@ router.get("/", async(req, res) => {
 });
 
 // form to create blog
-router.get("/create", (req, res) => {
+router.get("/create", auth,(req, res) => {
     let reqPath = path.join(__dirname, '../../views');
     res.render(reqPath + "/create-blog");
 });
@@ -117,7 +134,7 @@ router.post("/create", auth, upload.single("cover-img"), async(req, res) => {
     }
     try {
         const blog = req.body;
-        console.log(blog)
+       // console.log(blog)
         if (!blog) {
             req.flash("Something went wrong");
             res.redirect("/");
@@ -131,6 +148,9 @@ router.post("/create", auth, upload.single("cover-img"), async(req, res) => {
         // var tagsArray = [];
         // if (blog.tags)
         //     tagsArray = blog.tags.split(" ");
+        let p="";
+        for(let i=3;i<blog.body.length-6;i++)
+            p+=blog.body[i];
         const saved = await new Blog({
             title: blog.title,
             slug: (
@@ -142,19 +162,21 @@ router.post("/create", auth, upload.single("cover-img"), async(req, res) => {
             category: blog.category,
             cover: cover,
             // summary: summary,
-            body: blog.body
+            body: p
                 // tags: (tagsArray.length === 0) ? [] : tagsArray
         }).save();
         if (req.user.blogs) {
             req.user.blogs.push(saved);
         } else {
             req.user.blogs = [saved];
+            console.log(req.user.blogs);
         }
         await req.user.save();
+
         res.redirect("/blog");
     } catch (e) {
         console.log(e.message);
-        req.flash("error", "Something went wrong. Try again");
+        // req.flash("error", "Something went wrong. Try again");
         res.redirect("/blog/create");
     }
 });
@@ -248,8 +270,9 @@ router.get("/blogs", function(req, res) {
 
 
 //like a blog
-router.post("/appreciate/:blog_id", auth, async(req, res) => {
+router.get("/appreciate/:blog_id", auth, async(req, res) => {
     try {
+
         let user = req.user;
         let likesArr = user.likes || [];
         let blog = await Blog.findById(req.params.blog_id);
@@ -266,7 +289,7 @@ router.post("/appreciate/:blog_id", auth, async(req, res) => {
         await user.save();
         console.log(likesArr);
 
-        //res.redirect(req.get("referer"));
+        res.redirect('/blog');
     } catch (error) {
         console.log(error);
         req.flash("error", "Something went wrong. Try again");
@@ -293,7 +316,7 @@ router.get("/delete/:blog_id", auth, async(req, res) => {
 
 
 
-router.post("/bookmark/:bookmark_id", auth, async(req, res) => {
+router.get("/bookmark/:bookmark_id", auth, async(req, res) => {
     try {
         let user = await User.findById(req.user);
         let bookmarkArr = user.bookmarkBlogs || [];
@@ -305,6 +328,7 @@ router.post("/bookmark/:bookmark_id", auth, async(req, res) => {
         user.bookmarkBlogs = bookmarkArr;
         await user.save();
         console.log(user);
+        res.redirect('/blog');
         // res.redirect(req.get("referer"));
     } catch (error) {
         console.log(error);
@@ -313,46 +337,47 @@ router.post("/bookmark/:bookmark_id", auth, async(req, res) => {
     }
 });
 
-router.get("/bookmarks", auth, async(req, res) => {
-    const finduser = await User.find({
-        active: true
-    }, null, {
-        sort: {
-            name: 1
-        }
-    });
-    const user = await User.findById(req.user).populate("bookmarkBlogs");
-    res.json(user.bookmarkBlogs);
-    // const bookmarks = await Promise.all(
-    //     user.bookmarkBlogs.map(async(blog) => {
-    //         blog.author = await User.findById(blog.author);
-    //         return blog;
-    //     })
-    // );
-    // res.render("bookmarks", {
-    //     user: req.user,
-    //     found: finduser,
-    //     bookmarks: bookmarks,
-    // });
-    // res.send("Your Bookmarks");
-});
+// router.get("/bookmarks", auth, async(req, res) => {
+//     const finduser = await User.find({
+//         active: true
+//     }, null, {
+//         sort: {
+//             name: 1
+//         }
+//     });
+//     const user = await User.findById(req.user).populate("bookmarkBlogs");
+//     res.json(user.bookmarkBlogs);
+//     const bookmarks = await Promise.all(
+//         user.bookmarkBlogs.map(async(blog) => {
+//             blog.author = await User.findById(blog.author);
+//             return blog;
+//         })
+//     );
+
+//     res.render("bookmarks", {
+//         user: req.user,
+//         found: finduser,
+//         bookmarks: bookmarks,
+//     });
+//     res.send("Your Bookmarks");
+// });
 
 router.get("/recentblogs", auth, async(req, res) => {
 
     const user = await User.findById(req.user).populate("recentBlogs");
     res.json(user.recentBlogs);
-    // const bookmarks = await Promise.all(
-    //     user.bookmarkBlogs.map(async(blog) => {
-    //         blog.author = await User.findById(blog.author);
-    //         return blog;
-    //     })
-    // );
-    // res.render("bookmarks", {
-    //     user: req.user,
-    //     found: finduser,
-    //     bookmarks: bookmarks,
-    // });
-    // res.send("Your Bookmarks");
+    const bookmarks = await Promise.all(
+        user.bookmarkBlogs.map(async(blog) => {
+            blog.author = await User.findById(blog.author);
+            return blog;
+        })
+    );
+    res.render("bookmarks", {
+        user: req.user,
+        found: finduser,
+        bookmarks: bookmarks,
+    });
+    res.send("Your Bookmarks");
 });
 
 function escapeRegex(text) {

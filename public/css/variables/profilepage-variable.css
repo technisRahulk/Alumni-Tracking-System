@@ -22,9 +22,13 @@
   --btn-active-bg: 4169e1;
   --timeline-bg: #fff;
   --hr-bg: #fff;
-
+  --text-shadow-color: rgba(35, 66, 75, 0.938);
   --profile-pic-border: #fff;
   --dm-bg-color: #b1b1b1;
+  --element-text-color: #344955;
+  --color-grey: #808080;
+  --element-bg: #dee6e6;
+  --btn-shadow: rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode {
@@ -51,7 +55,11 @@
   --btn-active-bg: #4169e1;
   --timeline-bg: #a3d8f4;
   --hr-bg: #135f74;
-
+  --text-shadow-color: rgba(120, 176, 192, 0.6);
+  --color-grey: #304049;
+  --element-bg: #4a6572;
+  --element-text-color: rgb(205, 205, 205);
   --profile-pic-border: #232f34;
   --dm-bg-color: #000000;
+  --btn-shadow: rgba(0, 0, 0, 0.2);
 }

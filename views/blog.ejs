@@ -27,19 +27,21 @@
     <main>
         <div>
             <div class="row">
-                <div>
+                <div class="bar">
                     <form>
                         <input type="text" class="search" name="search" placeholder="Search Blog">
                     </form>
+                    <a href="/blog/create" class="tab_create-blog" onclick="active1()" id="tab1" >Create Blog</a>
                 </div>
 
-                <div class="navbutton">
-                    <button  class="btn active" id="btn1" onclick="btn1()"  >Blogs</button>
-                    <button class="btn" id="btn2" onclick="btn2()" >My Bookmarks</button>
-                    <button   class="btn" id="btn3" onclick="btn3()" >My Activity</button>
+                <div class="navbutton" id="navbutton">
+                    <button  class="btn" id="btn1" onclick="btn1()"  ><a href="/blog/create"><img src="https://img.icons8.com/nolan/50/plus.png"/></a></button>
+                    <button  class="btn active" id="btn2" onclick="btn2()"  >Blogs</button>
+                    <button class="btn" id="btn3" onclick="btn3()" >My Bookmarks</button>
+                    <button   class="btn" id="btn4" onclick="btn4()" >My Activity</button>
                 </div>
                     <div class="main-body">
-                        <div class="left-col" id="sec1">
+                        <div class="left-col margin" id="sec1">
                             <div class="bookmarks-activities">
                                 <div class="profile">
                                     <img class="pic1" src="/img/logo.png">
@@ -48,18 +50,12 @@
 
                                 <div class="list">
                                     <h4>My bookmarks</h4>
+                                    <% bookmarks.forEach(function(blogtitle){%>
                                     <div class="heading"><i class="fas fa-bookmark"></i>
-                                        <h1> Bookmark 1</h1>
+                                        <h1> <%= blogtitle.title%></h1>
                                     </div> <br>
-                                    <div class="heading"><i class="fas fa-bookmark"></i>
-                                        <h1> Bookmark 2</h1>
-                                    </div> <br>
-                                    <div class="heading"><i class="fas fa-bookmark"></i>
-                                        <h1> Bookmark 3</h1>
-                                    </div> <br>
-                                    <div class="heading"><i class="fas fa-bookmark"></i>
-                                        <h1> Bookmark 4</h1>
-                                    </div> <br>
+                                    
+                                    <% }) %>
                                     <div class="showmore"><i class="fas fa-chevron-circle-down"></i>
                                         <h1> See more</h1>
                                     </div> <br>
@@ -67,7 +63,7 @@
                             </div>
 
                         </div>
-                        <div class="center-col" id="sec2">
+                        <div class="center-col margin" id="sec2">
                         <% popularBlogs.forEach(function(blog){%> 
                                 <div class="blog">
                                     <img class="profile_pic" src="/img/logo.png">
@@ -82,8 +78,8 @@
                                         </p>
                                         <img class="pic" src="<%=blog.cover%>">
                                         <div class="container-icon">
-                                            <i class="fas fa-thumbs-up"></i>
-                                            <i class="fas fa-bookmark"></i>
+                                            <i class="fas fa-thumbs-up" id="thumbs"  onclick="LikeFunction('<%= blog._id%>')"></i>
+                                            <i class="fas fa-bookmark" id="bookmark" onclick="BMFunction('<%= blog._id%>')"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +87,7 @@
 
 
                         </div>
-                        <div class="right-col" id="sec3">
+                        <div class="right-col margin" id="sec3">
                             <div class="bookmarks-activities">
                                 <div class="profile">
                                     <img class="pic1" src="/img/logo.png">
@@ -100,18 +96,11 @@
 
                                 <div class="list">
                                     <h4>My Activity</h4>
+                                    <% recentactivity.forEach(function(blogtitle){%>
                                     <div class="heading"><i class="far fa-clock"></i>
-                                        <h1> Activity 1</h1>
+                                        <h1><%= blogtitle.title %></h1>
                                     </div> <br>
-                                    <div class="heading"><i class="far fa-clock"></i>
-                                        <h1> Activity 2</h1>
-                                    </div> <br>
-                                    <div class="heading"><i class="far fa-clock"></i>
-                                        <h1> Activity 3</h1>
-                                    </div> <br>
-                                    <div class="heading"><i class="far fa-clock"></i>
-                                        <h1> Activity 4</h1>
-                                    </div> <br>
+                                   <% }) %>
                                     <div class="showmore"><i class="fas fa-chevron-circle-down"></i>
                                         <h1> See more</h1>
                                     </div> <br>
@@ -124,10 +113,42 @@
         </div><br>
         <%- include('partials/footer') %>
     </main>
+<script >
+        function LikeFunction(val){
+            console.log(val);
 
+fetch('/blog/appreciate/'+val, { method: 'get'})
+  .then(function (response) {
+    if (response.ok) {
+      console.log('done')
+      return
+    }
+    throw new Error('Request failed.')
+  })
+  .catch(function (error) {
+    console.log(error)
+  })
+}
+function BMFunction(val){
+            console.log(val);
+
+fetch('/blog/bookmark/'+val, { method: 'get'})
+  .then(function (response) {
+    if (response.ok) {
+      console.log('done')
+      return
+    }
+    throw new Error('Request failed.')
+  })
+  .catch(function (error) {
+    console.log(error)
+  })
+}
+
+    </script>
     <script src="js/dark-mode.js"></script>
     <script src="js/blog.js"></script>
-
+ 
 </body>
 
 </html>
